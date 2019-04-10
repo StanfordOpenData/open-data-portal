@@ -3,9 +3,10 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  animation: App-logo-spin infinite 5s ease-in-out;
   height: 40vmin;
   pointer-events: none;
+  border-radius: 50%;
 }
 
 .App-header {
