@@ -26,6 +26,10 @@
   margin: 0px 30px;
 }
 
+.category {
+  margin-top: 10px;
+}
+
 .column-filter {
   float: left;
   width: 15%;
