@@ -1,44 +1,78 @@
-
 .link {
   color: black;
   display: block;
   text-decoration: none; /* remove underlines from linkes */
   border-style: solid;
   border-width: 1px;
-  border-color: #CDCDCD;
-  border-radius: 10px;
-  box-shadow: 1px 1px 2px #D3D3D3;
-  margin: 10px 0;
-  padding-left: 20px;
+  border-color: #E8E8EE;
+  border-radius: 0.5em;
+  box-shadow: 1px 1px 2px #E8E8EE;
+  margin: 1.4em 0;
+  padding: 0.3em 0 0.5em 1em;
 }
 
-.page {
-  text-align: left;
+.link:hover{
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
-  margin-right: 10px;
-}
-
-.title {
-  font-size: 22px;
-  font-weight: bold;
-  margin: 0px 30px;
-}
-
-.category {
-  margin-top: 10px;
-}
-
-.column-filter {
+.company-logo {
   float: left;
-  width: 15%;
-  margin: 0 30px;
+}
+.company-logo img{
+  width: 90px;
+  margin-right: 2em;
+  margin-left: 0.3em;
+  border-radius: 0.25em;
 }
 
-.column-jobs {
+.job-info {
+  float: right;
+}
+.wrapper {
+  width: 1000px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.main-header {
+  margin: 1em 0 2em 0;
+}
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.logo img {
+  width: 40px;
   float: left;
-  width: 60%;
+  margin-top: 1.9em;
+}
+
+.logo h1 {
+  float: left;
+  margin: 0 0 0 1em;
+  font-size: 1.5em;
+  padding-top: 1.6em;
+  color: #282828;
+}
+
+.nav {
+  float: right;
+  padding-top: 2em;
+}
+
+.nav a {
+  color: black;
+  margin-left: 1.5em;
+  text-decoration: none;
+}
+.sort {
+  text-align: right;
 }
 
 select {
@@ -46,17 +80,17 @@ select {
 }
 
 .job-title {
+  font-size: 17px;
   font-weight: bold;
   color: #8c1515;
 }
 
-.company-name {
-  font-weight: bold;
+.location-icon {
+  padding-right: 5px;
 }
 
 .job-type {
-  color: #808080;
+  color: #A2A2A8;
+  float: right;
+  padding-right: 25px;
 }
-
-
-
