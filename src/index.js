@@ -17,10 +17,6 @@ const Board = () => (
 	</div>
 );
 
-
-function TestJob() {
-	return <h1>Yup!</h1>;
-}
 ReactDOM.render(<Board />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
