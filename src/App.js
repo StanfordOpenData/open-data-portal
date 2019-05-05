@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
+import locationIcon from './locationicon.png';
+import building from './building.png';
+
+import { BrowserRouter, Link, Route } from "react-router-dom";
 
 let categories = [
   {
@@ -20,7 +24,7 @@ let categories = [
   }
 ];
 
-{/*}
+{/*} dummy data to use when not using API
 let data = [
   {
     "link": "https://stanford.joinhandshake.com/jobs/2620548?ref=web-app-job-search&search_id=a3b4e536-2f60-4741-9dff-c75b2b938d24",
@@ -45,7 +49,6 @@ let data = [
   }
 ];
 */}
-
 
 class App extends React.Component {
   constructor(props) {
@@ -79,13 +82,13 @@ class App extends React.Component {
     fetch("https://jobs.search.gov/jobs/search.json?query=nursing+jobs")
       .then(res => res.json())
       .then(
-        (result) => { 
+        (result) => {
           this.setState({
             isLoaded: true,
             items: result
           });
         },
-        
+
         (error) => {
           this.setState({
             isLoaded: true,
@@ -94,10 +97,9 @@ class App extends React.Component {
         }
       )
   }
-  
+
   render() {
     const { error, isLoaded, items } = this.state;
-    console.log(items);
     if (error) {
       return <div>Error!</div>;
     } else if (!isLoaded) {
@@ -106,44 +108,44 @@ class App extends React.Component {
       return (
         <div className="page">
         <Title />
-        <div className="column-filter">
-          <form action="" method="get">
-            <input type="text" name="job-search" />
-            <button type="submit">Search</button>
+          <div className="column-filter">
+            <form action="" method="get">
+              <input type="text" name="job-search" />
+              <button type="submit">Search</button>
 
-            {categories.map(cat => <div className="category">
-              {cat.category}
-              <br />
-
-              {cat.subcategories.map(subcat => <div>
-                <input type="checkbox" name="compensation" value="paid" />
-                {subcat}
+              {categories.map(cat => <div className="category">
+                {cat.category}
                 <br />
+
+                {cat.subcategories.map(subcat => <div>
+                  <input type="checkbox" name="compensation" value="paid" />
+                  {subcat}
+                  <br />
+                </div>
+                )}
+
               </div>
               )}
-
-            </div>
-            )}
-          </form>
-        </div>
-
-        <div className="column-jobs">
-          <div className="sort">
-            Sort by:
-          <select name="sort">
-              <option value="deadline">Deadline</option>
-              <option value="recent">Most Recent</option>
-            </select>
+            </form>
           </div>
 
-          {items.map(job => <JobCard
-            link={job.url}
-            title={job.position_title}
-            company={job.organization_name}
-            location={job.locations}
-            type={job.start_date} />
-          )}
-        </div> 
+          <div className="column-jobs">
+            <div className="sort">
+              Sort by:
+          <select name="sort">
+                <option value="deadline">Deadline</option>
+                <option value="recent">Most Recent</option>
+              </select>
+            </div>
+
+            {items.map(job => <JobCard
+              link={job.url}
+              title={job.position_title}
+              company={job.organization_name}
+              location={job.locations}
+              type={job.start_date} />
+            )}
+          </div>
         </div>);
     }
   }
@@ -153,7 +155,7 @@ function Title() {
   return (
     <div className="title">
       <h1><img className="logo" src="https://user-images.githubusercontent.com/1689183/55673023-25239a00-5857-11e9-9699-5f2d0ab365cf.png"
-        width="35" alt=""/>
+        width="26" alt=""/>
         Jobs & Internships</h1>
     </div>
   );
@@ -165,9 +167,15 @@ function JobCard(props) {
       <a className="link" href={props.link}>
         <div>
           <p className="job-title">{props.title}</p>
-          <p className="company-name">{props.company}</p>
-          <p>{props.location}</p>
-          <p className="job-type">{props.type}</p>
+          <p className="company-name">
+            <img className="location-icon" src={building} width="14" alt="" />
+            {props.company}
+            <span className="job-type">{props.type}</span>
+          </p>
+          <p>
+            <img className="location-icon" src={locationIcon} width="14" alt="" />
+            {props.location}
+            </p>
         </div>
       </a>
     </div>
@@ -175,7 +183,167 @@ function JobCard(props) {
 }
 
 export default App;
-  {/* 
+
+{/* uses API, has left column of categories
+  let categories = [
+  {
+    "category": "Job Type",
+    "subcategories": ["Internship", "Part-time", "Full-time"]
+  },
+  {
+    "category": "Compensation",
+    "subcategories": ["Paid", "Unpaid"]
+  },
+  {
+    "category": "Category",
+    "subcategories": ["Art", "Finance", "Media", "Non-Profit", "Science", "Technology"]
+  },
+  {
+    "category": "Location",
+    "subcategories": ["San Francisco, CA", "Palo Alto, CA", "Los Angeles, CA", "Berkeley, CA", "New York City, NY"]
+  }
+];
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null,
+      isLoaded: false,
+      items: [],
+      categories: [
+        {
+          "category": "Job Type",
+          "subcategories": ["Internship", "Part-time", "Full-time"]
+        },
+        {
+          "category": "Compensation",
+          "subcategories": ["Paid", "Unpaid"]
+        },
+        {
+          "category": "Category",
+          "subcategories": ["Art", "Finance", "Media", "Non-Profit", "Science", "Technology"]
+        },
+        {
+          "category": "Location",
+          "subcategories": ["San Francisco, CA", "Palo Alto, CA", "Los Angeles, CA", "Berkeley, CA", "New York City, NY"]
+        }
+      ]
+    };
+  }
+
+  componentDidMount() {
+    fetch("https://jobs.search.gov/jobs/search.json?query=nursing+jobs")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            items: result
+          });
+        },
+
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
+  }
+
+  render() {
+    const { error, isLoaded, items } = this.state;
+    if (error) {
+      return <div>Error!</div>;
+    } else if (!isLoaded) {
+      return <div>Loading...</div>;
+    } else {
+      return (
+        <div className="page">
+        <Title />
+          <div className="column-filter">
+            <form action="" method="get">
+              <input type="text" name="job-search" />
+              <button type="submit">Search</button>
+
+              {categories.map(cat => <div className="category">
+                {cat.category}
+                <br />
+
+                {cat.subcategories.map(subcat => <div>
+                  <input type="checkbox" name="compensation" value="paid" />
+                  {subcat}
+                  <br />
+                </div>
+                )}
+
+              </div>
+              )}
+            </form>
+          </div>
+
+          <div className="column-jobs">
+            <div className="sort">
+              Sort by:
+          <select name="sort">
+                <option value="deadline">Deadline</option>
+                <option value="recent">Most Recent</option>
+              </select>
+            </div>
+
+            {items.map(job => <JobCard
+              link={job.url}
+              title={job.position_title}
+              company={job.organization_name}
+              location={job.locations}
+              type={job.start_date} />
+            )}
+          </div>
+        </div>);
+    }
+  }
+}
+
+function Title() {
+  return (
+    <div className="title">
+      <h1><img className="logo" src="https://user-images.githubusercontent.com/1689183/55673023-25239a00-5857-11e9-9699-5f2d0ab365cf.png"
+        width="26" alt=""/>
+        Jobs & Internships</h1>
+    </div>
+  );
+}
+
+function JobCard(props) {
+  return (
+    <div>
+      <a className="link" href={props.link}>
+        <div>
+          <p className="job-title">{props.title}</p>
+          <p className="company-name">
+            <img className="location-icon" src={building} width="14" alt="" />
+            {props.company}
+            <span className="job-type">{props.type}</span>
+          </p>
+          <p>
+            <img className="location-icon" src={locationIcon} width="14" alt="" />
+            {props.location}
+            </p>
+        </div>
+      </a>
+    </div>
+  );
+}
+
+export default App;
+}
+
+
+
+
+
+{/*  renders dummy data to board
   render() {
     return (<div className="page">
     <Title />
