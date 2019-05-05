@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import locationIcon from './locationicon.png';
-import building from './building.png';
+import buildingIcon from './building.png';
+import clockIcon from './clock.png';
 import { BrowserRouter, Link, Route } from "react-router-dom";
 
 class App extends React.Component {
@@ -61,7 +62,8 @@ class App extends React.Component {
             title={job.position_title}
             company={job.organization_name}
             location={job.locations}
-            type={job.start_date} />
+            deadline={job.start_date}
+            type={job.minimum} />
           )}
         </div >);
     }
@@ -86,6 +88,7 @@ function Header() {
 }
 
 function JobCard(props) {
+  var wage = parseInt(props.type, 10); {/* to create articifical job types from API because it doesn't have them */}
   return (
     <div>
       <a className="link" href={props.link}>
@@ -94,17 +97,29 @@ function JobCard(props) {
             <img src="https://user-images.githubusercontent.com/1689183/55673023-25239a00-5857-11e9-9699-5f2d0ab365cf.png" alt="" />
           </div>
 
-<div>
-          <p className="job-title">{props.title}</p>
-          <p className="company-name">
-            <img className="location-icon" src={building} width="14" alt="" />
-            {props.company}
-            <span className="job-type">{props.type}</span>
-          </p>
-          <p>
-            <img className="location-icon" src={locationIcon} width="14" alt="" />
-            {props.location}
-          </p>
+          <div className="job-info">
+            <p className="job-title">{props.title}</p>
+            <div className="job-details">
+              <span className="job-type">
+                <p>
+                {wage > 58000 ? <span className="full-time">Full-time</span> : wage > 50000 ? <span className="part-time">Part-time</span> : <span className="internship">Internship</span>}
+                </p>
+              </span>
+              <p>
+                <img className="icon" src={buildingIcon} alt="" />
+                {props.company}
+                
+              </p>
+
+              <p>
+                <img className="icon" src={locationIcon} alt="" />
+                {props.location}
+              </p>
+              <p>
+                <img className="icon" src={clockIcon} alt="" />
+                {props.deadline}
+              </p>
+            </div>
           </div>
         </div>
       </a>
