@@ -1,7 +1,7 @@
 .link {
   color: black;
   display: block;
-  text-decoration: none; /* remove underlines from linkes */
+  text-decoration: none; /* remove underlines from links */
   border-style: solid;
   border-width: 1px;
   border-color: #E8E8EE;
@@ -17,7 +17,7 @@
 
 
 .wrapper {
-  width: 1000px;
+  width: 900px;
   max-width: 90%;
   margin: 0 auto;
 }
@@ -39,23 +39,26 @@
   width: 40px;
   float: left;
   margin-top: 1.9em;
+  border-radius: 100%;
 }
 
 .logo h1 {
   float: left;
-  margin: 0 0 0 1em;
+  margin: 0 0 0 0.7em;
   font-size: 1.5em;
   padding-top: 1.6em;
   color: #282828;
 }
 
 .nav {
+  font-weight: bold;
+  font-size: 16px;
   float: right;
-  padding-top: 2em;
+  padding-top: 2.7em;
 }
 
 .nav a {
-  color: black;
+  color: #696969;
   margin-left: 1.5em;
   text-decoration: none;
 }
@@ -97,7 +100,6 @@ select {
 
 .job-type {
   text-transform: uppercase;
-  color: #A2A2A8;
   float: right;
   white-space: nowrap;
   font-weight: 700;
@@ -105,20 +107,25 @@ select {
   position: relative;
 }
 
-.job-type:before {
-  content: " ";
-  width: 10px;
-  height: 10px;
-  border-radius: 100%;
-  position: absolute;
-  left: -10px;
-  margin-top: 0.9em;
-}
-
 .full-time {
-  color: #A020F0;
+  color: #5ec1e6;
 }
 
-.full-time:before {
-  background: #A020F0;
+.part-time {
+  color: rgb(255, 143, 159);
+}
+
+.internship {
+  color: #ffc53c;
+}
+
+.job-description {
+  margin-top: -0.5em;
+}
+
+hr {
+  margin: 2em 0;
+  height: 1px;
+  border: none;
+  background-color: #dadada;
 }
