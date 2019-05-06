@@ -1,15 +1,15 @@
 {
-  "main.css": "/static/css/main.aa1a7d75.chunk.css",
-  "main.js": "/static/js/main.06fcac3b.chunk.js",
-  "main.js.map": "/static/js/main.06fcac3b.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-  "static/js/2.b10fb7c6.chunk.js": "/static/js/2.b10fb7c6.chunk.js",
-  "static/js/2.b10fb7c6.chunk.js.map": "/static/js/2.b10fb7c6.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.706d7eb256509d97b5d6002662fce507.js": "/precache-manifest.706d7eb256509d97b5d6002662fce507.js",
-  "service-worker.js": "/service-worker.js",
-  "static/css/main.aa1a7d75.chunk.css.map": "/static/css/main.aa1a7d75.chunk.css.map",
-  "static/media/clock.png": "/static/media/clock.b91411d6.png",
-  "static/media/locationicon.png": "/static/media/locationicon.b97826db.png"
+  "main.css": "/jobs-board/static/css/main.aa1a7d75.chunk.css",
+  "main.js": "/jobs-board/static/js/main.2c405a60.chunk.js",
+  "main.js.map": "/jobs-board/static/js/main.2c405a60.chunk.js.map",
+  "runtime~main.js": "/jobs-board/static/js/runtime~main.28d152bc.js",
+  "runtime~main.js.map": "/jobs-board/static/js/runtime~main.28d152bc.js.map",
+  "static/js/2.b10fb7c6.chunk.js": "/jobs-board/static/js/2.b10fb7c6.chunk.js",
+  "static/js/2.b10fb7c6.chunk.js.map": "/jobs-board/static/js/2.b10fb7c6.chunk.js.map",
+  "index.html": "/jobs-board/index.html",
+  "precache-manifest.944d0c9230c3896b63e9e79df6dc8c9a.js": "/jobs-board/precache-manifest.944d0c9230c3896b63e9e79df6dc8c9a.js",
+  "service-worker.js": "/jobs-board/service-worker.js",
+  "static/css/main.aa1a7d75.chunk.css.map": "/jobs-board/static/css/main.aa1a7d75.chunk.css.map",
+  "static/media/clock.png": "/jobs-board/static/media/clock.b91411d6.png",
+  "static/media/locationicon.png": "/jobs-board/static/media/locationicon.b97826db.png"
 }
