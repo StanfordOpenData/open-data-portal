@@ -64,15 +64,6 @@ class Home extends React.Component {
     } else {
       return (
         <div className="wrapper">
-          <div className="sort">
-            Sort by:
-            <select name="sort">
-              <option value="deadline">Deadline</option>
-              <option value="recent">Most Recent</option>
-            </select>
-          </div>
-
-
           {this.state.filteredItems.map(job => <JobCard
             title={job.position_title}
             company={job.organization_name}
@@ -84,7 +75,6 @@ class Home extends React.Component {
     }
   }
 }
-
 
 function JobCard(props) {
   var wage = parseInt(props.type, 10); 
@@ -124,5 +114,6 @@ function JobCard(props) {
     </div>
   );
 }
+
 
 export default Home;

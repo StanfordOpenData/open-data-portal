@@ -19,6 +19,7 @@ class App extends Component {
               <Route exact path='/part-time' component={PartTime} />
               <Route path='/jobs/:id' component={JobDetails} />
             </Switch>
+            <Footer />
           </div>
         </HashRouter>
       </div>
@@ -49,4 +50,11 @@ function PartTime() {
     <Home filter="part-time"/>
   );
 }
+
+function Footer() {
+  return (
+    <div className="footer">Created by The Stanford Daily</div>
+  )
+}
+
 export default App;

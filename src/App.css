@@ -23,16 +23,10 @@
 }
 
 .main-header {
-  margin: 1em 0 2em 0;
+  margin: 0em 0 2.5em 0;
 }
-
-.clearfix:before, .clearfix:after {
-  content: " ";
-  display: table;
-}
-
-.clearfix:after {
-  clear: both;
+.main-header a {
+  text-decoration: none;
 }
 
 .logo img {
@@ -43,8 +37,7 @@
 }
 
 .logo h1 {
-  float: left;
-  margin: 0 0 0 0.7em;
+  margin: 0 0 0 2.5em;
   font-size: 1.5em;
   padding-top: 1.6em;
   color: #282828;
@@ -53,21 +46,29 @@
 .nav {
   font-weight: bold;
   font-size: 16px;
-  float: right;
-  padding-top: 2.7em;
+  padding-top: 2em;
 }
 
 .nav a {
-  color: #696969;
-  margin-left: 1.5em;
-  text-decoration: none;
-}
-.sort {
-  text-align: right;
+  color: grey;
+  margin-right: 1.5em;
 }
 
-select {
-  margin-left: 7px;
+.button {
+  float: right;
+  margin-left: 1em;
+  margin-top: -33px;
+  border: 1.5px solid black;
+  background-color: white;
+  padding: 10px 15px;
+  font-size: 15px;
+  cursor: pointer;
+  border-color: #e7e7e7;
+  color: #656565;
+}
+
+.button:hover {
+  background: #e7e7e7;
 }
 
 .company-logo {
@@ -128,4 +129,10 @@ hr {
   height: 1px;
   border: none;
   background-color: #dadada;
+}
+
+.footer {
+  text-align: center;
+  margin-bottom: 20px;
+  color: grey; 
 }

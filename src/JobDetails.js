@@ -18,7 +18,7 @@ function JobDetails() {
           <img className="icon" src={locationIcon} alt="" />
           Atlanta, GA
               </p>
-        <p>Apply by 6/6/2019
+        <p>Posted on 6/6/2019
               </p>
       </div>
       <hr />
