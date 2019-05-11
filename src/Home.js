@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import locationIcon from './locationicon.png';
 import buildingIcon from './building.png';
 import clockIcon from './clock.png';
-import { BrowserRouter, Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Home extends React.Component {
   constructor(props) {
@@ -12,6 +12,8 @@ class Home extends React.Component {
       error: null,
       isLoaded: false,
       items: [],
+      filteredItems: [],
+      filter: this.props.filter
     };
   }
 
@@ -22,8 +24,26 @@ class Home extends React.Component {
         (result) => {
           this.setState({
             isLoaded: true,
-            items: result
+            items: result,
           });
+
+          if (this.state.filter === "internships")
+            this.setState({
+              filteredItems: result.filter(item => item.minimum < 54000)
+            });
+          else if (this.state.filter === "full-time")
+            this.setState({
+              filteredItems: result.filter(item => item.minimum > 58000)
+            });
+          else if (this.state.filter === "part-time")
+            this.setState({
+              filteredItems: result.filter(item => item.minimum < 58000 && item.minimum > 54000)
+            });
+          else {
+            this.setState({
+              filteredItems: this.state.items
+            })
+          }
         },
 
         (error) => {
@@ -44,15 +64,7 @@ class Home extends React.Component {
     } else {
       return (
         <div className="wrapper">
-          <div className="sort">
-            Sort by:
-            <select name="sort">
-              <option value="deadline">Deadline</option>
-              <option value="recent">Most Recent</option>
-            </select>
-          </div>
-
-          {items.map(job => <JobCard
+          {this.state.filteredItems.map(job => <JobCard
             title={job.position_title}
             company={job.organization_name}
             location={job.locations}
@@ -64,12 +76,11 @@ class Home extends React.Component {
   }
 }
 
-
 function JobCard(props) {
-  var wage = parseInt(props.type, 10); {/* to create articifical job types from API because it doesn't have them */}
+  var wage = parseInt(props.type, 10); 
   return (
     <div>
-      <Link to="/jobdetails" className="link">
+      <Link to={"/jobs/" + props.title} className="link">
         <div>
           <div className="company-logo">
             <img src="https://user-images.githubusercontent.com/1689183/55673023-25239a00-5857-11e9-9699-5f2d0ab365cf.png" alt="" />
@@ -80,7 +91,7 @@ function JobCard(props) {
             <div className="job-details">
               <span className="job-type">
                 <p>
-                {wage > 58000 ? <span className="full-time">Full-time</span> : wage > 54000 ? <span className="part-time">Part-time</span> : <span className="internship">Internship</span>}
+                  {wage > 58000 ? <span className="full-time">Full-time</span> : wage > 54000 ? <span className="part-time">Part-time</span> : <span className="internship">Internship</span>}
                 </p>
               </span>
               <p>
@@ -103,5 +114,6 @@ function JobCard(props) {
     </div>
   );
 }
+
 
 export default Home;
