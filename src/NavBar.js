@@ -11,8 +11,8 @@ function NavBar() {
             <img src="https://user-images.githubusercontent.com/1689183/55673023-25239a00-5857-11e9-9699-5f2d0ab365cf.png" alt="" />
             <h1>Jobs & Internships</h1>
           </Link>
-          <button className="button">Post Job</button>
-          <button className="button" onClick={GetEmail}>Subscribe</button>
+          <Link to="/post-job" className="nav-button">Post Job</Link>
+          <Link to="/subscribe" className="nav-button">Subscribe</Link>
           <div className="nav">
             <Link to="/">All</Link>
             <Link to="/internships"><span className="internship">Internships</span></Link>
@@ -25,7 +25,4 @@ function NavBar() {
   );
 }
 
-function GetEmail() {
-  
-}
 export default NavBar;

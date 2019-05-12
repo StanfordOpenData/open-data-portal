@@ -13,18 +13,17 @@ function JobDetails() {
         <p style={{ fontWeight: 'bold' }}>
           <img className="icon" src={buildingIcon} alt="" />
           The Weather Channel
-              </p>
+        </p>
         <p>
           <img className="icon" src={locationIcon} alt="" />
           Atlanta, GA
-              </p>
-        <p>Posted on 6/6/2019
-              </p>
+        </p>
+        <p>Posted on 6/6/2019</p>
       </div>
       <hr />
       <h2 className="job-description">
         Job Description
-            </h2>
+      </h2>
       <div>Tremolo Productions&nbsp;is an Academy Award-winning production company that produces documentary feature films and television projects. Helmed by director Morgan Neville, Tremolo's  2013 film, <em>20 Feet From Stardom</em>, won numerous awards including the 2014 Academy Award for Best Documentary and a Grammy Award for Best Music Film. Tremolo’s most recent films include the acclaimed documentary <em>Best of Enemies</em>, <em>The Music of Strangers: Yo-Yo Ma and The Silk Road Ensemble</em>, <em>Won't You Be My Neighbor?</em>, and <em>They'll Love Me When I'm Dead</em>, as well as the Netflix series <em>Ugly Deliciou</em>s and <em>Abstract</em>.</div>
       <h2>What you can expect:</h2>
       <ul><li>A well-rounded experience on all phases of documentary production from development and research, to production, and through the distribution and release phases of the process</li><li>A strong collaborative atmosphere where we encourage you to share your ideas</li><li>A creative and engaging environment</li><li>A new challenge every day</li></ul>
