@@ -64,7 +64,7 @@
   font-size: 15px;
   cursor: pointer;
   border-color: #e7e7e7;
-  border-radius: 0.3em;
+  border-radius: 0.2em;
   color: #656565;
 }
 
@@ -138,27 +138,39 @@ hr {
   color: grey; 
 }
 
-.submit-button {
+button[type=submit] {
   background: #9f9f9f;
-  padding: 4px 12px;
+  padding: 6px 12px;
   font-size: 15px;
   cursor: pointer;
   border-color: #9f9f9f;
-  border-radius: 2em;
+  border-radius: 0.2em;
   color: white;
 }
 
-.submit-button:hover {
+button[type=submit]:hover {
   background: #656565;
   border-color: #656565;
 }
 
-input {
-  width: 40%;
+input, textarea, select {
+  width: 450px;
   padding: 7px 10px;
-  margin: 8px 0;
-  display: inline-block;
+  margin: 10px 0 20px 0;
+  display: block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  font-size: 14px;
 }
+
+select {
+  width: 150px;
+}
+
+input[type=checkbox] {
+  display: inline-block;
+  width: 20px;
+  margin-bottom: 0px;
+}
+

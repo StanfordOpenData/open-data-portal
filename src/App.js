@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import Form from "react-jsonschema-form";
 import './index.css';
 import { Switch, HashRouter, Route } from "react-router-dom";
 import NavBar from './NavBar';
 import Home from './Home';
 import JobDetails from './JobDetails';
+import PostJob from './PostJob';
 
 class App extends Component {
   render() {
@@ -14,7 +16,7 @@ class App extends Component {
             <NavBar />
             <Switch>
               <Route exact path='/subscribe' component={Subscribe} />
-              <Route exact path='/subscribe' component={Subscribe} />
+              <Route exact path='/post-job' component={PostJob} />
               <Route exact path='/' component={All} />
               <Route exact path='/internships' component={Internships} />
               <Route exact path='/full-time' component={FullTime} />
@@ -28,19 +30,46 @@ class App extends Component {
   }
 }
 
-function Subscribe() {
-  return (
-    <div className="wrapper">
-      <h3>Subscribe to receive updates about new jobs</h3>
-      <form action="" method="post">
-        <label for="mail">Email:</label>
-        <div>
-          <input type="email" id="mail" name="student_email"></input>
-        </div>
-        <button type="submit" className="submit-button">Submit</button>
-      </form>
+class Subscribe extends React.Component {
+  render() {
+    let schema = {
+      "title": "Subscribe to receive notifications about new jobs",
+      "type": "object",
+      "required": [
+        "email"
+      ],
+      "properties": {
+        "email": {
+          "type": "string",
+          "title": "Email"
+        },
+        "jobTypesList": {
+          "type": "array",
+          "title": "I want to be notified about these types of jobs:",
+          "items": {
+            "type": "string",
+            "enum": ["Internships", "Full-time", "Part-time"]
+          },
+          "uniqueItems": true
+        }
+      }
+    };
+    let uiSchema = {
+      "email": {
+        "ui:placeholder": "example@email.com",
+        "ui:options": {
+          "inputType": "email"
+        }
+      },
+      "jobTypesList": {
+        "ui:widget": "checkboxes"
+      },
+    }
+    return (<div className="wrapper">
+      <Form schema={schema} uiSchema={uiSchema} onSubmit={e => console.log(e.formData)} />
     </div>
-  )
+    );
+  }
 }
 
 function All() {

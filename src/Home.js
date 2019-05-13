@@ -104,8 +104,7 @@ function JobCard(props) {
                 {props.location}
               </p>
               <p>
-                <img className="icon" src={clockIcon} alt="" />
-                {props.deadline}
+                Posted on {props.deadline}
               </p>
             </div>
           </div>
