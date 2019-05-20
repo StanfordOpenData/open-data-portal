@@ -4,8 +4,7 @@ import Form from "react-jsonschema-form";
 class PostJob extends React.Component {
   render() {
     let schema = {
-      "title": "Post a job",
-      "description": "Tell us about the job",
+      "title": "Tell us about the job",
       "type": "object",
       "required": [
         "jobTitle",
@@ -45,10 +44,11 @@ class PostJob extends React.Component {
         "email": {
           "type": "string",
           "title": "Email for applicants to contact"
-        }
+        },
       }
     };
     let uiSchema = {
+      "classNames": "my-object",
       "jobTitle": {
         "ui:placeholder": "Job title"
       },
@@ -56,7 +56,8 @@ class PostJob extends React.Component {
         "ui:placeholder": "Company name"
       },
       "jobLocation": {
-        "ui:placeholder": "City, State"
+        "ui:placeholder": "City, State",
+        "classNames": "location-box"
       },
       "jobType": {
         "ui:placeholder": "Choose one"
@@ -69,7 +70,7 @@ class PostJob extends React.Component {
         "ui:options": {
           "inputType": "email"
         }
-      }
+      },
     }
     return (<div className="wrapper">
       <Form schema={schema} uiSchema={uiSchema} onSubmit={e => console.log(e.formData)} />

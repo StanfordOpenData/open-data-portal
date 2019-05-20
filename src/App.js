@@ -23,6 +23,7 @@ class App extends Component {
               <Route exact path='/part-time' component={PartTime} />
               <Route path='/jobs/:id' component={JobDetails} />
             </Switch>
+            <Footer />
           </div>
         </HashRouter>
       </div>
@@ -55,6 +56,7 @@ class Subscribe extends React.Component {
       }
     };
     let uiSchema = {
+      "classNames": "my-object",
       "email": {
         "ui:placeholder": "example@email.com",
         "ui:options": {
@@ -62,7 +64,8 @@ class Subscribe extends React.Component {
         }
       },
       "jobTypesList": {
-        "ui:widget": "checkboxes"
+        "ui:widget": "checkboxes",
+        "classNames": "checkbox-list"
       },
     }
     return (<div className="wrapper">
@@ -76,7 +79,6 @@ function All() {
   return (
     <div>
       <Home filter="none" />
-      <div className="footer">Created by The Stanford Daily</div>
     </div>
   );
 }
@@ -97,6 +99,14 @@ function PartTime() {
   return (
     <Home filter="part-time" />
   );
+}
+
+function Footer() {
+  return (
+    <div className="footer">
+      Created by The Stanford Daily
+    </div>
+  )
 }
 
 export default App;
