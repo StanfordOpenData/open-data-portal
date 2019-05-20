@@ -27,6 +27,7 @@ class Home extends React.Component {
             items: result,
           });
 
+          {/* divide jobs into different types using minimum salary key -- need to change later */}
           if (this.state.filter === "internships")
             this.setState({
               filteredItems: result.filter(item => item.minimum < 54000)
@@ -104,8 +105,7 @@ function JobCard(props) {
                 {props.location}
               </p>
               <p>
-                <img className="icon" src={clockIcon} alt="" />
-                {props.deadline}
+                Posted on {props.deadline}
               </p>
             </div>
           </div>
