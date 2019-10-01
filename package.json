@@ -1,33 +1,38 @@
 {
-  "homepage": "https://thestanforddaily.github.io/jobs-board/",
-  "name": "react-template",
+  "name": "jobs-board",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "gh-pages": "^2.0.1",
-    "jquery": "^3.4.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-jsonschema-form": "^1.5.0",
-    "react-router": "^5.0.0",
-    "react-router-dom": "^5.0.0",
-    "react-scripts": "2.1.8"
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "multiselect-dropdown-react": "^1.0.5",
+    "react": "^16.10.1",
+    "react-bootstrap": "^1.0.0-beta.12",
+    "react-dom": "^16.10.1",
+    "react-router-dom": "^5.1.1",
+    "react-scripts": "3.1.2",
+    "react-select": "^3.0.5",
+    "react-select-box": "^3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
