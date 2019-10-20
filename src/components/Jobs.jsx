@@ -1,10 +1,12 @@
 import React from 'react';
 import './styles.css';
+import heroImage from './heroImage.svg';
 import locationIcon from './locationIcon.png';
 import buildingIcon from './buildingIcon.png';
 import dollarIcon from './dollarIcon.png';
 import Select from 'react-select';
 import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 
 const typeOptions = [
   { value: 'internship', label: 'Internship' },
@@ -20,15 +22,6 @@ const industryOptions = [
   { value: 'health', label: 'Health' },
 ];
 
-const locationOptions = [
-  { value: 'atlanta', label: 'Atlanta, GA' },
-  { value: 'boston', label: 'Boston, MA' },
-  { value: 'chicago', label: 'Chicago, IL' },
-  { value: 'denver', label: 'Denver, CO' },
-];
-
-var data = [];
-
 class Jobs extends React.Component {
   state = {
     selectedOption: null,
@@ -40,7 +33,27 @@ class Jobs extends React.Component {
       error: null,
       isLoaded: false,
       items: [],
+      filteredItems: [],
+      locationFilter: []
     };
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange(val) {
+    var filteredItems = [];
+    if (val) {
+      var i;
+      for (i = 0; i < val.length; i++) {
+        this.setState({ locationFilter: [...this.state.locationFilter, val[i].value] })
+        filteredItems = filteredItems.concat(this.state.items.filter(function (item) {
+          return item["location"] === val[i].value;
+        }));
+        console.log(filteredItems)
+      }
+    } else {
+      filteredItems = this.state.items;
+    }
+    this.setState({ filteredItems: filteredItems });
   }
 
   componentDidMount() {
@@ -52,6 +65,7 @@ class Jobs extends React.Component {
         this.setState({
           isLoaded: true,
           items: result,
+          filteredItems: result,
         });
       },
         (error) => {
@@ -62,13 +76,6 @@ class Jobs extends React.Component {
         }
       )
   }
-
-  handleChange = selectedOption => {
-    /*
-    this.setState({ selectedOption });
-    console.log(`Option selected:`, selectedOption);
-    */
-  };
 
   searchKey = (event) => {
     let total = 0;
@@ -94,22 +101,33 @@ class Jobs extends React.Component {
   }
 
   render() {
-    const { error, isLoaded, items } = this.state;
+    const { error, isLoaded } = this.state;
     const { selectedOption } = this.state;
+    const unique = [...new Set(this.state.items.map(item => item.location))].sort(); //creates array of unique locations
+    var locationOptions = [];
+    for (var i = 0; i < unique.length; i++) {  // adds array to object for select options
+      locationOptions.push({ "value": unique[i], "label": unique[i] });
+    }
 
     if (error) {
       return <div>Error!</div>;
     } else if (!isLoaded) {
-      return <div>Loading...</div>;
+      return <div></div>;
     } else {
       return (
         <div>
-          <div className="mainContent">
+          <header>
+            <img className="hero" src={heroImage} alt="" height="375px" />
+            <h1>Find your dream job and contact recruiters right away.</h1>
+            {/* <HashLink to="/#jobsAnchor" className="btnPrimary">Explore jobs</HashLink>
+            <a href="#" className="btnTertiary">Get alerts</a> */}
+          </header>
+          <div id="jobsAnchor" className="mainContent">
             <div className="jobFilters">
               <input type="search" id="searchInput" onKeyUp={this.searchKey} placeholder="Search by title, description, company, etc." name="search" />
-              <span className="inline marginRight filterLabel">Job types</span>
-              <span className="inline marginRight filterLabel">Industries</span>
-              <span className="inline filterLabel">Locations</span>
+              <label className="inline marginRight">Job types</label>
+              <label className="inline marginRight">Industries</label>
+              <label className="inline">Locations</label>
               <span className="inline marginRight"><Select
                 value={selectedOption} isMulti
                 placeholder={'All types'}
@@ -156,14 +174,16 @@ class Jobs extends React.Component {
                     },
                   })}
                 />
+                <div>{this.state.filter}</div>
               </span>
             </div>
-            <ul id="jobList">
-              {this.state.items.map(job => <JobCard
+            <ul id="jobList" className="list">
+              {this.state.filteredItems.map(job => <JobCard
                 title={job.title}
+                logo={job.company_logo}
                 company={job.company}
                 location={job.location}
-                description={job.description}
+                excerpt={job.description}
                 pay={job.type}
                 id={job.id}   // CHANGE LATER !
               //type={job.type} !
@@ -171,22 +191,20 @@ class Jobs extends React.Component {
               )}
             </ul>
           </div>
-          <div className="sideBar">
-            <p>Tell us what you’re looking for and we’ll notify you of new jobs!</p>
-            <a href="#" class="btnPrimary">Get alerts</a>
-          </div>
+          <div className="clear"></div>
         </div>);
     }
   }
 }
 
 function JobCard(props) {
+  var excerpt = props.excerpt.replace(/<\/?[^>]+(>|$)/g, ""); // strip description excerpt of HTML tags
   return (
     <div>
       <li>
         <Link to={"/jobs/" + props.id}>
           <div className="companyLogo">
-            <img src="https://user-images.githubusercontent.com/1689183/55673023-25239a00-5857-11e9-9699-5f2d0ab365cf.png" alt="" />
+            <img src={props.logo} alt="" />
           </div>
           <div className="jobTitle">{props.title}</div>
           <div className="jobFacts">
@@ -204,7 +222,7 @@ function JobCard(props) {
             </span>
           </div>
           <div className="jobExcerpt">
-            {props.description}
+            {excerpt}
           </div>
         </Link>
       </li>

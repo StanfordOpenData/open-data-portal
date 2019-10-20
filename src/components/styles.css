@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,semibold,bold,italic&subset=latin,latin-ext');
 /* -----Global------*/
-/*
-var des = props.description;
-<div dangerouslySetInnerHTML={{__html: des}} className="jobExcerpt" />*/
+
 :root {
     --main-black: #303030;
     --main-red: #FF5A60;
@@ -10,17 +8,29 @@ var des = props.description;
     --main-gray: #8A8A8A;
     --main-outline: #DADADA;
     --light-outline: #E8E8E8;
-    --light-backgound: #F4F4F4;
+    --light-background: #F4F4F4;
 }
 body {
     width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     background-color: white;
     font-family: Source Sans Pro, sans-serif;
 }
-
+.mainContent {
+    float: left;
+    width: 66%;
+}
 .wrapper {
     width: 76%;
     padding: 0 12%;
+}
+.flexWrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between
 }
 a {
     color: var(--main-green);
@@ -28,7 +38,43 @@ a {
 }
 
 
-/* -----header/nav------*/
+
+/* -----buttons------*/
+a.btnPrimary, button[type=submit] {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: var(--main-red);
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+}
+a.btnPrimary:hover, button[type=submit]:hover {
+    background-color: #FF7B7F;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+}
+.btnSecondary {
+    border: 1px solid var(--main-outline);
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+.btnSecondary:hover {
+    border-color: var(--main-green);
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+}
+.btnTertiary {
+    font-weight: 600;
+}
+.btnTertiary:hover {
+    color: #58D2BB;
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+}
+
+/* -----header/nav----*/
 nav {
     display: inline-block;
     width: 100%;
@@ -61,24 +107,27 @@ nav ul li a:hover {
     transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
-.btnGreenLine {
-    border: 1px solid var(--main-outline);
-    padding: 8px 16px;
-    border-radius: 5px;
+header {
+    margin-bottom: 56px;
 }
-.btnGreenLine:hover {
-    border-color: var(--main-green);
-    transition: all .2s ease;
-    -webkit-transition: all .2s ease;
+header h1 {
+    font-size: 40px;
+    font-weight: 600;
+    width: 50%;
+    margin: 128px 0 32px 0;
+}
+header .btnTertiary {
+    margin-left: 16px;
+}
+.hero {
+    width: 50%;
+    position: absolute;
+    right: 24px;
+    top: 80px;
 }
 
 
-/* -----jobs list------*/
-.mainContent {
-    float: left;
-    width: 66%;
-    margin-top: 16px;
-}
+/* -----jobs list----*/
 #searchInput {
     background-image: url('searchIcon.png'); /* Add a search icon to input */
     background-size: 16px;
@@ -101,36 +150,37 @@ nav ul li a:hover {
     -webkit-transition: all .05s ease;
 }
 .jobFilters {
+    padding-top: 108px;
     margin-bottom: 32px;
 }
 .inline {
     display: inline-block;
     width: 32%;
 }
-.filterLabel {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 2px;
-}
 .marginRight {
     margin-right: 2%;
 }
-#jobList {
+.list {
     padding: 0;
-    margin-bottom: 160px;
     list-style: none;
 }
-#jobList li a {
+.list li a {
     display: block;
     text-decoration: none;
     border-bottom: 1px solid var(--light-outline);
     padding-bottom: 24px;
     margin-bottom: 24px;
 }
-#jobList li a:hover .jobTitle {
+.list li a:hover .jobTitle {
     color: #6E6E6E;
     transition: all .2s ease;
     -webkit-transition: all .2s ease;
+}
+.list .companyLogo img {
+    width: 48px;
+    margin-top: 6px;
+    margin-left: 12px;
+    float: right;
 }
 .jobTitle {
     font-size: 22px;
@@ -149,13 +199,6 @@ nav ul li a:hover {
     height: 12px;
     margin-right: 3px;
 }
-.companyLogo img {
-    height: 40px;
-    margin-top: 8px;
-    margin-left: 12px;
-    border-radius: 3px;
-    float: right;
-}
 .jobExcerpt {
     color: var(--main-gray);
     margin: 10px 0 3px 0;
@@ -168,7 +211,7 @@ nav ul li a:hover {
 
 
 
-/* -----sidebar------*/
+/* -----sidebar----*/
 .sideBar {
     float: left;
     width: 26%;
@@ -184,40 +227,26 @@ nav ul li a:hover {
     line-height: 22px;
     margin-bottom: 24px;
 }
-a.btnPrimary {
-    color: white;
-    text-decoration: none;
-    font-weight: 700;
-    background-color: var(--main-red);
-    padding: 8px 16px;
-    border-radius: 5px;
+
+
+
+/* -----job information page----*/
+.jobDetails {
 }
-a.btnPrimary:hover {
-    background-color: #FF7B7F;
-    transition: all .3s ease;
-    -webkit-transition: all .3s ease;
-}
-
-
-
-/* -----job information page------*/
 .jobDetails .jobTitle {
     font-size: 32px;
-    margin-top: 16px;
+    margin-top: 0px;
     margin-bottom: 24px;
 }
 .jobDetails .companyLogo img {
-    height: 48px;
-    margin-top: 12px;
-    margin-left: 12px;
+    height: 40px;
+    margin-top: 0px;
+    margin-left: 8px;
     border-radius: 3px;
     float: right;
 }
 .jobDetails a {
     font-weight: 600;
-}
-.applyInfo {
-    margin-top: 80px;
 }
 .jobDetails .jobFacts {
     border-bottom: 1px solid var(--light-outline);
@@ -236,11 +265,83 @@ a.btnPrimary:hover {
     clear: left;
 }
 .jobDetails .grayBackground {
-    margin-top: 174px;
+    margin-top: 142px;
     background-color: var(--light-backgound);
     border-radius: 5px;
     padding: 24px 32px;
 }
 .jobDetails .sideBar p {
     margin-bottom: 0;
+}
+.jobDescription p {
+    margin-top: 8px;
+}
+
+
+
+/* -----advice articles-----*/
+.articles img {
+    float: right;
+    height: 136px;
+    width: 200px;
+    padding-left: 16px;
+}
+
+/* -----forms (filters, post job)-----*/
+#root__title { /* formats titles of forms */
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+textarea, select, .postJob input {
+    width: 50%;
+    padding: 8px 8px;
+    margin-bottom: 16px;
+    margin-top: 4px;
+    display: block;
+    border: 1px solid var(--main-outline);
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+select {
+    width: 144px;
+}
+input[type=checkbox] {
+    display: inline-block;
+    width: 16px;
+    margin-bottom: 0px;
+}
+input[type=file] {
+    margin-top: -12px;   /* not sure why there's extra space below "company logo" */
+}
+label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+.checkboxContainer { /* adds space after last checkbox in Post Job form */
+    margin-bottom: 16px;
+}
+.upload {
+
+}
+input[type=checkbox] + label {
+    font-weight: 100;
+}
+fieldset { /* remove border of react json form */
+    border: 0;
+    padding: 0;
+}
+legend { /* remove indent of react json form */
+    padding: 0;
+}
+
+
+
+/* -----footer-----*/
+.footer {
+    margin-top: 60px;
+    margin-bottom: 32px;
+    color: var(--main-gray);
 }
