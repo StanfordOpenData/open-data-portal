@@ -56,12 +56,25 @@ class Advice extends React.Component {
         <div>
           <div className="mainContent articles">
             <ul className="list">
-              {this.state.items.map(article => <ArticleCard
+              {this.state.items.map(article => {
+                let featuredImage;
+                if (article._embedded['wp:featuredmedia']) {
+                  console.log("made it")
+                  featuredImage = article._embedded['wp:featuredmedia'][0].source_url;
+                  
+                }
+                else {
+                  featuredImage = "";
+                }
+              return (<ArticleCard
                 title={html_entity_decode(article.title.rendered)}
                 author={article._embedded.author[0].name}
                 excerpt={html_entity_decode(article.content.rendered.replace(/<\/?[^>]+(>|$)/g, ""))}
                 link={article.link}
-              />
+                image={featuredImage}
+              />)
+
+              }
               )}
             </ul>
           </div>
@@ -77,11 +90,19 @@ class Advice extends React.Component {
 
 
 function ArticleCard(props) {
+  let image;
+  console.log(props.image)
+  if (props.image) {
+    image = <img src={props.image} alt="" />;
+  } else {
+    image = <img src="https://user-images.githubusercontent.com/1689183/55673023-25239a00-5857-11e9-9699-5f2d0ab365cf.png" alt="" />;
+  }
+
   return (
     <div>
       <li>
         <a href={props.link}>
-          {/* <img src="https://user-images.githubusercontent.com/1689183/55673023-25239a00-5857-11e9-9699-5f2d0ab365cf.png" alt="" /> */}
+          {image}
           <div className="articleInfo">
             <div className="jobTitle">{props.title}</div>
             <div className="jobFacts">
