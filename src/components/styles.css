@@ -9,6 +9,7 @@
     --main-outline: #DADADA;
     --light-outline: #E8E8E8;
     --light-background: #F4F4F4;
+    --light-green: #9FE5D8;
 }
 body {
     width: 100%;
@@ -122,7 +123,7 @@ header .btnTertiary {
 .hero {
     width: 50%;
     position: absolute;
-    right: 24px;
+    right: 32px;
     top: 80px;
 }
 
@@ -177,7 +178,7 @@ header .btnTertiary {
     -webkit-transition: all .2s ease;
 }
 .list .companyLogo img {
-    width: 48px;
+    width: 56px;
     margin-top: 6px;
     margin-left: 12px;
     float: right;
@@ -208,6 +209,9 @@ header .btnTertiary {
     white-space: wrap;
     text-overflow: ellipsis;
 }
+.home .sideBar {
+    margin-top: 104px;
+}
 
 
 
@@ -216,6 +220,7 @@ header .btnTertiary {
     float: left;
     width: 26%;
     padding-left: 8%;
+    word-wrap: break-word;
 }
 .sideBar h1 {
     font-size: 20px;
@@ -264,11 +269,14 @@ header .btnTertiary {
 .clear {
     clear: left;
 }
-.jobDetails .grayBackground {
+.greenBackground {
     margin-top: 142px;
-    background-color: var(--light-backgound);
+    background-color: var(--light-green);
     border-radius: 5px;
     padding: 24px 32px;
+}
+.greenBackground a {
+    color: black;
 }
 .jobDetails .sideBar p {
     margin-bottom: 0;
@@ -344,4 +352,42 @@ legend { /* remove indent of react json form */
     margin-top: 60px;
     margin-bottom: 32px;
     color: var(--main-gray);
+}
+
+
+
+/* -----reponsive layouts-----*/
+.mainContent {
+    margin: 0 auto;
+}
+@media only screen and (max-width : 992px) {
+    .mainContent {
+        width: 100%;
+    }    
+    header h1 {
+        width: 100%;
+    }
+    .hero {
+        display: none;
+    }
+    .sideBar {
+        display: inline-block;
+        width: 100%;
+        float: none;
+        padding: 0;
+        margin: 0;
+    }
+    .greenBackground {
+        margin-top: 16px;
+    }
+
+}
+@media only screen and (max-width: 768px){
+    .mainContent {
+    }
+    .wrapper {
+        width: 90%;
+        padding: 0 5%;
+    }
+
 }
