@@ -41,6 +41,12 @@ class Advice extends React.Component {
     const { error, isLoaded, items } = this.state;
     const { selectedOption } = this.state;
 
+    function html_entity_decode(message) { {/* decodes UTF8 punctuation into HTML */}
+      var element = document.createElement("div");
+      element.innerHTML = message;
+      return element.innerHTML;
+    }
+    
     if (error) {
       return <div>Error!</div>;
     } else if (!isLoaded) {
@@ -50,14 +56,25 @@ class Advice extends React.Component {
         <div>
           <div className="mainContent articles">
             <ul className="list">
-              {this.state.items.map(article => <ArticleCard
-                title={article.title.rendered}
-                author={article.author}
-                excerpt={article.content.rendered.replace(/<\/?[^>]+(>|$)/g, "")}
+              {this.state.items.map(article => {
+                let featuredImage;
+                if (article._embedded['wp:featuredmedia']) {
+                  console.log("made it")
+                  featuredImage = article._embedded['wp:featuredmedia'][0].source_url;
+                  
+                }
+                else {
+                  featuredImage = "";
+                }
+              return (<ArticleCard
+                title={html_entity_decode(article.title.rendered)}
+                author={article._embedded.author[0].name}
+                excerpt={html_entity_decode(article.content.rendered.replace(/<\/?[^>]+(>|$)/g, ""))}
                 link={article.link}
-                id={article.id}
-                hasImage={article.featured_media}
-              />
+                image={featuredImage}
+              />)
+
+              }
               )}
             </ul>
           </div>
@@ -71,13 +88,21 @@ class Advice extends React.Component {
   }
 }
 
-{/*}
+
 function ArticleCard(props) {
+  let image;
+  console.log(props.image)
+  if (props.image) {
+    image = <img src={props.image} alt="" />;
+  } else {
+    image = <img src="https://user-images.githubusercontent.com/1689183/55673023-25239a00-5857-11e9-9699-5f2d0ab365cf.png" alt="" />;
+  }
+
   return (
     <div>
       <li>
         <a href={props.link}>
-          <img src="https://user-images.githubusercontent.com/1689183/55673023-25239a00-5857-11e9-9699-5f2d0ab365cf.png" alt="" />
+          {image}
           <div className="articleInfo">
             <div className="jobTitle">{props.title}</div>
             <div className="jobFacts">
@@ -92,61 +117,6 @@ function ArticleCard(props) {
     </div>
   );
 }
-*/}
-
-class ArticleCard extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoaded: false,
-      imageData: [],
-    };
-  }
-
-  componentDidMount() {
-    var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-      targetUrl = 'https://www.stanforddaily.com/wp-json/wp/v2/media/' + this.props.id
-    fetch(proxyUrl + targetUrl)
-      .then(blob => blob.json())
-      .then(result => {
-        this.setState({
-          imageData: result,
-          isLoaded: true,
-        });
-        console.log(this.state.imageData.guid.rendered)
-      },
-        (error) => {
-          this.setState({
-            error
-          });
-        }
-      )
-
-  }
-  render() {
-    return (
-      <div>
-        <li>
-          <a href={this.props.link}>
-            {this.state.isLoaded
-              ? <img src={this.state.imageData.guid} />
-              : <img src="https://user-images.githubusercontent.com/1689183/55673023-25239a00-5857-11e9-9699-5f2d0ab365cf.png" alt="" />
-            }
-
-            <div className="articleInfo">
-              <div className="jobTitle">{this.props.title}</div>
-              <div className="jobFacts">
-                {this.props.author}
-              </div>
-              <div className="jobExcerpt">
-                {this.props.excerpt}
-              </div>
-            </div>
-          </a>
-        </li>
-      </div>
-    );
-  }
-}
 
 export default Advice;
+

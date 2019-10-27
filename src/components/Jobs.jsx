@@ -40,19 +40,25 @@ class Jobs extends React.Component {
   }
 
   handleChange(val) {
+    console.log("change")
     var filteredItems = [];
-    if (val) {
+    if (!val) { // if an element is unselected (small X), so the value is null...
+      filteredItems = this.state.items;
+      console.log("it's this")
+    }
+    else if (val.length === 0) {  // if all selections are cleared (the big X is clicked)...
+      filteredItems = this.state.items; // reset items
+    }
+    else { // else if an element is selected...
       var i;
       for (i = 0; i < val.length; i++) {
         this.setState({ locationFilter: [...this.state.locationFilter, val[i].value] })
-        filteredItems = filteredItems.concat(this.state.items.filter(function (item) {
+        filteredItems = filteredItems.concat(this.state.items.filter(function (item) {  // only show items equal to the value passed in
           return item["location"] === val[i].value;
         }));
-        console.log(filteredItems)
       }
-    } else {
-      filteredItems = this.state.items;
-    }
+    } 
+
     this.setState({ filteredItems: filteredItems });
   }
 
@@ -115,7 +121,7 @@ class Jobs extends React.Component {
       return <div></div>;
     } else {
       return (
-        <div>
+        <div className="home">
           <header>
             <img className="hero" src={heroImage} alt="" height="375px" />
             <h1>Find your dream job and contact recruiters right away.</h1>
@@ -191,6 +197,13 @@ class Jobs extends React.Component {
               )}
             </ul>
           </div>
+          <div className="sideBar">
+          <div className="greenBackground">
+            <h1>What's this?</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+            </p>
+            </div>
+          </div>
           <div className="clear"></div>
         </div>);
     }
@@ -230,14 +243,4 @@ function JobCard(props) {
   );
 }
 
-/*
-class JobDetails extends React.Component {
-
-  render() {
-    const url = this.props.match.params.id;
-    const PageComponent = items.find(page => page.link === url).property;
-    return (<PageComponent />);
-  }
-}
-*/
 export default Jobs;

@@ -5,7 +5,7 @@ import './styles.css';
 import locationIcon from './locationIcon.png';
 import buildingIcon from './buildingIcon.png';
 import dollarIcon from './dollarIcon.png';
-import workIcon from './workIcon.png';
+import briefcaseIcon from './briefcaseIcon.png';
 
 class JobDetails extends React.Component {
   constructor(props) {
@@ -64,7 +64,7 @@ class JobDetails extends React.Component {
                 {this.state.items.type}
             </p>
               <p>
-                <img src={workIcon} alt="" />
+                <img src={briefcaseIcon} alt="" />
                 Technology
             </p>
             </div>
@@ -73,7 +73,7 @@ class JobDetails extends React.Component {
         {ReactHtmlParser(this.state.items.description)}
         </div>
         <div className="sideBar">
-          <div className="grayBackground">
+          <div className="greenBackground">
             <h1>How to apply</h1>
             <p><Linkify>{this.state.items.how_to_apply}</Linkify></p>
           </div>

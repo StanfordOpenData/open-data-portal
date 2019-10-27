@@ -9,7 +9,7 @@ class PostJob extends React.Component {
 
   handleSubmit(event) {
     let data = event.formData;
-    fetch('http://localhost.stanforddaily.com/wp-json/tsd/v1/jobs/', {
+    fetch('http://localhost.stanforddaily.com/wp-json/wp/v2/jobs/', {
       "method": "POST",
       headers: {
         'Content-Type': 'application/json'
@@ -63,11 +63,13 @@ class PostJob extends React.Component {
           "enum": ["Internship", "Full-time", "Part-time", "On-campus"],
           "default": "Internship"
         },
+        /*
         "pay": {
             "type": "string",
             "title": "Pay",
             "default": "Unpaid"
           },
+        */
         "jobDescription": {
           "type": "string",
           "title": "Job description",
