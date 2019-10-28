@@ -9,7 +9,7 @@ function NavBar() {
         <nav>
           <Link to="/" className="logo">Job Tree</Link>
           <ul>
-            <li><Link to="/">Jobs</Link></li>
+            <li className="leftNav"><Link to="/">Jobs</Link></li>
             {/* <li><a href="/">Email alerts</a></li> */}
             <li><Link to="/advice">Student advice</Link></li>
             <li><Link to="/post" className="btnSecondary">Post a job</Link></li>
