@@ -103,6 +103,9 @@ nav ul li {
     font-weight: 600;
     line-height: 56px;
 }
+nav .leftNav {
+    margin-left: 0;
+}
 nav ul li a:hover {
     color: var(--main-green);
     transition: all .2s ease;
@@ -391,5 +394,4 @@ legend { /* remove indent of react json form */
         width: 90%;
         padding: 0 5%;
     }
-
 }

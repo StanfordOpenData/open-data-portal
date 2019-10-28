@@ -9,7 +9,7 @@ class PostJob extends React.Component {
 
   handleSubmit(event) {
     let data = event.formData;
-    fetch('http://localhost.stanforddaily.com/wp-json/wp/v2/jobs/', {
+    fetch('http://localhost.stanforddaily.com/wp-json/tsd/v1/jobs', {
       "method": "POST",
       headers: {
         'Content-Type': 'application/json'
