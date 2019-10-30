@@ -17,7 +17,7 @@ export default class Payment extends React.Component { // once completed, need t
     render() {
         return (
             <div>
-            <h3>Thank you for entering the job description!</h3>
+            Thank you for entering the job description! 
             <p>To continue, please enter payment information. You will be charged $50 if the post is approved.</p>
             <div>
                 <StripeCheckout
