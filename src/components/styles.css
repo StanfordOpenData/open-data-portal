@@ -365,7 +365,7 @@ legend { /* remove indent of react json form */
 .mainContent {
     margin: 0 auto;
 }
-@media only screen and (max-width : 992px) {
+@media only screen and (max-width: 1000px) {
     .mainContent {
         width: 100%;
     }    
@@ -385,6 +385,9 @@ legend { /* remove indent of react json form */
     .greenBackground {
         margin-top: 16px;
     }
+    textarea, select, .postJob input {
+        width: 70%;
+    }
 
 }
 @media only screen and (max-width: 768px){
@@ -393,6 +396,17 @@ legend { /* remove indent of react json form */
     .wrapper {
         width: 90%;
         padding: 0 5%;
+    }
+    .articles img {
+        float: right;
+        width: 90px;
+        height: 58px;
+        padding-left: 16px;
+        margin: auto 0 auto 0;
+        object-fit: cover;
+    }
+    textarea, select, .postJob input {
+        width: 100%;
     }
 
 }

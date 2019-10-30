@@ -6,7 +6,6 @@ import buildingIcon from './buildingIcon.png';
 import dollarIcon from './dollarIcon.png';
 import Select from 'react-select';
 import { Link } from "react-router-dom";
-import { HashLink } from 'react-router-hash-link';
 
 const typeOptions = [
   { value: 'internship', label: 'Internship' },

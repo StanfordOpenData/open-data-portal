@@ -1,14 +1,7 @@
 import React from 'react';
 import './styles.css';
-import { Link } from "react-router-dom";
-
-var data = [];
 
 class Advice extends React.Component {
-  state = {
-    selectedOption: null,
-  };
-
   constructor(props) {
     super(props);
     this.state = {
@@ -38,8 +31,7 @@ class Advice extends React.Component {
       )
   }
   render() {
-    const { error, isLoaded, items } = this.state;
-    const { selectedOption } = this.state;
+    const { error, isLoaded } = this.state;
 
     function html_entity_decode(message) { {/* decodes UTF8 punctuation into HTML */}
       var element = document.createElement("div");

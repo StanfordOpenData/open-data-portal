@@ -17,7 +17,9 @@
     "react-router-hash-link": "^1.2.2",
     "react-scripts": "3.1.2",
     "react-select": "^3.0.5",
-    "react-select-box": "^3.0.1"
+    "react-select-box": "^3.0.1",
+    "react-stripe-checkout": "^2.6.3",
+    "react-stripe-elements": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

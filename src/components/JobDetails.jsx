@@ -1,6 +1,6 @@
 import React from 'react';
 import Linkify from 'react-linkify';
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+import ReactHtmlParser from 'react-html-parser';
 import './styles.css';
 import locationIcon from './locationIcon.png';
 import buildingIcon from './buildingIcon.png';

@@ -9,7 +9,7 @@ class PostJob extends React.Component {
 
   handleSubmit(event) {
     let data = event.formData;
-    fetch('http://localhost.stanforddaily.com/wp-json/wp/v2/jobs/', {
+    fetch('http://localhost.stanforddaily.com/wp-json/tsd/v1/jobs/', {
       "method": "POST",
       headers: {
         'Content-Type': 'application/json'
@@ -96,19 +96,16 @@ class PostJob extends React.Component {
         */
         "appInstructions": {
           "type": "string",
-          "title": "Instructions to apply (must include email for applicants to contact)",
+          "title": "Instructions for applying (must include email for applicants to contact)",
           "default": "Send resume"
         },
+        /*
         "jobDeadline": {
           "type": "string",
           "format": "date",
           "title": "Deadline to apply",
         },
-        "additionalPhoto": {
-            "type": "string",
-            "format": "data-url",
-            "title": "Add a photo (of the office, the team, etc.)"
-        }
+      */
       }
     };
     let uiSchema = {
@@ -136,9 +133,6 @@ class PostJob extends React.Component {
       },
       "appInstructions": {
         "ui:widget": "textarea"
-      },
-      "additionalPhoto": {
-        "classNames": "upload"
       },
     }
     return (<div>
