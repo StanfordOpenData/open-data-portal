@@ -51,6 +51,9 @@ a.btnPrimary, button[type=submit] {
     border: none;
     border-radius: 5px;
 }
+button[type=submit] {
+    margin-top: 16px;
+}
 a.btnPrimary:hover, button[type=submit]:hover {
     background-color: #FF7B7F;
     transition: all .3s ease;
