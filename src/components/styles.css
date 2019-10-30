@@ -51,6 +51,9 @@ a.btnPrimary, button[type=submit] {
     border: none;
     border-radius: 5px;
 }
+button[type=submit] {
+    margin-top: 16px;
+}
 a.btnPrimary:hover, button[type=submit]:hover {
     background-color: #FF7B7F;
     transition: all .3s ease;
@@ -365,7 +368,7 @@ legend { /* remove indent of react json form */
 .mainContent {
     margin: 0 auto;
 }
-@media only screen and (max-width : 992px) {
+@media only screen and (max-width: 1000px) {
     .mainContent {
         width: 100%;
     }    
@@ -385,6 +388,9 @@ legend { /* remove indent of react json form */
     .greenBackground {
         margin-top: 16px;
     }
+    textarea, select, .postJob input {
+        width: 70%;
+    }
 
 }
 @media only screen and (max-width: 768px){
@@ -394,4 +400,16 @@ legend { /* remove indent of react json form */
         width: 90%;
         padding: 0 5%;
     }
+    .articles img {
+        float: right;
+        width: 90px;
+        height: 58px;
+        padding-left: 16px;
+        margin: auto 0 auto 0;
+        object-fit: cover;
+    }
+    textarea, select, .postJob input {
+        width: 100%;
+    }
+
 }
