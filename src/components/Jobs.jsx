@@ -57,7 +57,6 @@ class Jobs extends React.Component {
         }));
       }
     } 
-
     this.setState({ filteredItems: filteredItems });
   }
 
