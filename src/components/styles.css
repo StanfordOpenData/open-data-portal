@@ -51,6 +51,9 @@ a.btnPrimary, button[type=submit] {
     border: none;
     border-radius: 5px;
 }
+a.btnPrimary {
+    padding: 12px 28px;
+}
 button[type=submit] {
     margin-top: 16px;
 }
@@ -114,6 +117,8 @@ nav ul li a:hover {
     transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
+
+/* -----landing page----*/
 header {
     margin-bottom: 56px;
 }
@@ -121,7 +126,7 @@ header h1 {
     font-size: 40px;
     font-weight: 600;
     width: 50%;
-    margin: 128px 0 32px 0;
+    margin: 128px 0 40px 0;
 }
 header .btnTertiary {
     margin-left: 16px;
@@ -130,7 +135,41 @@ header .btnTertiary {
     width: 50%;
     position: absolute;
     right: 32px;
-    top: 80px;
+    top: 112px;
+}
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+}
+.miniJobs {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.miniJobs a {
+    width: 27%;
+    border: 1px solid var(--light-outline);
+    border-radius: 10px;
+    padding: 24px 24px;
+    color: var(--main-black);
+}
+.miniJobs a:hover {
+    /*add box shadow */
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+}
+.miniJobs .jobTitle {
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+.miniJobs .jobLocation {
+    margin-top: 14px;
+    color: var(--main-gray);
+}
+.seeMore {
+    font-weight: 600;
+    float: right;
+    margin-top: 8px;
 }
 
 
@@ -157,7 +196,6 @@ header .btnTertiary {
     -webkit-transition: all .05s ease;
 }
 .jobFilters {
-    padding-top: 108px;
     margin-bottom: 32px;
 }
 .inline {
@@ -215,9 +253,7 @@ header .btnTertiary {
     white-space: wrap;
     text-overflow: ellipsis;
 }
-.home .sideBar {
-    margin-top: 104px;
-}
+
 
 
 

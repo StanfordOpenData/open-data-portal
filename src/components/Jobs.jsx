@@ -119,13 +119,15 @@ class Jobs extends React.Component {
       return <div></div>;
     } else {
       return (
-        <div className="home">
+        <div>
+          {/*
           <header>
             <img className="hero" src={heroImage} alt="" height="375px" />
             <h1>Find your dream job and contact recruiters right away.</h1>
             {/* <HashLink to="/#jobsAnchor" className="btnPrimary">Explore jobs</HashLink>
-            <a href="#" className="btnTertiary">Get alerts</a> */}
+            <a href="#" className="btnTertiary">Get alerts</a> 
           </header>
+          */}
           <div id="jobsAnchor" className="mainContent">
             <div className="jobFilters">
               <input type="search" id="searchInput" onKeyUp={this.searchKey} placeholder="Search by title, description, company, etc." name="search" />

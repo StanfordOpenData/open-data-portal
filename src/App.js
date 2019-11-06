@@ -3,6 +3,7 @@ import './index.css';
 import { Switch, HashRouter, Route } from "react-router-dom";import { Elements, StripeProvider } from 'react-stripe-elements';
 
 import NavBar from './components/NavBar';
+import LandingPage from './components/LandingPage';
 import Jobs from './components/Jobs';
 import JobDetails from './components/JobDetails';
 import PostJob from './components/PostJob';
@@ -20,7 +21,8 @@ class App extends Component {
           <div>
             <NavBar />
             <Switch>
-              <Route exact path='/' component={Jobs} />
+              <Route exact path='/' component={LandingPage} />
+              <Route exact path='/jobs' component={Jobs} />
               <Route path='/jobs/:id' component={JobDetails} />
               <Route exact path='/advice' component={Advice} />
               <Route exact path='/post' component={PostJob} />
