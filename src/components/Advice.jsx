@@ -53,7 +53,6 @@ class Advice extends React.Component {
                 if (article._embedded['wp:featuredmedia']) {
                   console.log("made it")
                   featuredImage = article._embedded['wp:featuredmedia'][0].source_url;
-                  
                 }
                 else {
                   featuredImage = "";

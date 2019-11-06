@@ -141,28 +141,35 @@ h3 {
     font-size: 24px;
     font-weight: 600;
 }
-.miniJobs {
+.newJobs {
+    margin-top: 160px;
+}
+.newArticles {
+    margin-top: 64px;
+}
+.mini {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
 }
-.miniJobs a {
+.mini a {
     width: 27%;
-    border: 1px solid var(--light-outline);
     border-radius: 10px;
     padding: 24px 24px;
     color: var(--main-black);
+    background-color: 	#eefbf8;
 }
-.miniJobs a:hover {
+.mini a:hover {
     /*add box shadow */
     transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
-.miniJobs .jobTitle {
+.mini .title {
+    font-weight: 600;
     font-size: 18px;
     margin-bottom: 14px;
 }
-.miniJobs .jobLocation {
+.mini .lightTitle {
     margin-top: 14px;
     color: var(--main-gray);
 }
