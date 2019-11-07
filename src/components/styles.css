@@ -85,6 +85,7 @@ a.btnPrimary:hover, button[type=submit]:hover {
 nav {
     display: inline-block;
     width: 100%;
+    margin-bottom: 16px;
 }
 nav a {
     color: var(--main-black);
@@ -127,7 +128,7 @@ h1 {
     font-weight: 600;
 }
 header h1 {
-    margin: 128px 0 40px 0;
+    margin: 112px 0 40px 0;
     width: 50%;
 }
 header .btnTertiary {
@@ -190,7 +191,7 @@ header .btnTertiary {
     width: 50%;
 }
 .secondHeader .right {
-    margin: 100px 0 auto 80px;
+    margin: 100px 0 auto 64px;
 }
 
 
