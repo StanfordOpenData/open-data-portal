@@ -34,7 +34,7 @@ body {
     justify-content: space-between
 }
 a {
-    color: var(--main-green);
+    color: rgba(255, 90, 96, 0.795);
     text-decoration: none;
 }
 
@@ -122,14 +122,19 @@ nav ul li a:hover {
 header {
     margin-bottom: 56px;
 }
-header h1 {
+h1 {
     font-size: 40px;
     font-weight: 600;
-    width: 50%;
+}
+header h1 {
     margin: 128px 0 40px 0;
+    width: 50%;
 }
 header .btnTertiary {
     margin-left: 16px;
+}
+.secondHeader h1 {
+    margin-bottom: 40px;
 }
 .hero {
     width: 50%;
@@ -137,15 +142,11 @@ header .btnTertiary {
     right: 32px;
     top: 112px;
 }
-h3 {
-    font-size: 24px;
-    font-weight: 600;
-}
 .newJobs {
     margin-top: 160px;
 }
 .newArticles {
-    margin-top: 64px;
+    margin-top: 120px;
 }
 .mini {
     display: flex;
@@ -164,7 +165,7 @@ h3 {
     transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
-.mini .title {
+.title {
     font-weight: 600;
     font-size: 18px;
     margin-bottom: 14px;
@@ -177,6 +178,19 @@ h3 {
     font-weight: 600;
     float: right;
     margin-top: 8px;
+}
+.secondHeader {
+    margin: 120px 0;
+}
+.secondHeader img {
+    width: 100%;
+}
+.column {
+    float: left;
+    width: 50%;
+}
+.secondHeader .right {
+    margin: 100px 0 auto 80px;
 }
 
 
@@ -234,9 +248,9 @@ h3 {
     margin-left: 12px;
     float: right;
 }
-.jobTitle {
+.jobTitle, h3 {
     font-size: 22px;
-    font-weight: 550;
+    font-weight: 600;
     color: var(--main-black);
 }
 .jobFacts {
@@ -301,6 +315,7 @@ h3 {
 }
 .jobDetails a {
     font-weight: 600;
+    color: var(--main-green);
 }
 .jobDetails .jobFacts {
     border-bottom: 1px solid var(--light-outline);
@@ -465,3 +480,6 @@ legend { /* remove indent of react json form */
     }
 
 }
+
+
+

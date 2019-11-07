@@ -2,6 +2,7 @@ import React from 'react';
 import './styles.css';
 import { Link } from "react-router-dom";
 import heroImage from './heroImage.svg';
+import Stanford from './StanfordOval@2x.png'
 
 export default class LandingPage extends React.Component {
   state = {
@@ -57,7 +58,8 @@ export default class LandingPage extends React.Component {
   }
 
   render() {
-    function html_entity_decode(message) { {/* decodes UTF8 punctuation into HTML */}
+    function html_entity_decode(message) {
+      {/* decodes UTF8 punctuation into HTML */ }
       var element = document.createElement("div");
       element.innerHTML = message;
       return element.innerHTML;
@@ -75,7 +77,7 @@ export default class LandingPage extends React.Component {
           <h3>New positions</h3>
           <div className="mini">
             {this.state.items.slice(0, 3).map(job =>
-              <Link>
+              <Link to={"/jobs/" + job.id}>
                 <div className="title">
                   {job.title}
                 </div>
@@ -96,21 +98,35 @@ export default class LandingPage extends React.Component {
           <h3>Student advice</h3>
           <div className="mini">
             {this.state.articles.map(article =>
-              <Link>
+              <a href={article.link}>
                 <div className="title">
-                {html_entity_decode(article.title.rendered)}
+                  {html_entity_decode(article.title.rendered)}
                 </div>
                 <div>
-                {article._embedded.author[0].name}
+                  {article._embedded.author[0].name}
                 </div>
-              </Link>
+              </a>
             )
             }
           </div>
           <Link to="/jobs" className="seeMore">See more</Link>
         </div>
 
-      </div>);
+        <div className="secondHeader">
+          <div className="column">
+            <img src={Stanford} alt="Stanford Oval" />
+          </div>
+          <div className="column">
+            <div className="right">
+            <div className="title">Employers</div>
+            <h1>Hire talented students and new grads.</h1>
+            <Link to="/post" className="btnPrimary">Post a job</Link>
+          </div>
+          </div>
+          <div style={{clear:"both"}}></div>
+        </div>
+      </div>
+    );
   }
 }
 

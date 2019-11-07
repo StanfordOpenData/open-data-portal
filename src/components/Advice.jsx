@@ -42,7 +42,7 @@ class Advice extends React.Component {
     if (error) {
       return <div>Error!</div>;
     } else if (!isLoaded) {
-      return <div></div>;
+      return <div>Loading...</div>;
     } else {
       return (
         <div>
