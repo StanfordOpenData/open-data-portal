@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/jobs-board/static/css/main.6da08fba.chunk.css",
-    "main.js": "/jobs-board/static/js/main.450bdc07.chunk.js",
-    "main.js.map": "/jobs-board/static/js/main.450bdc07.chunk.js.map",
-    "runtime-main.js": "/jobs-board/static/js/runtime-main.a9420efa.js",
-    "runtime-main.js.map": "/jobs-board/static/js/runtime-main.a9420efa.js.map",
-    "static/js/2.cfa413e5.chunk.js": "/jobs-board/static/js/2.cfa413e5.chunk.js",
-    "static/js/2.cfa413e5.chunk.js.map": "/jobs-board/static/js/2.cfa413e5.chunk.js.map",
+    "main.css": "/jobs-board/static/css/main.c082b408.chunk.css",
+    "main.js": "/jobs-board/static/js/main.eb8b8a5b.chunk.js",
+    "main.js.map": "/jobs-board/static/js/main.eb8b8a5b.chunk.js.map",
+    "runtime~main.js": "/jobs-board/static/js/runtime~main.28d152bc.js",
+    "runtime~main.js.map": "/jobs-board/static/js/runtime~main.28d152bc.js.map",
+    "static/js/2.9a6304a1.chunk.js": "/jobs-board/static/js/2.9a6304a1.chunk.js",
+    "static/js/2.9a6304a1.chunk.js.map": "/jobs-board/static/js/2.9a6304a1.chunk.js.map",
     "index.html": "/jobs-board/index.html",
-    "precache-manifest.b813aeb8246e169c438153045c92d54c.js": "/jobs-board/precache-manifest.b813aeb8246e169c438153045c92d54c.js",
+    "precache-manifest.2db8a1467304ed80530b397f00adc2d8.js": "/jobs-board/precache-manifest.2db8a1467304ed80530b397f00adc2d8.js",
     "service-worker.js": "/jobs-board/service-worker.js",
-    "static/css/main.6da08fba.chunk.css.map": "/jobs-board/static/css/main.6da08fba.chunk.css.map",
+    "static/css/main.c082b408.chunk.css.map": "/jobs-board/static/css/main.c082b408.chunk.css.map",
+    "static/media/StanfordOval@2x.png": "/jobs-board/static/media/StanfordOval@2x.b55b28c9.png",
     "static/media/heroImage.svg": "/jobs-board/static/media/heroImage.9352130c.svg"
   }
 }
