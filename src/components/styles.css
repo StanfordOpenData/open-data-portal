@@ -34,7 +34,7 @@ body {
     justify-content: space-between
 }
 a {
-    color: var(--main-green);
+    color: rgba(255, 90, 96, 0.795);
     text-decoration: none;
 }
 
@@ -50,6 +50,9 @@ a.btnPrimary, button[type=submit] {
     padding: 8px 16px;
     border: none;
     border-radius: 5px;
+}
+a.btnPrimary {
+    padding: 12px 28px;
 }
 button[type=submit] {
     margin-top: 16px;
@@ -114,23 +117,80 @@ nav ul li a:hover {
     transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
+
+/* -----landing page----*/
 header {
     margin-bottom: 56px;
 }
-header h1 {
+h1 {
     font-size: 40px;
     font-weight: 600;
+}
+header h1 {
+    margin: 128px 0 40px 0;
     width: 50%;
-    margin: 128px 0 32px 0;
 }
 header .btnTertiary {
     margin-left: 16px;
+}
+.secondHeader h1 {
+    margin-bottom: 40px;
 }
 .hero {
     width: 50%;
     position: absolute;
     right: 32px;
-    top: 80px;
+    top: 112px;
+}
+.newJobs {
+    margin-top: 160px;
+}
+.newArticles {
+    margin-top: 120px;
+}
+.mini {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.mini a {
+    width: 27%;
+    border-radius: 10px;
+    padding: 24px 24px;
+    color: var(--main-black);
+    background-color: 	#eefbf8;
+}
+.mini a:hover {
+    /*add box shadow */
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+}
+.title {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+.mini .lightTitle {
+    margin-top: 14px;
+    color: var(--main-gray);
+}
+.seeMore {
+    font-weight: 600;
+    float: right;
+    margin-top: 8px;
+}
+.secondHeader {
+    margin: 120px 0;
+}
+.secondHeader img {
+    width: 100%;
+}
+.column {
+    float: left;
+    width: 50%;
+}
+.secondHeader .right {
+    margin: 100px 0 auto 80px;
 }
 
 
@@ -157,7 +217,6 @@ header .btnTertiary {
     -webkit-transition: all .05s ease;
 }
 .jobFilters {
-    padding-top: 108px;
     margin-bottom: 32px;
 }
 .inline {
@@ -189,9 +248,9 @@ header .btnTertiary {
     margin-left: 12px;
     float: right;
 }
-.jobTitle {
+.jobTitle, h3 {
     font-size: 22px;
-    font-weight: 550;
+    font-weight: 600;
     color: var(--main-black);
 }
 .jobFacts {
@@ -215,9 +274,7 @@ header .btnTertiary {
     white-space: wrap;
     text-overflow: ellipsis;
 }
-.home .sideBar {
-    margin-top: 104px;
-}
+
 
 
 
@@ -258,6 +315,7 @@ header .btnTertiary {
 }
 .jobDetails a {
     font-weight: 600;
+    color: var(--main-green);
 }
 .jobDetails .jobFacts {
     border-bottom: 1px solid var(--light-outline);
@@ -354,6 +412,15 @@ legend { /* remove indent of react json form */
 }
 
 
+/* -----payment-----*/
+.__PrivateStripeElement {  /* controls width of Stripe card element */
+    width: 50%;
+}
+.StripeElement {  /* adds space above and below Stripe card element*/
+    margin-top: 4px;
+    margin-bottom: 16px;
+}
+
 
 /* -----footer-----*/
 .footer {
@@ -388,7 +455,7 @@ legend { /* remove indent of react json form */
     .greenBackground {
         margin-top: 16px;
     }
-    textarea, select, .postJob input {
+    textarea, select, .postJob input, .__PrivateStripeElement {
         width: 70%;
     }
 
@@ -408,8 +475,11 @@ legend { /* remove indent of react json form */
         margin: auto 0 auto 0;
         object-fit: cover;
     }
-    textarea, select, .postJob input {
+    textarea, select, .postJob input, .__PrivateStripeElement {
         width: 100%;
     }
 
 }
+
+
+
