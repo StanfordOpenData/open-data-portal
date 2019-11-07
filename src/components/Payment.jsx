@@ -1,8 +1,7 @@
 
-import React, { Component } from 'react';
+import React from 'react';
 import CheckoutForm from './CheckoutForm';
 import { Elements, StripeProvider } from 'react-stripe-elements';
-import StripeCheckout from 'react-stripe-checkout';
 import './styles.css';
 
 function Payment() { // once completed, need to redirect to /post-submitted to show confirmation page

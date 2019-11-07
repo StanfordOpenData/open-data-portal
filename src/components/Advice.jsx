@@ -42,7 +42,7 @@ class Advice extends React.Component {
     if (error) {
       return <div>Error!</div>;
     } else if (!isLoaded) {
-      return <div></div>;
+      return <div>Loading...</div>;
     } else {
       return (
         <div>
@@ -53,7 +53,6 @@ class Advice extends React.Component {
                 if (article._embedded['wp:featuredmedia']) {
                   console.log("made it")
                   featuredImage = article._embedded['wp:featuredmedia'][0].source_url;
-                  
                 }
                 else {
                   featuredImage = "";
