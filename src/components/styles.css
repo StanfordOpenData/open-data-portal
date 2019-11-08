@@ -102,6 +102,7 @@ nav a {
 nav ul {
     float: right;
     list-style: none;
+    padding-left: 0;
 }
 nav ul li {
     display: inline-block;
@@ -151,7 +152,7 @@ header .btnTertiary {
 }
 .mini {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-between;
 }
 .mini a {
@@ -455,6 +456,17 @@ legend { /* remove indent of react json form */
     }
     .greenBackground {
         margin-top: 16px;
+    }
+    .mini a {
+        width: 100%;
+        margin-top: 8px;
+    }
+    .column {
+        float: none;
+        width: 100%;
+    }
+    .secondHeader .right {
+        margin-left: 0px;
     }
     textarea, select, .postJob input, .__PrivateStripeElement {
         width: 70%;
