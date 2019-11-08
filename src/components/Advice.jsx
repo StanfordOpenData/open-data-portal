@@ -33,12 +33,13 @@ class Advice extends React.Component {
   render() {
     const { error, isLoaded } = this.state;
 
-    function html_entity_decode(message) { {/* decodes UTF8 punctuation into HTML */}
+    function html_entity_decode(message) {
+      {/* decodes UTF8 punctuation into HTML */ }
       var element = document.createElement("div");
       element.innerHTML = message;
       return element.innerHTML;
     }
-    
+
     if (error) {
       return <div>Error!</div>;
     } else if (!isLoaded) {
@@ -57,13 +58,13 @@ class Advice extends React.Component {
                 else {
                   featuredImage = "";
                 }
-              return (<ArticleCard
-                title={html_entity_decode(article.title.rendered)}
-                author={article._embedded.author[0].name}
-                excerpt={html_entity_decode(article.content.rendered.replace(/<\/?[^>]+(>|$)/g, ""))}
-                link={article.link}
-                image={featuredImage}
-              />)
+                return (<ArticleCard
+                  title={html_entity_decode(article.title.rendered)}
+                  author={article._embedded.author[0].name}
+                  excerpt={html_entity_decode(article.content.rendered.replace(/<\/?[^>]+(>|$)/g, ""))}
+                  link={article.link}
+                  image={featuredImage}
+                />)
 
               }
               )}

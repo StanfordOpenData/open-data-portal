@@ -38,8 +38,14 @@ class JobDetails extends React.Component {
   }
 
   render() {
+    const { error, isLoaded } = this.state;
     var showitems = this.state.items;
     console.log(showitems);
+    if (error) {
+      return <div>Error!</div>;
+    } else if (!isLoaded) {
+      return <div>Loading...</div>;
+    } else {
     return (
       <div className="jobDetails">
         <div className="mainContent">
@@ -82,6 +88,7 @@ class JobDetails extends React.Component {
       </div>
     )
   }
+}
 }
 
 export default JobDetails;
