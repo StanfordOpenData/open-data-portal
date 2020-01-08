@@ -68,13 +68,13 @@ export default class LandingPage extends React.Component {
       <div className="home">
         <header>
           <img className="hero" src={heroImage} alt="" height="375px" />
-          <h1>Find your dream job and contact recruiters right away.</h1>
-          <Link to="/jobs" className="btnPrimary">Explore jobs</Link>
+          <h1>Welcome to the Stanford Open Data Portal</h1>
+          <Link to="/jobs" className="btnPrimary">Explore data</Link>
           {/*<a href="#" className="btnTertiary">Get alerts</a>  */}
 
         </header>
         <div className="newJobs">
-          <h3>New positions</h3>
+          <h3>Articles using Open Data</h3>
           <div className="mini">
             {this.state.items.slice(0, 3).map(job =>
               <Link to={"/jobs/" + job.id}>
@@ -95,8 +95,9 @@ export default class LandingPage extends React.Component {
         </div>
 
         <div className="newArticles">
-          <h3>Student advice</h3>
+          <h3>Contribute data to SODP</h3>
           <div className="mini">
+          <Link to="/post" className="btnPrimary">Contribute a dataset</Link>
             {this.state.articles.map(article =>
               <a href={article.link}>
                 <div className="title">
@@ -118,9 +119,7 @@ export default class LandingPage extends React.Component {
           </div>
           <div className="column">
             <div className="right">
-            <div className="title">Employers</div>
-            <h1>Hire talented students and new grads.</h1>
-            <Link to="/post" className="btnPrimary">Post a job</Link>
+            <div className="title">The Stanford Open Data Project (SODP) is making data about Stanford University more accessible and transparent. The final version of this site will aggregate data about Stanford University &mdash; such as university finances, student life, and academics &mdash; as well as tools to analyze the data.</div>
           </div>
           </div>
           <div style={{clear:"both"}}></div>
@@ -129,4 +128,3 @@ export default class LandingPage extends React.Component {
     );
   }
 }
-

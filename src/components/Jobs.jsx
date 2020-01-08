@@ -8,10 +8,10 @@ import Select from 'react-select';
 import { Link } from "react-router-dom";
 
 const typeOptions = [
-  { value: 'internship', label: 'Internship' },
-  { value: 'fullTime', label: 'Full-time' },
-  { value: 'partTime', label: 'Part-time' },
-  { value: 'onCampus', label: 'On-campus' },
+  { value: 'Finances', label: 'Finances' },
+  { value: 'Academics', label: 'Academics' },
+  { value: 'Students', label: 'Students' },
+  { value: 'Sports', label: 'Sports' },
 ];
 
 const industryOptions = [
@@ -56,7 +56,7 @@ class Jobs extends React.Component {
           return item["location"] === val[i].value;
         }));
       }
-    } 
+    }
     this.setState({ filteredItems: filteredItems });
   }
 
@@ -125,7 +125,7 @@ class Jobs extends React.Component {
             <img className="hero" src={heroImage} alt="" height="375px" />
             <h1>Find your dream job and contact recruiters right away.</h1>
             {/* <HashLink to="/#jobsAnchor" className="btnPrimary">Explore jobs</HashLink>
-            <a href="#" className="btnTertiary">Get alerts</a> 
+            <a href="#" className="btnTertiary">Get alerts</a>
           </header>
           */}
           <div id="jobsAnchor" className="mainContent">
@@ -200,7 +200,7 @@ class Jobs extends React.Component {
           <div className="sideBar">
           <div className="greenBackground">
             <h1>What's this?</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
             </p>
             </div>
           </div>
