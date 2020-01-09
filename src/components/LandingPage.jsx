@@ -103,9 +103,6 @@ export default class LandingPage extends React.Component {
                 <div className="title">
                   {html_entity_decode(article.title.rendered)}
                 </div>
-                <div>
-                  {article._embedded.author[0].name}
-                </div>
               </a>
             )
             }
