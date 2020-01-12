@@ -48,27 +48,7 @@ class Advice extends React.Component {
       return (
         <div>
           <div className="mainContent articles">
-            <ul className="list">
-              {this.state.items.map(article => {
-                let featuredImage;
-                if (article._embedded['wp:featuredmedia']) {
-                  console.log("made it")
-                  featuredImage = article._embedded['wp:featuredmedia'][0].source_url;
-                }
-                else {
-                  featuredImage = "";
-                }
-                return (<ArticleCard
-                  title={html_entity_decode(article.title.rendered)}
-                  author={article._embedded.author[0].name}
-                  excerpt={html_entity_decode(article.content.rendered.replace(/<\/?[^>]+(>|$)/g, ""))}
-                  link={article.link}
-                  image={featuredImage}
-                />)
 
-              }
-              )}
-            </ul>
           </div>
           <div className="sideBar">
             <p>Tell us what you’re looking for and we’ll notify you of new jobs!</p>
