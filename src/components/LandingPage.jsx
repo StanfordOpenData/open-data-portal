@@ -99,7 +99,7 @@ export default class LandingPage extends React.Component {
           <h3>Articles Featuring Open Data</h3>
           <div className="mini">
             {this.state.articles.map(article =>
-              <a href={article.link}>
+              <a href={article.link} target="_blank">
                 <div className="title">
                   {html_entity_decode(article.title.rendered)}
                 </div>
