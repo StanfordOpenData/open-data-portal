@@ -107,7 +107,7 @@ export default class LandingPage extends React.Component {
             )
             }
           </div>
-          <Link to="/jobs" className="seeMore">See more</Link>
+          <a href="https://www.stanforddaily.com/category/data-vizzes/" className="seeMore" target="_blank">See more</a>
         </div>
 
         <div className="secondHeader">
