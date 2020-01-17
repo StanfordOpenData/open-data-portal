@@ -74,7 +74,7 @@ export default class LandingPage extends React.Component {
 
         </header>
         <div className="newJobs">
-          <h3>Articles using Open Data</h3>
+          <h3>Featured Datasets</h3>
           <div className="mini">
             {this.state.items.slice(0, 3).map(job =>
               <Link to={"/jobs/" + job.id}>
@@ -95,9 +95,8 @@ export default class LandingPage extends React.Component {
         </div>
 
         <div className="newArticles">
-          <h3>Contribute data to SODP</h3>
+          <h3>Articles Featuring Open Data</h3>
           <div className="mini">
-          <Link to="/post" className="btnPrimary">Contribute a dataset</Link>
             {this.state.articles.map(article =>
               <a href={article.link}>
                 <div className="title">
