@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.1",
     "gh-pages": "^2.0.1",
     "jquery": "^3.4.1",
     "multiselect-dropdown-react": "^1.0.5",
