@@ -1,145 +1,79 @@
-import React, { Component } from 'react';
-import Form from "react-jsonschema-form";
+import React from 'react';
+import Form from 'react-jsonschema-form';
+import * as emailjs from 'emailjs-com';
 
-class PostJob extends React.Component {
-  constructor() {
-    super();
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+class PostJob extends React.Component{
+	onSubmitForm(formData) {
+		const templateParams = {
+			name: formData.name,
+			email: formData.email,
+      message: formData.message,
+      subscribe: formData.subscribe
+		}
+		emailjs.send('gmail', 'template_7oDz4B6T', templateParams, 'user_QAUruhPQ0MpGqcIy5zffv').then(function(response) {
+			//Send notification to user of form submit
+			alert('Email sent!');
+			console.log(templateParams);
+			console.log('SUCCESS!', response.status, response.text);
+		}, function(error) {
+			console.log('FAILED...', error);
+		});
+	}
+	render(){
+		// Create form schemas
+		let schema ={
+			"type": "object",
+			"required": [
+				"name",
+				"email",
+				"message"
+			],
+	
+			"properties": {
+				"name": {
+					"title": "Name",
+					"type": "string",
+				},
+				"email": {
+					"title": "Email",
+					"type": "string",
+					"format": "email"
+				},
+				"message": {
+					"title": "Message",
+					"type": "string"
+				},
+				"subscribe":{
+					"title": " I want to be notified when new datasets are added!",
+					"type": "boolean",
+					"default": true
+				}
+			}
+		}
+		let uiSchema = {
+			"name": {
+				"ui:autofocus": true,
+				"ui:placeholder": "Enter your name here."
+			},
+			"email":{
+				"ui:widget": "text",
+				"ui:placeholder": "What is your email?"
+			},
+			"message": {
+				"ui:widget": "textarea",
+				"ui:placeholder": "Type your message!"
+			}
+		}
 
-  handleSubmit(event) {
-    let data = event.formData;
-    fetch('http://localhost.stanforddaily.com/wp-json/tsd/v1/jobs/', {
-      "method": "POST",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      "body": JSON.stringify(data)
-    }).then(e => e.json()).then(e => console.log(e));
-    this.props.history.push('/payment')
-  }
-
-  render() {
-    let schema = {
-      "title": "Create your listing",
-      "type": "object",
-      "required": [
-        "jobTitle",
-        "companyName",
-        "jobLocation",
-        "jobType",
-        "jobDescription",
-        "appInstructions"
-      ],
-      "properties": {
-        "jobTitle": {
-          "type": "string",
-          "title": "Job title",
-          "default": "Engineer"
-        },
-        "companyName": {
-          "type": "string",
-          "title": "Company name",
-          "default": "Google"
-        },
-        "companySite": {
-          "type": "string",
-          "title": "Company website link",
-          "default": "google.com"
-        },
-        "companyLogo": {
-          "type": "string",
-          "format": "data-url",
-          "title": "Company logo image"
-        },
-        "jobLocation": {
-          "type": "string",
-          "title": "Location",
-          "default": "San Francisco, CA"
-        },
-        "jobType": {
-          "type": "string",
-          "title": "Type of role",
-          "enum": ["Internship", "Full-time", "Part-time", "On-campus"],
-          "default": "Internship"
-        },
-        /*
-        "pay": {
-            "type": "string",
-            "title": "Pay",
-            "default": "Unpaid"
-          },
-        */
-        "jobDescription": {
-          "type": "string",
-          "title": "Job description",
-          "default": "Make things"
-        },
-        /*
-        "schoolYear": {
-          "type": "array",
-          "title": "Preferred school years",
-          "items": {
-            "type": "string",
-            "enum": [
-              "Freshman",
-              "Sophomore",
-              "Junior",
-              "Senior",
-              "Masters",
-              "PhD"
-            ]
-          },
-          "uniqueItems": true,
-          "default": ["Freshman"]
-        },
-        */
-        "appInstructions": {
-          "type": "string",
-          "title": "Instructions for applying (must include email for applicants to contact)",
-          "default": "Send resume"
-        },
-        /*
-        "jobDeadline": {
-          "type": "string",
-          "format": "date",
-          "title": "Deadline to apply",
-        },
-      */
-      }
-    };
-    let uiSchema = {
-      "jobTitle": {
-        "ui:placeholder": "Software Engineer Intern"
-      },
-      "companyName": {
-        "ui:placeholder": "E-Solutions"
-      },
-      "companySite": {
-        "ui:placeholder": "esolutions.com"
-      },
-      "companyLogo": {
-        "classNames": "upload"
-      },
-      "jobLocation": {
-        "ui:placeholder": "City, State",
-        "ui:placeholder": "Atlanta, GA"
-      },
-      "jobType": {
-        "ui:placeholder": "Choose one"
-      },
-      "jobDescription": {
-        "ui:widget": "textarea"
-      },
-      "appInstructions": {
-        "ui:widget": "textarea"
-      },
-    }
-    return (<div>
-      <Form className="postJob" schema={schema} uiSchema={uiSchema} onSubmit={this.handleSubmit} />
-    </div>
-    );
-  }
+		return(
+			<div className = "container">
+				<h2> Contact Us! </h2>
+				<p>In the form below, you can leave us a message or drop 
+					us a link to an interesting Stanford dataset you found (or would like to see)! </p>
+				<Form schema={schema} uiSchema={uiSchema} onSubmit={e => this.onSubmitForm(e.formData)} />
+			</div>
+		);
+	}
 }
 
 export default PostJob;
