@@ -1,93 +1,17 @@
 import React from 'react';
-import './styles.css';
+import photo from './photo.jpg';
 
-class Advice extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      error: null,
-      isLoaded: false,
-      items: [],
-    };
-  }
+const Advice = () => (
+  <div className="container">
+    <h2>About Us</h2>
+    <p>The Stanford Open Data Project (SODP) is making data about Stanford University more accessible  and transparent. Our Open Data Portal allows anyone to find and analyze Stanford-related data, such as university finances, student life, and academics.</p>
 
-  componentDidMount() {
-    var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-      targetUrl = 'https://www.stanforddaily.com/wp-json/wp/v2/posts?_embed&tags=16534,8248,24207,406,318&per_page=50' // embed adds featured image
-    fetch(proxyUrl + targetUrl)
-      .then(blob => blob.json())
-      .then(result => {
-        this.setState({
-          isLoaded: true,
-          items: result,
-        });
-      },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }
-      )
-  }
-  render() {
-    const { error, isLoaded } = this.state;
+    <p>SODP works in collaboration with <a href="http://www.stanforddaily.com" target="_blank">The Stanford Daily</a>, Stanford's premier publication. Student journalists are constantly trying to write impactful stories about the university, but they often struggle to find relevant data that would strengthen their narratives. Even if this data can be located, often it is unprocessed and difficult to use. Additionally, there are many stories that wouldn't be discovered without seeing the data first. As a result, SODP's convenient access to Stanford data is immensely valuable for The Stanford Daily. </p>
 
-    function html_entity_decode(message) {
-      {/* decodes UTF8 punctuation into HTML */ }
-      var element = document.createElement("div");
-      element.innerHTML = message;
-      return element.innerHTML;
-    }
+    <p>SODP is also the recipient of <a href="https://www.codingitforward.com/build" target="_blank">Coding It Forward's Build Program Fellowship</a>, a semester-long civic tech incubator.</p>
 
-    if (error) {
-      return <div>Error!</div>;
-    } else if (!isLoaded) {
-      return <div>Loading...</div>;
-    } else {
-      return (
-        <div>
-          <div className="mainContent articles">
-          </div>
-          <div className="sideBar">
-            <p>Tell us what you’re looking for and we’ll notify you of new jobs!</p>
-            <a href="#" class="btnPrimary">Get alerts</a>
-          </div>
-          <div className="clear"></div>
-        </div>);
-    }
-  }
-}
-
-
-function ArticleCard(props) {
-  let image;
-  console.log(props.image)
-  if (props.image) {
-    image = <img src={props.image} alt="" />;
-  } else {
-    image = <img src="https://user-images.githubusercontent.com/1689183/55673023-25239a00-5857-11e9-9699-5f2d0ab365cf.png" alt="" />;
-  }
-
-  return (
-    <div>
-      <li>
-        <a href={props.link}>
-          {image}
-          <div className="articleInfo">
-            <div className="jobTitle">{props.title}</div>
-            <div className="jobFacts">
-              {props.author}
-            </div>
-            <div className="jobExcerpt">
-              {props.excerpt}
-            </div>
-          </div>
-        </a>
-      </li>
-    </div>
-  );
-}
+    <img src={photo} alt="photo" style={{height: '15.1rem'}} />
+  </div>
+);
 
 export default Advice;
-
