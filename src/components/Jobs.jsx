@@ -177,14 +177,23 @@ class Jobs extends React.Component {
           </div>
           <div className="lightTitle">{this.state.filteredItems.length} datasets found</div>
           <ul id="jobList" className="list">
-            {this.state.filteredItems.map(post => <JobCard
-              display_name={post.display_name}
-              description={post.description}
-              date={post.create_date}
-              source={post.source_url}
-              name={post.name}
-              tag={post.tags}
-            />
+            {this.state.filteredItems.map(post => 
+            <div>
+              <Link to={{
+                pathname: '/datasets/' + post.name,
+                state: {
+                  data: post,
+                }
+              }}></Link>
+              <JobCard
+                display_name={post.display_name}
+                description={post.description}
+                date={post.create_date}
+                source={post.source_url}
+                name={post.name}
+                tag={post.tags}
+              />
+            </div>
             )}
           </ul>
         </div>
@@ -205,7 +214,12 @@ function JobCard(props) {
   return (
     <div>
       <li>
-        <Link to={"/datasets/" + props.name}>
+        <Link to={{
+          pathname: "/datasets/" + props.name,
+          state: {
+              data: props,   
+          }
+        }}>
           <div className="jobTitle">{props.display_name}</div>
           <div className="jobFacts">
             <span>

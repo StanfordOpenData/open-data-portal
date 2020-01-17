@@ -6,6 +6,8 @@ import locationIcon from './locationIcon.png';
 import buildingIcon from './buildingIcon.png';
 import dollarIcon from './dollarIcon.png';
 import briefcaseIcon from './briefcaseIcon.png';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class JobDetails extends React.Component {
   constructor(props) {
@@ -18,15 +20,13 @@ class JobDetails extends React.Component {
   }
 
   componentDidMount() {
-    var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-      targetUrl = 'https://jobs.github.com/positions/' + this.props.match.params.id + '.json?markdown=true';
-    fetch(proxyUrl + targetUrl)
-      .then(blob => blob.json())
+    axios.get('https://open-data-portal.s3.us-east-2.amazonaws.com/metadata.json')
       .then(result => {
         this.setState({
           isLoaded: true,
-          items: result,
+          items: result.data,
         });
+        console.log('here');
       },
         (error) => {
           this.setState({
@@ -38,50 +38,49 @@ class JobDetails extends React.Component {
   }
 
   render() {
-    const { error, isLoaded } = this.state;
-    var showitems = this.state.items;
-    console.log(showitems);
-    if (error) {
-      return <div>Error!</div>;
-    } else if (!isLoaded) {
+    if (this.state.items.length === 0) {
       return <div>Loading...</div>;
     } else {
     return (
       <div className="jobDetails">
         <div className="mainContent">
-          <div className="companyLogo">
-            <img src={this.state.items.company_logo} alt="" />
-          </div>
-          <p className="jobTitle">{this.state.items.title}</p>
-          <div className="jobFacts">
-            <div className="leftCol">
-              <p>
-                <img src={buildingIcon} alt="" />
-                <a href={this.state.items.company_url}>{this.state.items.company}</a>
-              </p>
-              <p>
-                <img src={locationIcon} alt="" />
-                {this.state.items.location}
-            </p>
-            </div>
-            <div className="rightCol">
-              <p>
-                <img src={dollarIcon} alt="" />
-                {this.state.items.type}
-            </p>
-              <p>
-                <img src={briefcaseIcon} alt="" />
-                Technology
-            </p>
-            </div>
-            <div className="clear"></div>
-          </div>
-        {ReactHtmlParser(this.state.items.description)}
+          {this.state.items && this.state.items.map((post) =>
+              post.name === this.props.match.params.name &&
+              <div>
+                <div>
+                  <div>
+                    <p className = "jobTitle"> {post.display_name} </p>
+                    <b>Upload Date:</b> {post.create_date}  <br></br>
+                    <div> <b>Description:</b> {post.description} </div>
+                    <b>Actions:</b> <a href = {post.source_url}> Download Source</a> <a> | </a>
+                    <a href = {"https://s3.us-east-2.amazonaws.com/open-data-portal/" + this.props.match.params.name + ".csv"}>Download CSV</a>
+                  </div>
+                </div>
+                <div className="jobFacts">
+                  <div className="leftCol">
+                    <p>
+                      <img src={buildingIcon} alt="" />
+                      <a href={post.create_date}></a>
+                    </p>
+                    <p>
+                      <img src={locationIcon} alt="" />
+                      {this.state.items.location}
+                    </p>
+                  </div>
+                  <div className="rightCol">
+                    <p>
+                      <img src={dollarIcon} alt="" />
+                      {post.source_url}
+                    </p>
+                  </div>
+                  <div className="clear"></div>
+                </div>
+              </div>
+            )}
         </div>
         <div className="sideBar">
           <div className="greenBackground">
-            <h1>How to apply</h1>
-            <p><Linkify>{this.state.items.how_to_apply}</Linkify></p>
+            <h1>Stories that Used this Data</h1>
           </div>
         </div>
         <div className="clear"></div>
