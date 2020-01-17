@@ -70,7 +70,7 @@ class PostJob extends React.Component{
 				<h2> Contact Us! </h2>
 				<p>In the form below, you can leave us a message or drop 
 					us a link to an interesting Stanford dataset you found (or would like to see)! </p>
-				<Form schema={schema} uiSchema={uiSchema} onSubmit={e => this.onSubmitForm(e.formData)} />
+				<Form className="postJob" schema={schema} uiSchema={uiSchema} onSubmit={e => this.onSubmitForm(e.formData)} />
 			</div>
 		);
 	}
