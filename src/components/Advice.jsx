@@ -48,7 +48,6 @@ class Advice extends React.Component {
       return (
         <div>
           <div className="mainContent articles">
-
           </div>
           <div className="sideBar">
             <p>Tell us what you’re looking for and we’ll notify you of new jobs!</p>

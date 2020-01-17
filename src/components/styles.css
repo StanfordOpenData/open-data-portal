@@ -268,7 +268,7 @@ header .btnTertiary {
     height: 12px;
     margin-right: 3px;
 }
-.jobExcerpt {
+.jobInfo {
     color: var(--main-gray);
     margin: 10px 0 3px 0;
     line-height: 22px;
@@ -295,6 +295,11 @@ header .btnTertiary {
     font-weight: 600;
 }
 .sideBar p {
+    line-height: 22px;
+    margin-bottom: 24px;
+}
+
+.mobile.sideBar {
     line-height: 22px;
     margin-bottom: 24px;
 }
