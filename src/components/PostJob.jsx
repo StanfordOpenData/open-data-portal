@@ -7,7 +7,8 @@ class PostJob extends React.Component{
 		const templateParams = {
 			name: formData.name,
 			email: formData.email,
-			message: formData.message
+      message: formData.message,
+      subscribe: formData.subscribe
 		}
 		emailjs.send('gmail', 'template_7oDz4B6T', templateParams, 'user_QAUruhPQ0MpGqcIy5zffv').then(function(response) {
 			//Send notification to user of form submit
