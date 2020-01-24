@@ -122,6 +122,10 @@ nav ul li a:hover {
 }
 
 /* -----landing page----*/
+.articleImg {
+    width: 260px;
+    padding-top: 20px;
+}
 header {
     margin-bottom: 56px;
 }
