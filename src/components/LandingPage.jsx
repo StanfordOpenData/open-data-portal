@@ -103,6 +103,11 @@ export default class LandingPage extends React.Component {
                 <div className="title">
                   {html_entity_decode(article.title.rendered)}
                 </div>
+                <div className="lightTitle">
+                  {html_entity_decode(article._embedded.author[0].name)} • {html_entity_decode(article.date)}
+                </div>
+                <div></div>
+                <img className="articleImg" src={article._embedded['wp:featuredmedia'][0].source_url} alt=""/>
               </a>
             )
             }
