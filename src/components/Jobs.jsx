@@ -34,7 +34,8 @@ class Jobs extends React.Component {
       isLoaded: false,
       items: [],
       filteredItems: [],
-      locationFilter: []
+      locationFilter: [],
+      n_datasets: 0,
     };
     this.handleChange = this.handleChange.bind(this)
   }
@@ -48,6 +49,7 @@ class Jobs extends React.Component {
     }
     else if (val.length === 0) {  // if all selections are cleared (the big X is clicked)...
       filteredItems = this.state.items; // reset items
+
     }
     else { 
       // else if an element is selected...
@@ -60,7 +62,10 @@ class Jobs extends React.Component {
       }
       */}
     }
-    this.setState({ filteredItems: filteredItems });
+    this.setState(
+      { filteredItems: filteredItems,
+        n_datasets: filteredItems.length,
+      });
   }
 
   componentDidMount() {
@@ -100,6 +105,9 @@ class Jobs extends React.Component {
         li[i].style.display = "none";
       }
     }
+    this.setState({
+      n_datasets: total.length,
+    })
     return total;
   }
   result(params) {
@@ -129,7 +137,7 @@ class Jobs extends React.Component {
           <a href="#" className="btnTertiary">Get alerts</a>
         </header>
         */}
-        <div className = "sideBar mobile">
+        <div className = "sideBar desktop">
           <div className="greenBackground">
             <h1>What's this?</h1>
             <p>The Stanford Open Data Portal structures and stores university data for public use.
@@ -196,13 +204,6 @@ class Jobs extends React.Component {
             </div>
             )}
           </ul>
-        </div>
-        <div className="sideBar desktop">
-          <div className="greenBackground">
-            <h1>What's this?</h1>
-            <p>Use this page to search for datasets either through the search bar or delimited by the drop-down categories!
-            </p>
-          </div>
         </div>
         <div className="clear"></div>
       </div>);

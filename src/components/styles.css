@@ -287,7 +287,7 @@ header .btnTertiary {
 
 /* -----sidebar----*/
 .sideBar {
-    float: left;
+    float: right;
     width: 26%;
     padding-left: 8%;
     word-wrap: break-word;
@@ -304,6 +304,11 @@ header .btnTertiary {
 }
 
 .mobile.sideBar {
+    line-height: 22px;
+    margin-bottom: 24px;
+}
+
+.desktop.sideBar {
     line-height: 22px;
     margin-bottom: 24px;
 }
