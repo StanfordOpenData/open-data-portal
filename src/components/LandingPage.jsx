@@ -3,6 +3,7 @@ import './styles.css';
 import { Link } from "react-router-dom";
 import heroImage from './heroImage.svg';
 import Stanford from './StanfordOval@2x.png'
+import axios from 'axios';
 
 export default class LandingPage extends React.Component {
   state = {
@@ -21,21 +22,20 @@ export default class LandingPage extends React.Component {
 
 
   componentDidMount() {
-    var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-      targetUrl = 'https://jobs.github.com/positions.json?utf8=%E2%9C%93&description=&location=california'
-    fetch(proxyUrl + targetUrl)
-      .then(blob => blob.json())
+    axios.get('https://open-data-portal.s3.us-east-2.amazonaws.com/metadata.json')
       .then(result => {
         this.setState({
           isLoaded: true,
-          items: result
+          items: result.data,
         });
+        console.log(result.data)
       },
         (error) => {
           this.setState({
             isLoaded: true,
             error
           });
+          console.log('here');
         }
       )
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
@@ -78,23 +78,24 @@ export default class LandingPage extends React.Component {
           <h3>Featured Datasets</h3>
           <div className="mini">
             {this.state.items.slice(0, 3).map(job =>
-              <Link to={"/jobs/" + job.id}>
+              <Link to={{
+                pathname: '/datasets/' + job.name,
+                state: {
+                  data: job,
+                }
+              }} className="seeMore">
                 <div className="title">
-                  {job.title}
-                </div>
-                <div>
-                  {job.company}
-                </div>
-                <div className="lightTitle">
-                  {job.location}
-                </div>
+                {job.display_name}
+              </div>
+              <div className="lightTitle">
+                {job.tags}
+              </div>
               </Link>
             )
             }
           </div>
           <Link to="/jobs" className="seeMore">See more</Link>
         </div>
-
         <div className="newArticles">
           <h3>Articles Featuring Open Data</h3>
           <div className="mini">

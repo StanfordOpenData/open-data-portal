@@ -23,7 +23,7 @@ class App extends Component {
             <Switch>
               <Route exact path='/' component={LandingPage} />
               <Route exact path='/jobs' component={Jobs} />
-              <Route path='/jobs/:name' component={JobDetails} />
+              <Route path='/datasets/:name' component={JobDetails} />
               <Route exact path='/advice' component={Advice} />
               <Route exact path='/post' component={PostJob} />
               <Route exact path='/payment' component={Payment} />

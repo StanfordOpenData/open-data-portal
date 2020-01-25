@@ -64,24 +64,17 @@ class JobDetails extends React.Component {
                     </p>
                     <p>
                       <img src={locationIcon} alt="" />
-                      {this.state.items.location}
+                    </p>
+                    <p>
+                      <img src={dollarIcon} alt="" />
                     </p>
                   </div>
                   <div className="rightCol">
-                    <p>
-                      <img src={dollarIcon} alt="" />
-                      {post.source_url}
-                    </p>
                   </div>
                   <div className="clear"></div>
                 </div>
               </div>
             )}
-        </div>
-        <div className="sideBar">
-          <div className="greenBackground">
-            <h1>Stories that Used this Data</h1>
-          </div>
         </div>
         <div className="clear"></div>
       </div>
