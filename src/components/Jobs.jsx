@@ -189,7 +189,7 @@ class Jobs extends React.Component {
                 display_name={post.display_name}
                 description={post.description}
                 date={post.create_date}
-                source={post.source_url}
+                source_url={post.source_url}
                 name={post.name}
                 tag={post.tags}
               />
