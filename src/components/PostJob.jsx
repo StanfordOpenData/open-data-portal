@@ -8,15 +8,14 @@ class PostJob extends React.Component{
 			name: formData.name,
 			email: formData.email,
       message: formData.message,
-      subscribe: formData.subscribe
+			subscribe: formData.subscribe,
+			file: formData.file
 		}
 		emailjs.send('gmail', 'template_7oDz4B6T', templateParams, 'user_QAUruhPQ0MpGqcIy5zffv').then(function(response) {
 			//Send notification to user of form submit
 			alert('Email sent!');
-			console.log(templateParams);
-			console.log('SUCCESS!', response.status, response.text);
 		}, function(error) {
-			console.log('FAILED...', error);
+			alert('Email failed to send.');
 		});
 	}
 	render(){
