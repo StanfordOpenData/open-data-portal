@@ -1,13 +1,12 @@
 import React from 'react';
 import axios from 'axios';
 import './styles.css';
-import heroImage from './heroImage.svg';
+import Fuse from "fuse.js";
 import locationIcon from './locationIcon.png';
 import buildingIcon from './buildingIcon.png';
 import dollarIcon from './dollarIcon.png';
 import Select from 'react-select';
 import { Link } from "react-router-dom";
-import { PostalCodeElement } from 'react-stripe-elements';
 
 const typeOptions = [
   { value: 'Finances', label: 'Finances' },
@@ -88,27 +87,25 @@ class Jobs extends React.Component {
       )
   }
 
-  searchKey = (event) => {
-    let total = 0;
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById('searchInput');
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("jobList");
-    li = ul.getElementsByTagName('li');
-
-    for (i = 0; i < li.length; i++) {
-      a = li[i].getElementsByTagName("a")[0];
-      txtValue = a.textContent || a.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        li[i].style.display = "";
-      } else {
-        li[i].style.display = "none";
-      }
-    }
+  searchKey = (e) => {
+    const term = e.target.value;
+    const options = {
+      shouldSort: true,
+      threshold: 0.6,
+      location: 0,
+      distance: 100,
+      maxPatternLength: 32,
+      minMatchCharLength: 1,
+      keys: [
+        "name",
+        "description"
+      ]
+    };
+    const fuse = new Fuse(this.state.items, options);
+    const filteredItems = fuse.search(term);
     this.setState({
-      n_datasets: total.length,
-    })
-    return total;
+      filteredItems
+    });
   }
   result(params) {
     console.log(params);
@@ -147,7 +144,7 @@ class Jobs extends React.Component {
         </div>
         <div id="jobsAnchor" className="mainContent">
           <div className="jobFilters">
-            <input type="search" id="searchInput" onKeyUp={this.searchKey} placeholder="Search by dataset category, description, etc." name="search" />
+            <input type="search" id="searchInput" onChange={e => this.searchKey(e)} placeholder="Search by dataset category, description, etc." name="search" />
             <label className="inline marginRight">Categories</label>
             <label className="inline marginRight">Data Types</label>
             <span className="inline marginRight"><Select

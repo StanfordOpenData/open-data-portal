@@ -5,6 +5,8 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.1",
+    "emailjs-com": "^2.3.2",
+    "fuse.js": "^3.4.6",
     "gh-pages": "^2.0.1",
     "jquery": "^3.4.1",
     "multiselect-dropdown-react": "^1.0.5",
@@ -20,8 +22,7 @@
     "react-select": "^3.0.5",
     "react-select-box": "^3.0.1",
     "react-stripe-checkout": "^2.6.3",
-    "react-stripe-elements": "^5.1.0",
-    "emailjs-com": "^2.3.2"
+    "react-stripe-elements": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
