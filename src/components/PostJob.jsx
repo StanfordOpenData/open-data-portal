@@ -67,6 +67,9 @@ class PostJob extends React.Component{
 
 		return(
 			<div className = "container">
+				<h2> Contribute a Dataset! </h2>
+				<p> Feel free to upload any Stanford-related datasets you have to the folder below, or you can send us a link via the form below. </p>
+				<iframe src="https://stanford.app.box.com/embed/s/i33cf888zpz8cfytj7s6eg0aa29f76pm?sortColumn=date&view=list" width="500" height="400" frameborder="0" allowfullscreen webkitallowfullscreen msallowfullscreen></iframe>
 				<h2> Contact Us! </h2>
 				<p>In the form below, you can leave us a message or drop 
 					us a link to an interesting Stanford dataset you found (or would like to see)! </p>
