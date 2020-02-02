@@ -1,6 +1,6 @@
 import React from 'react';
 import Form from 'react-jsonschema-form';
-import * as emailjs from 'emailjs-com';
+import emailjs from 'emailjs-com';
 
 class PostJob extends React.Component{
 	onSubmitForm(formData) {
