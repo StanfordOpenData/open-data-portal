@@ -51,19 +51,20 @@ class Jobs extends React.Component {
 
     }
     else { 
-      // else if an element is selected...
-      {/*var i;
-      for (i = 0; i < val.length; i++) {
-        this.setState({ locationFilter: [...this.state.locationFilter, val[i].value] })
-        filteredItems = filteredItems.concat(this.state.items.filter(function (item) {  // only show items equal to the value passed in
-          return item["tags"] === val[i].value;
-        }));
-      }
-      */}
+      //val is the set of filters
+      console.log("val", val);
+      console.log("val.value", val[0].value);
+      const vals = val.map((v) => v.value);
+      let items = this.state.items;
+      let final = (vals === undefined || vals.length === 0) ? items :
+      items.filter((post) => {
+        return vals.includes(post.tags);
+      });
+      console.log('final', final);
+      filteredItems = final;
     }
     this.setState(
       { filteredItems: filteredItems,
-        n_datasets: filteredItems.length,
       });
   }
 
@@ -75,14 +76,12 @@ class Jobs extends React.Component {
           items: result.data,
           filteredItems: result.data,
         });
-        console.log(result.data)
       },
         (error) => {
           this.setState({
             isLoaded: true,
             error
           });
-          console.log('here');
         }
       )
   }
@@ -102,10 +101,15 @@ class Jobs extends React.Component {
       ]
     };
     const fuse = new Fuse(this.state.items, options);
-    const filteredItems = fuse.search(term);
-    this.setState({
-      filteredItems
-    });
+    const newFilteredItems = fuse.search(term);
+    if ((typeof(term) === "undefined") || (term.length === 0)) {
+      this.setState({
+        filteredItems: this.state.items
+      })} else {
+      this.setState({
+        filteredItems: newFilteredItems,
+        });
+      }
   }
   result(params) {
     console.log(params);
