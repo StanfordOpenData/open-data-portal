@@ -52,7 +52,6 @@ class PostJob extends React.Component{
 		}
 		let uiSchema = {
 			"name": {
-				"ui:autofocus": true,
 				"ui:placeholder": "Enter your name here."
 			},
 			"email":{
