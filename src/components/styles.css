@@ -399,7 +399,6 @@ select {
     width: 144px;
 }
 input[type=checkbox] {
-    display: inline-block;
     width: 16px;
     margin-bottom: 0px;
 }
@@ -455,6 +454,7 @@ legend { /* remove indent of react json form */
 @media only screen and (max-width: 1000px) {
     .mainContent {
         width: 100%;
+        flex-wrap: wrap;
     }    
     header h1 {
         width: 100%;
