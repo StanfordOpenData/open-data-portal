@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.1",
+    "emailjs-com": "^2.4.1",
     "fuse.js": "^3.4.6",
     "gh-pages": "^2.0.1",
     "jquery": "^3.4.1",

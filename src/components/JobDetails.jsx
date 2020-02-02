@@ -47,16 +47,23 @@ class JobDetails extends React.Component {
           {this.state.items && this.state.items.map((post) =>
               post.name === this.props.match.params.name &&
               <div>
-                <div>
+                <div className="jobFacts">
                   <div>
                     <p className = "jobTitle"> {post.display_name} </p>
-                    <b>Upload Date:</b> {post.create_date}  <br></br>
-                    <div> <b>Description:</b> {post.description} </div>
-                    <b>Actions:</b> <a href = {post.source_url}> Download Source</a> <a> | </a>
-                    <a href = {"https://s3.us-east-2.amazonaws.com/open-data-portal/" + this.props.match.params.name + ".csv"}>Download CSV</a>
+                    <img src={locationIcon} alt="" />
+                    <b>  Upload Date:</b> {post.create_date}  <br></br>
+                    <div> <img src={briefcaseIcon} alt="" /> {post.description} </div>
+                    <br></br>
+                    <br></br>
+                    <div>
+                      <a href={post.source_url} target="_blank" className="btnSecondary">Download Source</a>
+                      <a> </a>
+                      <a href={"https://s3.us-east-2.amazonaws.com/open-data-portal/" + this.props.match.params.name + ".csv"} className="btnSecondary">Download CSV</a>
+                    </div>
+
                   </div>
                 </div>
-                <div className="jobFacts">
+                {/*<div className="jobFacts">
                   <div className="leftCol">
                     <p>
                       <img src={buildingIcon} alt="" />
@@ -72,7 +79,7 @@ class JobDetails extends React.Component {
                   <div className="rightCol">
                   </div>
                   <div className="clear"></div>
-                </div>
+                </div>*/}
               </div>
             )}
         </div>
