@@ -50,13 +50,14 @@ class JobDetails extends React.Component {
                 <div className="jobFacts">
                   <div>
                     <p className = "jobTitle"> {post.display_name} </p>
-                    <img src={locationIcon} alt="" />
-                    <b>  Upload Date:</b> {post.create_date}  <br></br>
-                    <div> <img src={briefcaseIcon} alt="" /> {post.description} </div>
+                    <div><img src={dollarIcon} alt="" /> <b> Categories:</b> {post.tags} </div>
+                    <div><img src={locationIcon} alt="" /> <b> Upload Date:</b> {post.create_date} </div>
+                    <br></br>
+                    <div> {post.description} </div>
                     <br></br>
                     <br></br>
                     <div>
-                      <a href={post.source_url} target="_blank" className="btnSecondary">Download Source</a>
+                      <a href={post.source_url} target="_blank" className="btnSecondary">View Source</a>
                       <a> </a>
                       <a href={"https://s3.us-east-2.amazonaws.com/open-data-portal/" + this.props.match.params.name + ".csv"} className="btnSecondary">Download CSV</a>
                     </div>

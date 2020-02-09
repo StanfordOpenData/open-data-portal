@@ -225,15 +225,11 @@ function JobCard(props) {
           <div className="jobTitle">{props.display_name}</div>
           <div className="jobFacts">
             <span>
-              <img className="icon" src={buildingIcon} alt="" />
-              {props.display_name}
-            </span>
-            <span>
-              <img className="icon" src={locationIcon} alt="" />
+              <img className="icon" src={dollarIcon} alt="" />
               {props.tag}
             </span>
             <span>
-              <img className="icon" src={dollarIcon} alt="" />
+              <img className="icon" src={locationIcon} alt="" />
               {props.date}
             </span>
           </div>
