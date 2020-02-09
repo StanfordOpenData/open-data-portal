@@ -50,9 +50,9 @@ class JobDetails extends React.Component {
                 <div className="jobFacts">
                   <div>
                     <p className = "jobTitle"> {post.display_name} </p>
-                    <img src={locationIcon} alt="" />
-                    <b>  Upload Date:</b> {post.create_date}  <br></br>
-                    <div> <img src={briefcaseIcon} alt="" /> {post.description} </div>
+                    <div><img src={locationIcon} alt="" /> <b> Upload Date:</b> {post.create_date} </div>
+                    <br></br>
+                    <div> {post.description} </div>
                     <br></br>
                     <br></br>
                     <div>
