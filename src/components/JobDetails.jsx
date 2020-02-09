@@ -56,7 +56,7 @@ class JobDetails extends React.Component {
                     <br></br>
                     <br></br>
                     <div>
-                      <a href={post.source_url} target="_blank" className="btnSecondary">Download Source</a>
+                      <a href={post.source_url} target="_blank" className="btnSecondary">View Source</a>
                       <a> </a>
                       <a href={"https://s3.us-east-2.amazonaws.com/open-data-portal/" + this.props.match.params.name + ".csv"} className="btnSecondary">Download CSV</a>
                     </div>
