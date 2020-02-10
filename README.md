@@ -1,4 +1,4 @@
-### Overview
+## Overview
 The open data portal is a serverless data store for Stanford datasets. We store our data in AWS and have a React frontend. Feel free to fork for your own campus open data portal!
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
