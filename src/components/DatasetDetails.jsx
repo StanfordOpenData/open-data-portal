@@ -9,7 +9,7 @@ import briefcaseIcon from './briefcaseIcon.png';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-class JobDetails extends React.Component {
+class DatasetDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -91,4 +91,4 @@ class JobDetails extends React.Component {
 }
 }
 
-export default JobDetails;
+export default DatasetDetails;

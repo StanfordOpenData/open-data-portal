@@ -4,12 +4,12 @@ import { Switch, HashRouter, Route } from "react-router-dom";import { Elements, 
 
 import NavBar from './components/NavBar';
 import LandingPage from './components/LandingPage';
-import Jobs from './components/Jobs';
-import JobDetails from './components/JobDetails';
+import Datasets from './components/Datasets';
+import DatasetDetails from './components/DatasetDetails';
 import PostJob from './components/PostJob';
 import Advice from './components/Advice';
 import Footer from './components/Footer';
-import Payment from './components/Payment';
+//import Payment from './components/Payment';
 import NotFound from './components/NotFound';
 
 class App extends Component {
@@ -22,11 +22,10 @@ class App extends Component {
             <NavBar />
             <Switch>
               <Route exact path='/' component={LandingPage} />
-              <Route exact path='/jobs' component={Jobs} />
-              <Route path='/datasets/:name' component={JobDetails} />
-              <Route exact path='/advice' component={Advice} />
-              <Route exact path='/post' component={PostJob} />
-              <Route exact path='/payment' component={Payment} />
+              <Route exact path='/datasets' component={Datasets} />
+              <Route path='/datasets/:name' component={DatasetDetails} />
+              <Route exact path='/aboutus' component={Advice} />
+              <Route exact path='/contribute' component={PostJob} />
               <Route path="*" component={NotFound} />
             </Switch>
           </div>
@@ -39,3 +38,5 @@ class App extends Component {
 }
 
 export default App;
+
+// <Route exact path='/payment' component={Payment} />

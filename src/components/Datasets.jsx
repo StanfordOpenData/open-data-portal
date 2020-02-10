@@ -21,7 +21,7 @@ const industryOptions = [
   { value: 'numerical', label: 'Numerical' },
 ];
 
-class Jobs extends React.Component {
+class Datasets extends React.Component {
   state = {
     selectedOption: null,
   };
@@ -40,11 +40,9 @@ class Jobs extends React.Component {
   }
 
   handleChange(val) {
-    console.log("change")
     var filteredItems = [];
     if (!val) { // if an element is unselected (small X), so the value is null...
       filteredItems = this.state.items;
-      console.log("it's this")
     }
     else if (val.length === 0) {  // if all selections are cleared (the big X is clicked)...
       filteredItems = this.state.items; // reset items
@@ -52,15 +50,12 @@ class Jobs extends React.Component {
     }
     else { 
       //val is the set of filters
-      console.log("val", val);
-      console.log("val.value", val[0].value);
       const vals = val.map((v) => v.value);
       let items = this.state.items;
       let final = (vals === undefined || vals.length === 0) ? items :
       items.filter((post) => {
         return vals.includes(post.tags);
       });
-      console.log('final', final);
       filteredItems = final;
     }
     this.setState(
@@ -130,14 +125,6 @@ class Jobs extends React.Component {
     }
     return (
       <div>
-        {/*
-        <header>
-          <img className="hero" src={heroImage} alt="" height="375px" />
-          <h1>Find your dream job and contact recruiters right away.</h1>
-          {/* <HashLink to="/#jobsAnchor" className="btnPrimary">Explore jobs</HashLink>
-          <a href="#" className="btnTertiary">Get alerts</a>
-        </header>
-        */}
         <div className = "sideBar desktop">
           <div className="greenBackground">
             <h1>What's this?</h1>
@@ -242,4 +229,4 @@ function JobCard(props) {
   );
 }
 
-export default Jobs;
+export default Datasets;
