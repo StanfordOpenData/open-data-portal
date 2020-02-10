@@ -1,14 +1,15 @@
 {
-  "homepage": "https://thestanforddaily.github.io/jobs-board/",
+  "homepage": "http://opendata.stanorddaily.com",
   "name": "jobs-board",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "axios": "^0.18.1",
-    "emailjs-com": "^2.4.1",
+    "emailjs-com": "^2.3.2",
     "fuse.js": "^3.4.6",
     "gh-pages": "^2.0.1",
     "jquery": "^3.4.1",
+    "moment": "^2.24.0",
     "multiselect-dropdown-react": "^1.0.5",
     "react": "^16.10.1",
     "react-bootstrap": "^1.0.0-beta.12",
@@ -16,14 +17,14 @@
     "react-html-parser": "^2.0.2",
     "react-jsonschema-form": "^1.8.0",
     "react-linkify": "^1.0.0-alpha",
+    "react-moment": "^0.9.7",
     "react-router-dom": "^5.1.1",
     "react-router-hash-link": "^1.2.2",
     "react-scripts": "^3.3.0",
     "react-select": "^3.0.5",
     "react-select-box": "^3.0.1",
     "react-stripe-checkout": "^2.6.3",
-    "react-stripe-elements": "^5.1.0",
-    "emailjs-com": "^2.3.2"
+    "react-stripe-elements": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
