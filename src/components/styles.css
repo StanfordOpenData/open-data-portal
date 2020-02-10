@@ -149,7 +149,7 @@ header .btnTertiary {
     right: 32px;
     top: 112px;
 }
-.newJobs {
+.newDatasets {
     margin-top: 160px;
 }
 .newArticles {
@@ -201,7 +201,7 @@ header .btnTertiary {
 }
 
 
-/* -----jobs list----*/
+/* -----datasets list----*/
 #searchInput {
     background-image: url('searchIcon.png'); /* Add a search icon to input */
     background-size: 16px;
@@ -223,7 +223,7 @@ header .btnTertiary {
     transition: all .05s ease;
     -webkit-transition: all .05s ease;
 }
-.jobFilters {
+.datasetFilters {
     margin-bottom: 32px;
 }
 .inline {
@@ -244,7 +244,7 @@ header .btnTertiary {
     padding-bottom: 24px;
     margin-bottom: 24px;
 }
-.list li a:hover .jobTitle {
+.list li a:hover .datasetTitle {
     color: #6E6E6E;
     transition: all .2s ease;
     -webkit-transition: all .2s ease;
@@ -255,24 +255,24 @@ header .btnTertiary {
     margin-left: 12px;
     float: right;
 }
-.jobTitle, h3 {
+.datasetTitle, h3 {
     font-size: 22px;
     font-weight: 600;
     color: var(--main-black);
 }
-.jobFacts {
+.datasetFacts {
     font-size: 16px;
     color: var(--main-black);
     margin-top: 8px;
 }
-.jobFacts span {
+.datasetFacts span {
     margin-right: 16px;
 }
-.jobFacts img {
+.datasetFacts img {
     height: 12px;
     margin-right: 3px;
 }
-.jobInfo {
+.datasetInfo {
     color: var(--main-gray);
     margin: 10px 0 3px 0;
     line-height: 22px;
@@ -315,31 +315,31 @@ header .btnTertiary {
 
 
 
-/* -----job information page----*/
-.jobDetails {
+/* -----dataset information page----*/
+.datasetDetails {
 }
-.jobDetails .jobTitle {
+.datasetDetails .datasetTitle {
     font-size: 32px;
     margin-top: 0px;
     margin-bottom: 24px;
 }
-.jobDetails .companyLogo img {
+.datasetDetails .companyLogo img {
     height: 40px;
     margin-top: 0px;
     margin-left: 8px;
     border-radius: 3px;
     float: right;
 }
-.jobDetails a {
+.datasetDetails a {
     font-weight: 600;
     color: var(--main-green);
 }
-.jobDetails .jobFacts {
+.datasetDetails .datasetFacts {
     border-bottom: 1px solid var(--light-outline);
     padding-bottom: 24px;
     margin-bottom: 24px;
 }
-.jobDetails .jobFacts p {
+.datasetDetails .datasetFacts p {
     margin-top: 0;
     margin-bottom: 8px;
 }
@@ -359,10 +359,10 @@ header .btnTertiary {
 .greenBackground a {
     color: black;
 }
-.jobDetails .sideBar p {
+.datasetDetails .sideBar p {
     margin-bottom: 0;
 }
-.jobDescription p {
+.datasetDescription p {
     margin-top: 8px;
 }
 
@@ -378,13 +378,13 @@ header .btnTertiary {
     object-fit: cover;
 }
 
-/* -----forms (filters, post job)-----*/
+/* -----forms (filters, post dataset)-----*/
 #root__title { /* formats titles of forms */
     font-size: 32px;
     font-weight: 600;
     margin-bottom: 16px;
 }
-textarea, select, .postJob input {
+textarea, select, .postDataset input {
     width: 50%;
     padding: 8px 8px;
     margin-bottom: 16px;
@@ -410,7 +410,7 @@ label {
     font-weight: 600;
     margin-bottom: 4px;
 }
-.checkboxContainer { /* adds space after last checkbox in Post Job form */
+.checkboxContainer { /* adds space after last checkbox in Post Dataset form */
     margin-bottom: 16px;
 }
 .upload {
@@ -483,7 +483,7 @@ legend { /* remove indent of react json form */
     .secondHeader .right {
         margin-left: 0px;
     }
-    textarea, select, .postJob input, .__PrivateStripeElement {
+    textarea, select, .postDataset input, .__PrivateStripeElement {
         width: 70%;
     }
 
@@ -503,7 +503,7 @@ legend { /* remove indent of react json form */
         margin: auto 0 auto 0;
         object-fit: cover;
     }
-    textarea, select, .postJob input, .__PrivateStripeElement {
+    textarea, select, .postDataset input, .__PrivateStripeElement {
         width: 100%;
     }
 

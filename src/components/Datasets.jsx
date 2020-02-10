@@ -133,8 +133,8 @@ class Datasets extends React.Component {
             </p>
           </div>
         </div>
-        <div id="jobsAnchor" className="mainContent">
-          <div className="jobFilters">
+        <div id="datasetsAnchor" className="mainContent">
+          <div className="datasetFilters">
             <input type="search" id="searchInput" onChange={e => this.searchKey(e)} placeholder="Search by dataset category, description, etc." name="search" />
             <label className="inline marginRight">Categories</label>
             <label className="inline marginRight">Data Types</label>
@@ -172,7 +172,7 @@ class Datasets extends React.Component {
             </span>
           </div>
           <div className="lightTitle">{this.state.filteredItems.length} datasets found</div>
-          <ul id="jobList" className="list">
+          <ul id="datasetList" className="list">
             {this.state.filteredItems.map(post => 
             <div>
               <Link to={{
@@ -181,7 +181,7 @@ class Datasets extends React.Component {
                   data: post,
                 }
               }}></Link>
-              <JobCard
+              <DatasetCard
                 display_name={post.display_name}
                 description={post.description}
                 date={post.create_date}
@@ -198,7 +198,7 @@ class Datasets extends React.Component {
   }
 }
 
-function JobCard(props) {
+function DatasetCard(props) {
   //var excerpt = props.excerpt.replace(/<\/?[^>]+(>|$)/g, ""); // strip description excerpt of HTML tags
   return (
     <div>
@@ -209,8 +209,8 @@ function JobCard(props) {
               data: props,   
           }
         }}>
-          <div className="jobTitle">{props.display_name}</div>
-          <div className="jobFacts">
+          <div className="datasetTitle">{props.display_name}</div>
+          <div className="datasetFacts">
             <span>
               <img className="icon" src={dollarIcon} alt="" />
               {props.tag}
@@ -220,7 +220,7 @@ function JobCard(props) {
               {props.date}
             </span>
           </div>
-          <div className="jobInfo">
+          <div className="datasetInfo">
             {props.description}
           </div>
         </Link>

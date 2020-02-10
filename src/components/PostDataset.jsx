@@ -2,7 +2,7 @@ import React from 'react';
 import Form from 'react-jsonschema-form';
 import emailjs from 'emailjs-com';
 
-class PostJob extends React.Component{
+class PostDataset extends React.Component{
 	onSubmitForm(formData) {
 		const templateParams = {
 			name: formData.name,
@@ -72,10 +72,10 @@ class PostJob extends React.Component{
 				<h2> Contact Us! </h2>
 				<p>In the form below, you can leave us a message or drop 
 					us a link to an interesting Stanford dataset you found (or would like to see)! </p>
-				<Form className="postJob" schema={schema} uiSchema={uiSchema} onSubmit={e => this.onSubmitForm(e.formData)} />
+				<Form className="postDataset" schema={schema} uiSchema={uiSchema} onSubmit={e => this.onSubmitForm(e.formData)} />
 			</div>
 		);
 	}
 }
 
-export default PostJob;
+export default PostDataset;
