@@ -21,7 +21,7 @@ const industryOptions = [
   { value: 'numerical', label: 'Numerical' },
 ];
 
-class Jobs extends React.Component {
+class Datasets extends React.Component {
   state = {
     selectedOption: null,
   };
@@ -40,11 +40,9 @@ class Jobs extends React.Component {
   }
 
   handleChange(val) {
-    console.log("change")
     var filteredItems = [];
     if (!val) { // if an element is unselected (small X), so the value is null...
       filteredItems = this.state.items;
-      console.log("it's this")
     }
     else if (val.length === 0) {  // if all selections are cleared (the big X is clicked)...
       filteredItems = this.state.items; // reset items
@@ -52,15 +50,12 @@ class Jobs extends React.Component {
     }
     else { 
       //val is the set of filters
-      console.log("val", val);
-      console.log("val.value", val[0].value);
       const vals = val.map((v) => v.value);
       let items = this.state.items;
       let final = (vals === undefined || vals.length === 0) ? items :
       items.filter((post) => {
         return vals.includes(post.tags);
       });
-      console.log('final', final);
       filteredItems = final;
     }
     this.setState(
@@ -130,14 +125,6 @@ class Jobs extends React.Component {
     }
     return (
       <div>
-        {/*
-        <header>
-          <img className="hero" src={heroImage} alt="" height="375px" />
-          <h1>Find your dream job and contact recruiters right away.</h1>
-          {/* <HashLink to="/#jobsAnchor" className="btnPrimary">Explore jobs</HashLink>
-          <a href="#" className="btnTertiary">Get alerts</a>
-        </header>
-        */}
         <div className = "sideBar desktop">
           <div className="greenBackground">
             <h1>What's this?</h1>
@@ -146,8 +133,8 @@ class Jobs extends React.Component {
             </p>
           </div>
         </div>
-        <div id="jobsAnchor" className="mainContent">
-          <div className="jobFilters">
+        <div id="datasetsAnchor" className="mainContent">
+          <div className="datasetFilters">
             <input type="search" id="searchInput" onChange={e => this.searchKey(e)} placeholder="Search by dataset category, description, etc." name="search" />
             <label className="inline marginRight">Categories</label>
             <label className="inline marginRight">Data Types</label>
@@ -185,7 +172,7 @@ class Jobs extends React.Component {
             </span>
           </div>
           <div className="lightTitle">{this.state.filteredItems.length} datasets found</div>
-          <ul id="jobList" className="list">
+          <ul id="datasetList" className="list">
             {this.state.filteredItems.map(post => 
             <div>
               <Link to={{
@@ -194,7 +181,7 @@ class Jobs extends React.Component {
                   data: post,
                 }
               }}></Link>
-              <JobCard
+              <DatasetCard
                 display_name={post.display_name}
                 description={post.description}
                 date={post.create_date}
@@ -211,7 +198,7 @@ class Jobs extends React.Component {
   }
 }
 
-function JobCard(props) {
+function DatasetCard(props) {
   //var excerpt = props.excerpt.replace(/<\/?[^>]+(>|$)/g, ""); // strip description excerpt of HTML tags
   return (
     <div>
@@ -222,8 +209,8 @@ function JobCard(props) {
               data: props,   
           }
         }}>
-          <div className="jobTitle">{props.display_name}</div>
-          <div className="jobFacts">
+          <div className="datasetTitle">{props.display_name}</div>
+          <div className="datasetFacts">
             <span>
               <img className="icon" src={dollarIcon} alt="" />
               {props.tag}
@@ -233,7 +220,7 @@ function JobCard(props) {
               {props.date}
             </span>
           </div>
-          <div className="jobInfo">
+          <div className="datasetInfo">
             {props.description}
           </div>
         </Link>
@@ -242,4 +229,4 @@ function JobCard(props) {
   );
 }
 
-export default Jobs;
+export default Datasets;

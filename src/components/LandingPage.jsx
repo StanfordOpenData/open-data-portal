@@ -70,31 +70,31 @@ export default class LandingPage extends React.Component {
         <header>
           <img className="hero" src={heroImage} alt="" height="375px" />
           <h1>Welcome to the Stanford Open Data Portal</h1>
-          <Link to="/jobs" className="btnPrimary">Explore data</Link>
+          <Link to="/datasets" className="btnPrimary">Explore data</Link>
           {/*<a href="#" className="btnTertiary">Get alerts</a>  */}
 
         </header>
-        <div className="newJobs">
+        <div className="newDatasets">
           <h3>Featured Datasets</h3>
           <div className="mini">
-            {this.state.items.slice(0, 3).map(job =>
+            {this.state.items.slice(0, 3).map(dataset =>
               <Link to={{
-                pathname: '/datasets/' + job.name,
+                pathname: '/datasets/' + dataset.name,
                 state: {
-                  data: job,
+                  data: dataset,
                 }
               }} className="seeMore">
                 <div className="title">
-                {job.display_name}
+                {dataset.display_name}
               </div>
               <div className="lightTitle">
-                {job.tags}
+                {dataset.tags}
               </div>
               </Link>
             )
             }
           </div>
-          <Link to="/jobs" className="seeMore">See more</Link>
+          <Link to="/datasets" className="seeMore">See more</Link>
         </div>
         <div className="newArticles">
           <h3>Articles Featuring Open Data</h3>

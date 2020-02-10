@@ -9,7 +9,7 @@ import briefcaseIcon from './briefcaseIcon.png';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-class JobDetails extends React.Component {
+class DatasetDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -42,14 +42,14 @@ class JobDetails extends React.Component {
       return <div>Loading...</div>;
     } else {
     return (
-      <div className="jobDetails">
+      <div className="datasetDetails">
         <div className="mainContent">
           {this.state.items && this.state.items.map((post) =>
               post.name === this.props.match.params.name &&
               <div>
-                <div className="jobFacts">
+                <div className="datasetFacts">
                   <div>
-                    <p className = "jobTitle"> {post.display_name} </p>
+                    <p className = "datasetTitle"> {post.display_name} </p>
                     <div><img src={dollarIcon} alt="" /> <b> Categories:</b> {post.tags} </div>
                     <div><img src={locationIcon} alt="" /> <b> Upload Date:</b> {post.create_date} </div>
                     <br></br>
@@ -64,23 +64,6 @@ class JobDetails extends React.Component {
 
                   </div>
                 </div>
-                {/*<div className="jobFacts">
-                  <div className="leftCol">
-                    <p>
-                      <img src={buildingIcon} alt="" />
-                      <a href={post.create_date}></a>
-                    </p>
-                    <p>
-                      <img src={locationIcon} alt="" />
-                    </p>
-                    <p>
-                      <img src={dollarIcon} alt="" />
-                    </p>
-                  </div>
-                  <div className="rightCol">
-                  </div>
-                  <div className="clear"></div>
-                </div>*/}
               </div>
             )}
         </div>
@@ -91,4 +74,4 @@ class JobDetails extends React.Component {
 }
 }
 
-export default JobDetails;
+export default DatasetDetails;
