@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import heroImage from './heroImage.svg';
 import Stanford from './StanfordOval@2x.png'
 import axios from 'axios';
+import Moment from 'moment';
 
 export default class LandingPage extends React.Component {
   state = {
@@ -105,7 +106,7 @@ export default class LandingPage extends React.Component {
                   {html_entity_decode(article.title.rendered)}
                 </div>
                 <div className="lightTitle">
-                  {html_entity_decode(article._embedded.author[0].name)} • {html_entity_decode(article.date)}
+                  {html_entity_decode(article._embedded.author[0].name)} • {Moment(Date(html_entity_decode(article.date))).format("LL")}
                 </div>
                 <div></div>
                 <img className="articleImg" src={article._embedded['wp:featuredmedia'][0].source_url} alt=""/>
