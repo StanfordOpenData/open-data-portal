@@ -167,6 +167,9 @@ header .btnTertiary {
     color: var(--main-black);
     background-color: 	#eefbf8;
 }
+#detailsPageLink {
+    width: 100%;
+}
 .mini a:hover {
     /*add box shadow */
     transition: all .2s ease;
@@ -379,8 +382,14 @@ header .btnTertiary {
 .datasetDescription p {
     margin-top: 8px;
 }
-
-
+.detailsColumn1 {
+    float: left;
+    width: 60%;
+}
+.detailsColumn2 {
+    float: left;
+    width: 40%;
+}
 
 /* -----advice articles-----*/
 .articles img {
