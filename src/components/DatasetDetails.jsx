@@ -87,7 +87,7 @@ class DatasetDetails extends React.Component {
     return (
       <div className="datasetDetails">
         <div className="detailsColumn1">
-          <div className="mainContent">
+          <div>
             {this.state.items && this.state.items.map((post) =>
                 post.name === this.props.match.params.name &&
                 <div>
@@ -122,6 +122,8 @@ class DatasetDetails extends React.Component {
           <div className="clear"></div>
         </div>
         <div className="detailsColumn2">
+        <br></br>
+        <p className = "datasetTitle" style={{float:"right"}}>Stories Using this Data</p>
             {this.state.items && this.state.items.map((post) =>
               post.name === this.props.match.params.name &&
                 <div>
