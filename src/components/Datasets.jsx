@@ -188,6 +188,7 @@ class Datasets extends React.Component {
                 source_url={post.source_url}
                 name={post.name}
                 tag={post.tags}
+                source={post.source}
               />
             </div>
             )}
@@ -218,6 +219,10 @@ function DatasetCard(props) {
             <span>
               <img className="icon" src={locationIcon} alt="" />
               {props.date}
+            </span>
+            <span>
+              <img className="icon" src={buildingIcon} alt="" />
+              {props.source}
             </span>
           </div>
           <div className="datasetInfo">
