@@ -30,14 +30,12 @@ export default class LandingPage extends React.Component {
           isLoaded: true,
           items: result.data,
         });
-        console.log(result.data)
       },
         (error) => {
           this.setState({
             isLoaded: true,
             error
           });
-          console.log('here');
         }
       )
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
@@ -125,18 +123,23 @@ export default class LandingPage extends React.Component {
         <div className="newArticles">
           <h3>Articles Featuring Open Data</h3>
           <div className="mini">
-            {this.state.articles.map(article =>
-              <a href={article.link} target="_blank">
+            {this.state.articles.map(function (article) {
+              var names = []
+              for (var i = 0; i < article._embedded.author.length; i++) {
+                names += html_entity_decode(article._embedded.author[i].name);
+              }
+
+              return (<a href={article.link} target="_blank">
                 <div className="title">
                   {html_entity_decode(article.title.rendered)}
                 </div>
                 <div className="lightTitle">
-                  {html_entity_decode(article._embedded.author[0].name)} • {Moment(Date.parse(article.date)).format("LL")}
+                  {names} • {Moment(Date.parse(article.date)).format("LL")}
                 </div>
                 <div></div>
                 <img className="articleImg" src={article._embedded['wp:featuredmedia'][0].source_url} alt=""/>
-              </a>
-            )
+              </a>)
+            })
             }
           </div>
           <a href="https://www.stanforddaily.com/category/data-vizzes/" className="seeMore" target="_blank">See more</a>

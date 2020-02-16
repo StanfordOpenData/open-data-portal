@@ -29,7 +29,6 @@ class DatasetDetails extends React.Component {
           isLoaded: true,
           items: result.data,
         });
-        console.log('here');
       },
         (error) => {
           this.setState({
@@ -67,6 +66,7 @@ class DatasetDetails extends React.Component {
                     <p className = "datasetTitle"> {post.display_name} </p>
                     <div><img src={dollarIcon} alt="" /> <b> Categories:</b> {post.tags} </div>
                     <div><img src={locationIcon} alt="" /> <b> Upload Date:</b> {post.create_date} </div>
+                    <div><img src={buildingIcon} alt="" /> <b> Source:</b> {post.source} </div>
                     <br></br>
                     <div> {post.description} </div>
                     <br></br>
