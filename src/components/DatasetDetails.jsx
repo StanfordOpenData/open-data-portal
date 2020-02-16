@@ -96,6 +96,7 @@ class DatasetDetails extends React.Component {
                       <p className = "datasetTitle"> {post.display_name} </p>
                       <div><img src={dollarIcon} alt="" /> <b> Categories:</b> {post.tags} </div>
                       <div><img src={locationIcon} alt="" /> <b> Upload Date:</b> {post.create_date} </div>
+                      <div><img src={buildingIcon} alt="" /> <b> Source:</b> {post.source} </div>
                       <br></br>
                       <div> {post.description} </div>
                       <br></br>
@@ -123,35 +124,40 @@ class DatasetDetails extends React.Component {
         </div>
         <div className="detailsColumn2">
         <br></br>
-        <p className = "datasetTitle" style={{float:"right"}}>Stories Using this Data</p>
+        
+          <p className="datasetTitle" style={{float:"right"}}>Stories Using this Data</p>
             {this.state.items && this.state.items.map((post) =>
-              post.name === this.props.match.params.name &&
-                <div>
-                {
-                  post.stories.split(',').map(story => 
-                    <div className="mini" style = {{width: 100 + '%'}}>
-                      <ul>
-                        {this.state.articles.map(article =>
-                          story === article.slug &&
 
-                          <li className="mini" >
-                            <a href={article.link} target="_blank" id="detailsPageLink">
-                              <div className="title">
-                                {html_entity_decode(article.title.rendered)}
-                              </div>
-                              <div className="lightTitle">
-                                {html_entity_decode(article._embedded.author[0].name)} • {Moment(Date.parse(article.date)).format("LL")}
-                              </div>
-                              <div></div>
-                              <img className="articleImg" src={article._embedded['wp:featuredmedia'][0].source_url} alt=""/>
-                            </a>
-                          </li>
-                        )}
-                      </ul>
-                    </div>
-                  )}
-                </div>
+              <div>
+                  
 
+                  {post.name === this.props.match.params.name &&
+                 
+                      post.stories.split(',').map(story => 
+                        <div className="mini" style = {{width: 100 + '%'}}>
+                          <ul>
+                            {this.state.articles.map(article =>
+                              story === article.slug &&
+
+                              <li className="mini" >
+                                <a href={article.link} target="_blank" id="detailsPageLink">
+                                  <div className="title">
+                                    {html_entity_decode(article.title.rendered)}
+                                  </div>
+                                  <div className="lightTitle">
+                                    {html_entity_decode(article._embedded.author[0].name)} • {Moment(Date.parse(article.date)).format("LL")}
+                                  </div>
+                                  <div></div>
+                                  <img className="articleImg" src={article._embedded['wp:featuredmedia'][0].source_url} alt=""/>
+                                </a>
+                              </li>
+                            )}
+                          </ul>
+                        </div>
+                      )
+                    
+                  }
+              </div>
             )}
         </div>
       </div>
