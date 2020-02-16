@@ -121,6 +121,9 @@ nav ul li a:hover {
     -webkit-transition: all .2s ease;
 }
 
+
+
+
 /* -----landing page----*/
 .articleImg {
     width: 100%;
@@ -448,6 +451,22 @@ th, td {
   }
 
 tr:nth-child(even) {background-color: #f2f2f2;}
+
+.fixed_header tbody{
+    display:block;
+    overflow:auto;
+    height:200px;
+    width:100%;
+  }
+  .fixed_header thead tr{
+    display:block;
+  }
+
+  .table_scroll {
+    height:500px;
+    width:70%;
+    overflow:auto;
+  }
 
 
 /* -----footer-----*/
