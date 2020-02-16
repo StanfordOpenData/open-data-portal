@@ -31,7 +31,6 @@ class DatasetDetails extends React.Component {
           isLoaded: true,
           items: result.data,
         });
-        console.log(result.data);
       },
         (error) => {
           this.setState({
@@ -108,10 +107,13 @@ class DatasetDetails extends React.Component {
                       </div>
 
                     </div>
-                  </div>
+                  </div>                                         
+                                                        
                   <div>
                     <p className = "datasetTitle">Table Preview</p>
-                    <CsvToHtmlTable data={this.state.csv} csvDelimiter="," tableClassName="table table-striped table-hover"/>
+                    <div className = "table_scroll">
+                      <CsvToHtmlTable data={this.state.csv} csvDelimiter="," tableClassName="table table-striped table-hover"/>
+                    </div> 
                   </div>
                 </div>
               )}
