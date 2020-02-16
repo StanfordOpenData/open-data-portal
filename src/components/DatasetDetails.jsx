@@ -67,6 +67,23 @@ class DatasetDetails extends React.Component {
               </div>
             )}
         </div>
+        <div>
+          {/* <div className="mini">
+            {this.state.articles.map(article =>
+              <a href={article.link} target="_blank">
+                <div className="title">
+                  {html_entity_decode(article.title.rendered)}
+                </div>
+                <div className="lightTitle">
+                  {html_entity_decode(article._embedded.author[0].name)} • {Moment(Date.parse(article.date)).format("LL")}
+                </div>
+                <div></div>
+                <img className="articleImg" src={article._embedded['wp:featuredmedia'][0].source_url} alt=""/>
+              </a>
+            )
+            }
+          </div> */}
+        </div>
         <div className="clear"></div>
       </div>
     )
