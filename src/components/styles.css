@@ -487,7 +487,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
   .table_scroll {
     height:500px;
-    width:70%;
+    width:100%;
     overflow:auto;
   }
 
@@ -496,6 +496,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 .footer {
     margin-top: 60px;
     margin-bottom: 32px;
+    padding: 0 12%;
     color: var(--main-gray);
 }
 

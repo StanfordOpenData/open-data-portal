@@ -30,8 +30,9 @@ class App extends Component {
             </Switch>
           </div>
         </HashRouter>
-        <Footer />
+        
       </div>
+      <Footer />
       </div>
     );
   }
