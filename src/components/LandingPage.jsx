@@ -17,7 +17,8 @@ export default class LandingPage extends React.Component {
       error: null,
       isLoaded: false,
       items: [],
-      articles: []
+      articles: [],
+      randomfact: "Stanford University was established in 1891."
     };
   }
 
@@ -59,6 +60,23 @@ export default class LandingPage extends React.Component {
       )
   }
 
+  getRandomFact = () => { // updates random fact displayed
+    var randomfacts = ["Stanford has won 270 overall Olympic medals (139 gold, 73 silver, 58 bronze), as of the 2016 Rio Olympics.", 
+                      "Stanford has 165 overall Olympic medalists, as of the 2016 Rio Olympics",
+                      "Stanford won 27 medals at the 2016 Rio de Janeiro Olympic Games, a school record!", 
+                      "The Cardinal has produced at least one medalist in every Olympics the U.S. has competed in since 1912.",
+                      "There are over 800 (registered) parties yearly on Stanford campus.",
+                      "Over 10,000 students were driven home by 5-SURE in the 2017-2018 school year.",
+                      "Stanford offers over 15,000 courses annually, as of 2020."]
+    var randfact = this.state.randomfact;
+    if (randomfacts.length > 1) {
+      while (randfact == this.state.randomfact) {
+        randfact = randomfacts[Math.floor(Math.random()*randomfacts.length)]
+      }
+    }
+    this.setState({randomfact: randfact}) 
+  }
+
   render() {
     function html_entity_decode(message) {
       {/* decodes UTF8 punctuation into HTML */ }
@@ -66,6 +84,7 @@ export default class LandingPage extends React.Component {
       element.innerHTML = message;
       return element.innerHTML;
     }
+
     return (
       <div className="home">
         <header>
@@ -74,6 +93,12 @@ export default class LandingPage extends React.Component {
           <Link to="/datasets" className="btnPrimary">Explore data</Link>
           {/*<a href="#" className="btnTertiary">Get alerts</a>  */}
 
+          <div id="randomfactdiv">
+            <button onClick={this.getRandomFact} type = "button" className="btnPrimary" id="randomfactcontainer">  
+              <p id="randomfact">{this.state.randomfact}</p>
+              <p id="newfact">Click for Another Fun Data Fact!</p> 
+            </button>
+          </div>
         </header>
         <div className="newDatasets">
           <h3>Featured Datasets</h3>
