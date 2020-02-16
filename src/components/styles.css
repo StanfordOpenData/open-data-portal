@@ -42,7 +42,7 @@ a {
 
 
 /* -----buttons------*/
-a.btnPrimary, button[type=submit] {
+a.btnPrimary, button.btnPrimary, button[type=submit] {
     color: white;
     text-decoration: none;
     font-size: 16px;
@@ -52,13 +52,13 @@ a.btnPrimary, button[type=submit] {
     border: none;
     border-radius: 5px;
 }
-a.btnPrimary {
+a.btnPrimary, button.btnPrimary {
     padding: 12px 28px;
 }
 button[type=submit] {
     margin-top: 16px;
 }
-a.btnPrimary:hover, button[type=submit]:hover {
+a.btnPrimary:hover, button.btnPrimary:hover, button[type=submit]:hover {
     background-color: #FF7B7F;
     transition: all .3s ease;
     -webkit-transition: all .3s ease;
@@ -147,7 +147,7 @@ header .btnTertiary {
     width: 50%;
     position: absolute;
     right: 32px;
-    top: 112px;
+    top: 212px;
 }
 .newDatasets {
     margin-top: 160px;
@@ -199,7 +199,21 @@ header .btnTertiary {
 .secondHeader .right {
     margin: 100px 0 auto 64px;
 }
-
+#randomfactcontainer {
+    margin-top: 3em;
+    background-color: #eefbf8;
+    width: 100%;
+    border-radius: 10px;
+}
+#randomfactdiv {
+    width: 50%;
+}
+#randomfact {
+    color: var(--main-black);
+}
+#newfact {
+    color: var(--main-gray);
+}
 
 /* -----datasets list----*/
 #searchInput {
@@ -461,6 +475,11 @@ legend { /* remove indent of react json form */
     }
     .hero {
         display: none;
+    }
+    #randomfactdiv {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
     }
     .sideBar {
         display: inline-block;
