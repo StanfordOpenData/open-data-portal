@@ -113,17 +113,7 @@ class Datasets extends React.Component {
 
   render() {
     const { selectedOption } = this.state;
-    const uniqueLocations = [...new Set(this.state.items.map(item => item.location))].sort(); // creates array of unique locations
-    var locationOptions = [];
-    for (var i = 0; i < uniqueLocations.length; i++) {  // adds array to object for select options
-      locationOptions.push({ "value": uniqueLocations[i], "label": uniqueLocations[i] });
-    }
 
-    const uniqueIndustries = [...new Set(this.state.items.map(item => item.industry))].sort(); // creates array of unique locations
-    var industryOptions = [];
-    for (var i = 0; i < uniqueIndustries.length; i++) {  // adds array to object for select options
-      industryOptions.push({ "value": uniqueIndustries[i], "label": uniqueIndustries[i] });
-    }
     return (
       <div>
         <div className = "sideBar desktop">
