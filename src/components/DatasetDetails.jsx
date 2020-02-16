@@ -8,6 +8,8 @@ import dollarIcon from './dollarIcon.png';
 import briefcaseIcon from './briefcaseIcon.png';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { CsvToHtmlTable } from 'react-csv-to-table';
+
 
 class DatasetDetails extends React.Component {
   constructor(props) {
@@ -16,6 +18,7 @@ class DatasetDetails extends React.Component {
       error: null,
       isLoaded: false,
       items: [],
+      csv: '',
     };
   }
 
@@ -34,7 +37,19 @@ class DatasetDetails extends React.Component {
             error
           });
         }
-      ) 
+      )
+    axios.get("https://s3.us-east-2.amazonaws.com/open-data-portal/" + this.props.match.params.name + ".csv") 
+        .then(result => {
+          this.setState({
+            csv: result.data,
+          });
+        },
+          (error) => {
+            this.setState({
+              error
+          });
+        }
+      )
   }
 
   render() {
@@ -63,6 +78,10 @@ class DatasetDetails extends React.Component {
                     </div>
 
                   </div>
+                </div>
+                <div>
+                  <p className = "datasetTitle">Table Preview</p>
+                  <CsvToHtmlTable data={this.state.csv} csvDelimiter="," tableClassName="table table-striped table-hover"/>
                 </div>
               </div>
             )}
