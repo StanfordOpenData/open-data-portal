@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { CsvToHtmlTable } from 'react-csv-to-table';
 import Moment from 'moment';
+import { find } from 'lodash';
 
 
 class DatasetDetails extends React.Component {
@@ -51,7 +52,6 @@ class DatasetDetails extends React.Component {
           });
         }
       )
-
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
     targetUrl = 'https://wp.stanforddaily.com/wp-json/wp/v2/posts?_embed&categories=58277' 
       // embed adds featured image
@@ -74,11 +74,21 @@ class DatasetDetails extends React.Component {
   }
 
   render() {
-    function html_entity_decode(message) {
+    function decodeURIComponent(message) {
       {/* decodes UTF8 punctuation into HTML */ }
       var element = document.createElement("div");
       element.innerHTML = message;
       return element.innerHTML;
+    }
+
+    let curArticles = [];
+    if (this.state.items.length !== 0 && this.state.articles.length !== 0) {
+      //console.log('this.state.items' + this.state.items);
+      let dataset = find(this.state.items, {"name": this.props.match.params.name});
+      //console.log('dataset', dataset);
+      //console.log('articles', this.state.articles);
+      curArticles = dataset.stories.split(',').map((story) => find(this.state.articles, {"slug": story})).filter(e => e)
+      console.log('curArticles', curArticles);
     }
 
     if (this.state.items.length === 0) {
@@ -124,41 +134,29 @@ class DatasetDetails extends React.Component {
         </div>
         <div className="detailsColumn2">
         <br></br>
-        
+        {curArticles.length > 0 && 
+        <>
           <p className="datasetTitle" style={{float:"right"}}>Stories Using this Data</p>
-            {this.state.items && this.state.items.map((post) =>
-
-              <div>
-                  
-
-                  {post.name === this.props.match.params.name &&
-                 
-                      post.stories.split(',').map(story => 
-                        <div className="mini" style = {{width: 100 + '%'}}>
-                          <ul>
-                            {this.state.articles.map(article =>
-                              story === article.slug &&
-
-                              <li className="mini" >
-                                <a href={article.link} target="_blank" id="detailsPageLink">
-                                  <div className="title">
-                                    {html_entity_decode(article.title.rendered)}
-                                  </div>
-                                  <div className="lightTitle">
-                                    {html_entity_decode(article._embedded.author[0].name)} • {Moment(Date.parse(article.date)).format("LL")}
-                                  </div>
-                                  <div></div>
-                                  <img className="articleImg" src={article._embedded['wp:featuredmedia'][0].source_url} alt=""/>
-                                </a>
-                              </li>
-                            )}
-                          </ul>
-                        </div>
-                      )
-                    
-                  }
+              <div className="mini" style = {{width: 100 + '%'}}>
+                {curArticles && curArticles.map(article => (
+                  <ul>
+                    <li className="mini" >
+                      <a href={article.link} target="_blank" id="detailsPageLink">
+                          <div className="title">
+                              {decodeURIComponent(article.title.rendered)}
+                          </div>
+                          <div className="lightTitle">
+                            {decodeURIComponent(article._embedded.author[0].name)} • {Moment(Date.parse(article.date)).format("LL")}
+                          </div>
+                            <img className="articleImg" src={article._embedded['wp:featuredmedia'][0].source_url} alt=""/>
+                      </a>
+                    </li>
+                      </ul>
+                  ))
+              }
               </div>
-            )}
+              </>
+            }
         </div>
       </div>
     )

@@ -71,7 +71,7 @@ class Datasets extends React.Component {
           items: result.data,
           filteredItems: result.data,
         });
-        console.log(result.data)
+        //console.log(result.data)
       },
         (error) => {
           this.setState({
