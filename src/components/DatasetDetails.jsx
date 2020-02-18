@@ -74,13 +74,6 @@ class DatasetDetails extends React.Component {
   }
 
   render() {
-    function decodeURIComponent(message) {
-      {/* decodes UTF8 punctuation into HTML */ }
-      var element = document.createElement("div");
-      element.innerHTML = message;
-      return element.innerHTML;
-    }
-
     let curArticles = [];
     if (this.state.items.length !== 0 && this.state.articles.length !== 0) {
       //console.log('this.state.items' + this.state.items);
