@@ -86,7 +86,7 @@ class DatasetDetails extends React.Component {
               </div>
             )}
         </div>
-        <div cla ssName="clear"></div>
+        <div className="clear"></div>
       </div>
     )
   }
