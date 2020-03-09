@@ -17,7 +17,7 @@ Our home page gives an overview of the website, highlighting some datasets and d
 ### About Us
 This page provides some background on the team working on this website.
 
-### [Datasets](http://opendata.stanforddaily.com/#/datasets)
+### Datasets
 This page contains a comprehensive list of all the datasets on our site. Users can also search directly for a dataset or narrow down their choices by category. 
 
 ### Dataset Details
