@@ -3,6 +3,18 @@ The open data portal is a serverless data store for Stanford datasets. We store 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Data Collection
+
+## Dataset Submission 
+
+## Open Data Pipeline
+
+## Frontend Structure
+
+## Feature Spotlights
+
+## Contact Us!
+
 ## Available Scripts
 
 In the project directory, you can run:
