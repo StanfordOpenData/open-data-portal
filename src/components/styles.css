@@ -217,7 +217,7 @@ header .btnTertiary {
 
 /* -----datasets list----*/
 #searchInput {
-    background-image: url('searchIcon.png'); /* Add a search icon to input */
+    background-image: url('static/searchIcon.png'); /* Add a search icon to input */
     background-size: 16px;
     background-position: 8px 10px; /* Position the search icon */
     background-repeat: no-repeat; /* Do not repeat the icon image */

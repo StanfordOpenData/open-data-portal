@@ -2,10 +2,10 @@ import React from 'react';
 import Linkify from 'react-linkify';
 import ReactHtmlParser from 'react-html-parser';
 import './styles.css';
-import locationIcon from './locationIcon.png';
-import buildingIcon from './buildingIcon.png';
-import dollarIcon from './dollarIcon.png';
-import briefcaseIcon from './briefcaseIcon.png';
+import locationIcon from './static/locationIcon.png';
+import buildingIcon from './static/buildingIcon.png';
+import dollarIcon from './static/dollarIcon.png';
+//import briefcaseIcon from './static/briefcaseIcon.png';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { CsvToHtmlTable } from 'react-csv-to-table';
@@ -86,7 +86,7 @@ class DatasetDetails extends React.Component {
               </div>
             )}
         </div>
-        <div className="clear"></div>
+        <div cla ssName="clear"></div>
       </div>
     )
   }

@@ -1,8 +1,8 @@
 import React from 'react';
 import './styles.css';
 import { Link } from "react-router-dom";
-import heroImage from './heroImage.svg';
-import Stanford from './StanfordOval@2x.png'
+import heroImage from './static/heroImage.svg';
+import Stanford from './static/StanfordOval@2x.png'
 import axios from 'axios';
 import Moment from 'moment';
 
