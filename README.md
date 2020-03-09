@@ -11,10 +11,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Frontend Structure
 We have the following types of pages/components on our website.
-### [Landing Page](http://opendata.stanforddaily.com/#/)
+### Landing Page
 Our home page gives an overview of the website, highlighting some datasets and data-viz stories.
 
-### [About Us] (http://opendata.stanforddaily.com/#/aboutus)
+### About Us
 This page provides some background on the team working on this website.
 
 ### [Datasets](http://opendata.stanforddaily.com/#/datasets)
@@ -23,7 +23,7 @@ This page contains a comprehensive list of all the datasets on our site. Users c
 ### Dataset Details
 There is a dataset details page for each dataset. These pages contain more detailed information about the dataset, and provide links to download the dataset from the original source and from our cleaned CSV version. We have also added dataset preview and links to stories that use the dataset.
 
-### [Contribute](http://opendata.stanforddaily.com/#/contribute)
+### Contribute
 We have a form that allows users of our site to leave us messages. The form responses are then automatically sent to our email address by using the [emailjs](https://www.emailjs.com/) service. 
 
 Additionally, we embedded a [Box](https://www.box.com/home) folder onto this page. This allows users to submit dataset file directly to us, while ensuring that they cannot access (and possibly delete) other files within our folder. 
