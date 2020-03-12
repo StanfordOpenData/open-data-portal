@@ -1,5 +1,5 @@
 ## Overview
-The open data portal is a serverless data store for Stanford datasets. We store our data in AWS and have a React frontend. Feel free to fork for your own campus open data portal!
+The Stanford Open Data Portal is a serverless data store for Stanford datasets. We store our data in AWS and have a React frontend. Feel free to fork for your own campus open data portal!
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -24,7 +24,7 @@ This page contains a comprehensive list of all the datasets on our site. Users c
 There is a dataset details page for each dataset. These pages contain more detailed information about the dataset, and provide links to download the dataset from the original source and from our cleaned CSV version. We have also added dataset preview and links to stories that use the dataset.
 
 ### Contribute
-We have a form that allows users of our site to leave us messages. The form responses are then automatically sent to our email address by using the [emailjs](https://www.emailjs.com/) service. 
+We have a form that allows users of our site to leave us messages. The form responses are then automatically sent to our email address by using the [EmailJS](https://www.emailjs.com/) service. 
 
 Additionally, we embedded a [Box](https://www.box.com/home) folder onto this page. This allows users to submit dataset file directly to us, while ensuring that they cannot access (and possibly delete) other files within our folder. 
 
@@ -34,6 +34,17 @@ Note: We intially tried to allow submission of files through our form, but there
 All of these pages share the same CSS template (styles.css) and all of the photos used on our site are under the static folder.
 
 ## Feature Spotlights
+### Searching Datasets
+On the datasets page, we have a search bar that enables users to search for datasets by category, keyword, date, location, etc. This was implemented using the [Fuse.js](https://fusejs.io/) service. 
+
+### Articles Featuring Open Data
+On our home page, we have a section highlighting articles written in The Stanford Daily that use or feature datasets in our portal. To do this, we pull the article data by using the [WordPress REST API](https://developer.wordpress.org/rest-api/) to interact with The Stanford Daily's WordPress site as JSON.
+
+### Stories Using this Data
+In the dataset details page for a particular dataset, we use the same method described above to highlight Stanford Daily articles that use or feature the dataset.
+
+### Fun Data Facts
+On our home page, we have a subsection to feature fun facts about Stanford data. Clicking on the subsection will display a new random data fact.
 
 ## Contact Us!
 If you're interesting in creating your own open data project, feel free to contact us via email, stanfordopendataproject@gmail.com.
