@@ -4,10 +4,22 @@ The Stanford Open Data Portal is a serverless data store for Stanford datasets. 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Data Collection
+We obtain or data from a number of locations including
+- scraping/downloading existing online university datasets
+- contacing university departments and other institutions (e.g. police) for unreleased data
+- crowdsourcing data collection through our submit form
+- crowdsourcing data collection from Stanford Daily journalists and other campus news organiztaions
 
-## Dataset Submission 
+## Dataset Submission
+- Data can be submitted through a simple [Google Form](https://forms.gle/MY4ScX4MbTFaXLCRA).
 
 ## Open Data Pipeline
+Organizing metadata and retrieving datasets from a data store can be a complicated process. We use the following workflow:
+- Store all dataset metadata in a google sheet. Metadata include a unique article identifier, article name, data created, date collected, source, source url, description, tags, slugs of stories that used the dataset.
+- Write a python script to do the following: Call the google sheets API to pull the sheet. Convert the sheet into a .json file. Upload the metadata.json file to an AWS container using the AWS API.
+- Pull the metadata from the website codebase in React using the AWS API. Populate the datasets page in the website with metadata as needed.
+
+We also store our datasets in AWS. These datasets are made publicly callable and are accessed through the React frontend by storing a fragment of the url in the metadata.
 
 ## Frontend Structure
 We have the following types of pages/components on our website.
