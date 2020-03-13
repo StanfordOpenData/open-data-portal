@@ -65,6 +65,13 @@ If you're interesting in creating your own open data project, feel free to conta
 
 In the project directory, you can run:
 
+### Future Plans
+Our goals include the following:
+- adding and maintaining more datasets
+- creating and adding custom datasets including polling data on the Stanford student body
+- feeding a steady pipeline of interesting stories using open data. Check out some of them on the Daily's data team [https://stanforddaily.com/category/@94305/](page!)
+- Spreading open data to other campuses by supporting other student organizations in their creation of campus open data portals.
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
