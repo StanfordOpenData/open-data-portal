@@ -58,19 +58,19 @@ In the dataset details page for a particular dataset, we use the same method des
 ### Fun Data Facts
 On our home page, we have a subsection to feature fun facts about Stanford data. Clicking on the subsection will display a new random data fact.
 
+## Future Plans
+Our goals include the following:
+- adding and maintaining more datasets
+- creating and adding custom datasets including polling data on the Stanford student body
+- feeding a steady pipeline of interesting stories using open data. Check out some of them on the Daily's data team [https://stanforddaily.com/category/@94305/](page!)
+- Spreading open data to other campuses by supporting other student organizations in their creation of campus open data portals.
+
 ## Contact Us!
 If you're interesting in creating your own open data project, feel free to contact us via email, stanfordopendataproject@gmail.com.
 
 ## Available Scripts
 
 In the project directory, you can run:
-
-### Future Plans
-Our goals include the following:
-- adding and maintaining more datasets
-- creating and adding custom datasets including polling data on the Stanford student body
-- feeding a steady pipeline of interesting stories using open data. Check out some of them on the Daily's data team [https://stanforddaily.com/category/@94305/](page!)
-- Spreading open data to other campuses by supporting other student organizations in their creation of campus open data portals.
 
 ### `npm start`
 
