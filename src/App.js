@@ -18,19 +18,22 @@ class App extends Component {
     return (
       <div className="application">
         <Helmet>
+          <meta charSet="utf-8" />
           <title>Stanford Open Data Portal</title>
+          <link rel="canonical" href="http://opendata.stanforddaily.com" />
           <meta name="description" content="Check out our datasets and contribute your own!"/>
-          {/* meta tags for facebook  */}
+
           <meta property="og:title" content="Stanford Open Data Portal"/>
           <meta property="og:description" content="Check out our datasets and contribute your own!"/>
           <meta property="og:image" content="logo.jpg"/>
           <meta property="og:url" content="http://opendata.stanforddaily.com"/>
-          {/* <!-- meta tags for twitter --> */}
+
           <meta name="twitter:title" content="Stanford Open Data Portal"/>
           <meta name="twitter:description" content="Check out our datasets and contribute your own!"/>
           <meta name="twitter:image" content="logo.jpg"/>
           <meta name="twitter:card" content="summary"/>
         </Helmet>
+
         <div className="flexWrapper">
         <div className="wrapper">
           <HashRouter>
