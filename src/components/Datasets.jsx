@@ -2,9 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import './styles.css';
 import Fuse from "fuse.js";
-import locationIcon from './locationIcon.png';
-import buildingIcon from './buildingIcon.png';
-import dollarIcon from './dollarIcon.png';
+import locationIcon from './static/locationIcon.png';
+import buildingIcon from './static/buildingIcon.png';
+import dollarIcon from './static/dollarIcon.png';
 import Select from 'react-select';
 import { Link } from "react-router-dom";
 
