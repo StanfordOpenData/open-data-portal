@@ -25,7 +25,7 @@ class App extends Component {
 
             <meta property="og:title" content="Stanford Open Data Portal"/>
             <meta property="og:description" content="Check out our datasets and contribute your own!"/>
-            <meta property="og:image" content="logo.jpg"/>
+            <meta property="og:image" content="https://github.com/TheStanfordDaily/open-data-portal/blob/master/src/components/static/logo.jpg"/>
             <meta property="og:url" content="http://opendata.stanforddaily.com"/>
 
             <meta name="twitter:title" content="Stanford Open Data Portal"/>
@@ -33,7 +33,7 @@ class App extends Component {
             <meta name="twitter:image" content="logo.jpg"/>
             <meta name="twitter:card" content="summary"/>
         </Helmet>
-        
+
         <div className="wrapper">
           <HashRouter>
             <div>
