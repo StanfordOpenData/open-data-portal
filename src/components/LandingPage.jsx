@@ -5,7 +5,6 @@ import heroImage from './static/heroImage.svg';
 import Stanford from './static/StanfordOval@2x.png'
 import axios from 'axios';
 import Moment from 'moment';
-import { Helmet } from 'react-helmet';
 
 export default class LandingPage extends React.Component {
   state = {
@@ -86,22 +85,6 @@ export default class LandingPage extends React.Component {
 
     return (
       <div className="home">
-          <Helmet>
-            <meta charSet="utf-8" />
-            <title>Stanford Open Data Portal</title>
-            <link rel="canonical" href="http://opendata.stanforddaily.com" />
-            <meta name="description" content="Check out our datasets and contribute your own!"/>
-
-            <meta property="og:title" content="Stanford Open Data Portal"/>
-            <meta property="og:description" content="Check out our datasets and contribute your own!"/>
-            <meta property="og:image" content="https://github.com/TheStanfordDaily/open-data-portal/blob/master/src/components/static/logo.jpg"/>
-            <meta property="og:url" content="http://opendata.stanforddaily.com"/>
-
-            <meta name="twitter:title" content="Stanford Open Data Portal"/>
-            <meta name="twitter:description" content="Check out our datasets and contribute your own!"/>
-            <meta name="twitter:image" content="https://github.com/TheStanfordDaily/open-data-portal/blob/master/src/components/static/logo.jpg"/>
-            <meta name="twitter:card" content="summary"/>
-        </Helmet>
         <header>
           <img className="hero" src={heroImage} alt="" height="375px" />
           <h1>Welcome to the Stanford Open Data Portal</h1>

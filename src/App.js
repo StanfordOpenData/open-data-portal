@@ -11,7 +11,7 @@ import AboutUs from './components/AboutUs';
 import Footer from './components/Footer';
 //import Payment from './components/Payment';
 import NotFound from './components/NotFound';
-import {Helmet} from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 class App extends Component {
   render() {
@@ -30,7 +30,7 @@ class App extends Component {
 
             <meta name="twitter:title" content="Stanford Open Data Portal"/>
             <meta name="twitter:description" content="Check out our datasets and contribute your own!"/>
-            <meta name="twitter:image" content="logo.jpg"/>
+            <meta name="twitter:image" content="https://github.com/TheStanfordDaily/open-data-portal/blob/master/src/components/static/logo.jpg"/>
             <meta name="twitter:card" content="summary"/>
         </Helmet>
 
