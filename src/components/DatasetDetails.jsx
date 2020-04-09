@@ -12,7 +12,6 @@ import { CsvToHtmlTable } from 'react-csv-to-table';
 import Moment from 'moment';
 import { find } from 'lodash';
 
-
 class DatasetDetails extends React.Component {
   constructor(props) {
     super(props);
@@ -107,7 +106,11 @@ class DatasetDetails extends React.Component {
                       <div>
                         <a href={post.source_url} target="_blank" className="btnSecondary">View Source</a>
                         <a> </a>
-                        <a href={"https://s3.us-east-2.amazonaws.com/open-data-portal/" + this.props.match.params.name + ".csv"} className="btnSecondary">Download CSV</a>
+                        <a href={"https://s3.us-east-2.amazonaws.com/open-data-portal/" + this.props.match.params.name + ".csv"} className="btnSecondary"
+                            onclick={window.gtag('send', 'view '+this.props.match.params.name, {
+                              'event_category': 'view dataset'
+                            })}
+                        > Download CSV </a>
                       </div>
 
                     </div>
