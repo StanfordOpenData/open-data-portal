@@ -61,7 +61,7 @@ class DatasetDetails extends React.Component {
           isLoaded: true,
           articles: result,
         });
-        console.log(result);
+        // console.log(result);
       },
         (error) => {
           this.setState({
@@ -80,7 +80,7 @@ class DatasetDetails extends React.Component {
       //console.log('dataset', dataset);
       //console.log('articles', this.state.articles);
       curArticles = dataset.stories.split(',').map((story) => find(this.state.articles, {"slug": story})).filter(e => e)
-      console.log('curArticles', curArticles);
+      // console.log('curArticles', curArticles);
     }
 
     if (this.state.items.length === 0) {
@@ -107,7 +107,7 @@ class DatasetDetails extends React.Component {
                         <a href={post.source_url} target="_blank" className="btnSecondary">View Source</a>
                         <a> </a>
                         <a href={"https://s3.us-east-2.amazonaws.com/open-data-portal/" + this.props.match.params.name + ".csv"} className="btnSecondary"
-                            onclick={window.gtag('send', 'view '+this.props.match.params.name, {
+                            onClick={window.gtag('send', 'view '+this.props.match.params.name, {
                               'event_category': 'view dataset'
                             })}
                         > Download CSV </a>

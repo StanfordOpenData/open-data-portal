@@ -64,6 +64,13 @@ class Datasets extends React.Component {
   }
 
   componentDidMount() {
+    // for google analytics
+    window.gtag('config', 'G-NBL58Z6SF0', {
+      'page_location': 'datasets',
+      'page_path': '/datasets',
+    })
+    
+    // get data
     axios.get('https://open-data-portal.s3.us-east-2.amazonaws.com/metadata.json')
       .then(result => {
         this.setState({

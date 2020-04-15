@@ -39,7 +39,7 @@ class App extends Component {
             <div>
               <NavBar />
               <Switch>
-                <Route exact path='/' component={LandingPage} />
+                <Route exact path='/' component={LandingPage}/>
                 <Route exact path='/datasets' component={Datasets} />
                 <Route path='/datasets/:name' component={DatasetDetails} />
                 <Route exact path='/aboutus' component={AboutUs} />
