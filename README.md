@@ -16,7 +16,7 @@ We obtain or data from a number of locations including
 ## Open Data Pipeline
 Organizing metadata and retrieving datasets from a data store can be a complicated process. We use the following workflow:
 - Store all dataset metadata in a google sheet. Metadata include a unique article identifier, article name, data created, date collected, source, source url, description, tags, slugs of stories that used the dataset.
-- Write a python script to do the following: Call the google sheets API to pull the sheet. Convert the sheet into a .json file. Upload the metadata.json file to an AWS container using the AWS API.
+- Write a Python script to do the following: Call the Google Sheets API to pull the sheet. Convert the sheet into a .json file. Upload the metadata.json file to an AWS container using the AWS API.
 - Pull the metadata from the website codebase in React using the AWS API. Populate the datasets page in the website with metadata as needed.
 
 We also store our datasets in AWS. These datasets are made publicly callable and are accessed through the React frontend by storing a fragment of the url in the metadata.
