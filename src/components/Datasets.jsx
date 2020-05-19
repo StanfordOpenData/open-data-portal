@@ -37,6 +37,7 @@ class Datasets extends React.Component {
       n_datasets: 0,
     };
     this.handleChange = this.handleChange.bind(this)
+    this.handleSortBy = this.handleSortBy.bind(this)
   }
 
   handleChange(val) {
@@ -61,6 +62,10 @@ class Datasets extends React.Component {
     this.setState(
       { filteredItems: filteredItems,
       });
+  }
+
+  handleSortBy(val) {
+    console.log(this.state.items);
   }
 
   componentDidMount() {
@@ -150,6 +155,22 @@ class Datasets extends React.Component {
                 value={selectedOption} isMulti
                 placeholder={'All Data Types'}
                 onChange={this.handleChange}
+                options={industryOptions}
+                theme={theme => ({
+                  ...theme,
+                  colors: {
+                    ...theme.colors,
+                    primary25: '#9FE5D8',
+                    primary: '#11BF9F',
+                  },
+                })}
+              />
+            </span>
+            <span className="inline marginRight">
+              <Select
+                value={selectedOption}
+                placeholder={'All Data Types'}
+                onChange={this.handleSortBy}
                 options={industryOptions}
                 theme={theme => ({
                   ...theme,
