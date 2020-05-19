@@ -21,6 +21,14 @@ const industryOptions = [
   { value: 'numerical', label: 'Numerical' },
 ];
 
+const sortOptions = [
+  {value: 'alphabetical', label: 'A-Z'},
+  {value: 'reverse', label: 'Z-A'}
+  //{value: 'new', label: 'New'},
+  //{value: 'old', label: 'Old'},
+  // Size?
+]
+
 class Datasets extends React.Component {
   state = {
     selectedOption: null,
@@ -65,7 +73,16 @@ class Datasets extends React.Component {
   }
 
   handleSortBy(val) {
-    console.log(this.state.items);
+    let sortby = val.value;
+    let items = this.state.items;
+    if (sortby === 'alphabetical') {
+      items.sort((p, q) => (p.display_name > q.display_name) ? 1 : (q.display_name > p.display_name) ? -1 : 0);
+    }
+    else if (sortby === 'reverse') {
+      items.sort((p, q) => (p.display_name > q.display_name) ? -1 : (q.display_name > p.display_name) ? 1 : 0);
+    }
+    console.log(val);
+    this.setState(items)
   }
 
   componentDidMount() {
@@ -132,56 +149,65 @@ class Datasets extends React.Component {
         <div id="datasetsAnchor" className="mainContent">
           <div className="datasetFilters">
             <input type="search" id="searchInput" onChange={e => this.searchKey(e)} placeholder="Search by dataset category, description, etc." name="search" />
-            <label className="inline marginRight">Categories</label>
-            <label className="inline marginRight">Data Types</label>
-            <span className="inline marginRight"><Select
-              value={selectedOption} isMulti
-              placeholder={'All categories'}
-              onChange={this.handleChange}
-              options={typeOptions}
-              theme={theme => ({
-                ...theme,
-                colors: {
-                  ...theme.colors,
-                  primary25: '#9FE5D8',
-                  primary: '#11BF9F',
-                },
-              })}
-            />
-            </span>
-            
-            <span className="inline marginRight">
-              <Select
-                value={selectedOption} isMulti
-                placeholder={'All Data Types'}
-                onChange={this.handleChange}
-                options={industryOptions}
-                theme={theme => ({
-                  ...theme,
-                  colors: {
-                    ...theme.colors,
-                    primary25: '#9FE5D8',
-                    primary: '#11BF9F',
-                  },
-                })}
-              />
-            </span>
-            <span className="inline marginRight">
-              <Select
-                value={selectedOption}
-                placeholder={'All Data Types'}
-                onChange={this.handleSortBy}
-                options={industryOptions}
-                theme={theme => ({
-                  ...theme,
-                  colors: {
-                    ...theme.colors,
-                    primary25: '#9FE5D8',
-                    primary: '#11BF9F',
-                  },
-                })}
-              />
-            </span>
+            <div id="filterDropdowns">
+              <label className="filter">
+                <label className="marginRight">Categories</label>
+                <span className="marginRight">
+                  <Select
+                  value={selectedOption} isMulti
+                  placeholder={'All categories'}
+                  onChange={this.handleChange}
+                  options={typeOptions}
+                  theme={theme => ({
+                    ...theme,
+                    colors: {
+                      ...theme.colors,
+                      primary25: '#9FE5D8',
+                      primary: '#11BF9F',
+                    },
+                  })}
+                />
+                </span>
+              </label>
+              <label className="filter">
+                <label className="marginRight">Data Types</label>
+                <span className="marginRight">
+                  <Select
+                    value={selectedOption} isMulti
+                    placeholder={'All Data Types'}
+                    onChange={this.handleChange}
+                    options={industryOptions}
+                    theme={theme => ({
+                      ...theme,
+                      colors: {
+                        ...theme.colors,
+                        primary25: '#9FE5D8',
+                        primary: '#11BF9F',
+                      },
+                    })}
+                  />
+                </span>
+              </label>
+              <label className="filter">
+                <label className="marginRight">Sort By</label>
+                <span className="marginRight">
+                  <Select
+                    value={selectedOption}
+                    placeholder={'All Data Types'}
+                    onChange={this.handleSortBy}
+                    options={sortOptions}
+                    theme={theme => ({
+                      ...theme,
+                      colors: {
+                        ...theme.colors,
+                        primary25: '#9FE5D8',
+                        primary: '#11BF9F',
+                      },
+                    })}
+                  />
+                </span>
+              </label>
+            </div>
           </div>
           <div className="lightTitle">{this.state.filteredItems.length} datasets found</div>
           <ul id="datasetList" className="list">
