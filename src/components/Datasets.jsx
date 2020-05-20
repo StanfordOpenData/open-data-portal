@@ -74,15 +74,14 @@ class Datasets extends React.Component {
 
   handleSortBy(val) {
     let sortby = val.value;
-    let items = this.state.items;
+    let filteredItems = [...this.state.items];
     if (sortby === 'alphabetical') {
-      items.sort((p, q) => (p.display_name > q.display_name) ? 1 : (q.display_name > p.display_name) ? -1 : 0);
+      filteredItems.sort((p, q) => (p.display_name > q.display_name) ? 1 : (q.display_name > p.display_name) ? -1 : 0);
     }
     else if (sortby === 'reverse') {
-      items.sort((p, q) => (p.display_name > q.display_name) ? -1 : (q.display_name > p.display_name) ? 1 : 0);
+      filteredItems.sort((p, q) => (p.display_name > q.display_name) ? -1 : (q.display_name > p.display_name) ? 1 : 0);
     }
-    console.log(val);
-    this.setState(items)
+    this.setState({filteredItems: filteredItems});
   }
 
   componentDidMount() {
