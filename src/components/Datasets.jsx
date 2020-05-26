@@ -24,9 +24,6 @@ const industryOptions = [
 const sortOptions = [
   {value: 'alphabetical', label: 'A-Z'},
   {value: 'reverse', label: 'Z-A'}
-  //{value: 'new', label: 'New'},
-  //{value: 'old', label: 'Old'},
-  // Size?
 ]
 
 class Datasets extends React.Component {
@@ -74,14 +71,18 @@ class Datasets extends React.Component {
 
   handleSortBy(val) {
     let sortby = val.value;
-    let filteredItems = [...this.state.items];
+    let sortedItems = [...this.state.items];
+    let fsortedItems = [...this.state.filteredItems];
     if (sortby === 'alphabetical') {
-      filteredItems.sort((p, q) => (p.display_name > q.display_name) ? 1 : (q.display_name > p.display_name) ? -1 : 0);
+      sortedItems.sort((p, q) => (p.display_name > q.display_name) ? 1 : (q.display_name > p.display_name) ? -1 : 0);
+      fsortedItems.sort((p, q) => (p.display_name > q.display_name) ? 1 : (q.display_name > p.display_name) ? -1 : 0);
     }
     else if (sortby === 'reverse') {
-      filteredItems.sort((p, q) => (p.display_name > q.display_name) ? -1 : (q.display_name > p.display_name) ? 1 : 0);
+      sortedItems.sort((p, q) => (p.display_name > q.display_name) ? -1 : (q.display_name > p.display_name) ? 1 : 0);
+      fsortedItems.sort((p, q) => (p.display_name > q.display_name) ? -1 : (q.display_name > p.display_name) ? 1 : 0);
     }
-    this.setState({filteredItems: filteredItems});
+    this.setState({items: sortedItems});
+    this.setState({filteredItems: fsortedItems});
   }
 
   componentDidMount() {
@@ -149,7 +150,7 @@ class Datasets extends React.Component {
           <div className="datasetFilters">
             <input type="search" id="searchInput" onChange={e => this.searchKey(e)} placeholder="Search by dataset category, description, etc." name="search" />
             <div id="filterDropdowns">
-              <label className="filter">
+              <div className="filter">
                 <label className="marginRight">Categories</label>
                 <span className="marginRight">
                   <Select
@@ -167,8 +168,8 @@ class Datasets extends React.Component {
                   })}
                 />
                 </span>
-              </label>
-              <label className="filter">
+              </div>
+              <div className="filter">
                 <label className="marginRight">Data Types</label>
                 <span className="marginRight">
                   <Select
@@ -186,8 +187,8 @@ class Datasets extends React.Component {
                     })}
                   />
                 </span>
-              </label>
-              <label className="filter">
+              </div>
+              <div className="filter">
                 <label className="marginRight">Sort By</label>
                 <span className="marginRight">
                   <Select
@@ -205,7 +206,7 @@ class Datasets extends React.Component {
                     })}
                   />
                 </span>
-              </label>
+              </div>
             </div>
           </div>
           <div className="lightTitle">{this.state.filteredItems.length} datasets found</div>
