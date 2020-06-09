@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.css';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import heroImage from './static/heroImage.svg';
 import Stanford from './static/StanfordOval@2x.png'
 import axios from 'axios';
@@ -19,7 +19,6 @@ export default class LandingPage extends React.Component {
       items: [],
       articles: [],
       randomfact: "Stanford University was established in 1891.",
-      randomDataset: ""
     };
   }
 
@@ -76,6 +75,11 @@ export default class LandingPage extends React.Component {
     this.setState({randomfact: randfact}) 
   }
 
+  getRandomDataset = () => { // gets a random pathname & redirects to a random dataset
+    var randpath = '/#' + '/datasets/' + this.state.items[Math.floor(Math.random()*this.state.items.length)].name
+    window.location.href = (randpath);
+  }
+
   render() {
     function html_entity_decode(message) {
       {/* decodes UTF8 punctuation into HTML */ }
@@ -83,7 +87,7 @@ export default class LandingPage extends React.Component {
       element.innerHTML = message;
       return element.innerHTML;
     }
-    var randomNum = Math.floor(Math.random()*this.state.items.length);
+
     return (
       <div className="home">
         <header>
@@ -92,18 +96,9 @@ export default class LandingPage extends React.Component {
           
           <Link to="/datasets" className="btnPrimary">Explore data</Link>
           {/*<a href="#" className="btnTertiary">Get alerts</a>  */}
-          
-          {this.state.items.slice(randomNum, randomNum + 1).map(dataset =>
-              <Link to={{
-                pathname: '/datasets/' + dataset.name, // change this to this.state.items index
-                state: {
-                  data: dataset,
-                }
-              }} class="btnPrimary" id='randomdataset'> Random Dataset
-              </Link>
-            )
-          }
-          
+
+          <button onClick={this.getRandomDataset} class="btnPrimary" id="randomdataset"> Random Dataset</button>
+
           <div id="randomfactdiv">
             <button onClick={this.getRandomFact} type = "button" className="btnPrimary" id="randomfactcontainer">  
               <p id="randomfact">{this.state.randomfact}</p>
