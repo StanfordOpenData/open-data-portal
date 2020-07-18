@@ -76,7 +76,7 @@ export default class LandingPage extends React.Component {
   }
 
   getRandomDataset = () => { // gets a random pathname & redirects to a random dataset
-    var randpath = '/#' + '/datasets/' + this.state.items[Math.floor(Math.random()*this.state.items.length)].name
+    var randpath = '/#/datasets/' + this.state.items[Math.floor(Math.random()*this.state.items.length)].name
     window.location.href = (randpath);
   }
 
