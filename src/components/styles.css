@@ -20,6 +20,9 @@ body {
     background-color: white;
     font-family: Source Sans Pro, sans-serif;
 }
+button {
+    font-family: Source Sans Pro, sans-serif;
+}
 .mainContent {
     float: left;
     width: 66%;
@@ -216,6 +219,9 @@ header .btnTertiary {
 }
 #randomfact {
     color: var(--main-black);
+}
+#randomdataset {
+    margin-left: 30px;
 }
 #newfact {
     color: var(--main-gray);

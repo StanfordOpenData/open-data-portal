@@ -18,7 +18,7 @@ export default class LandingPage extends React.Component {
       isLoaded: false,
       items: [],
       articles: [],
-      randomfact: "Stanford University was established in 1891."
+      randomfact: "Stanford University was established in 1891.",
     };
   }
 
@@ -75,6 +75,11 @@ export default class LandingPage extends React.Component {
     this.setState({randomfact: randfact}) 
   }
 
+  getRandomDataset = () => { // gets a random pathname & redirects to a random dataset
+    var randpath = '/#/datasets/' + this.state.items[Math.floor(Math.random()*this.state.items.length)].name
+    window.location.href = (randpath);
+  }
+
   render() {
     function html_entity_decode(message) {
       /* decodes UTF8 punctuation into HTML */
@@ -88,8 +93,11 @@ export default class LandingPage extends React.Component {
         <header>
           <img className="hero" src={heroImage} alt="" height="375px" />
           <h1>Welcome to the Stanford Open Data Portal</h1>
+          
           <Link to="/datasets" className="btnPrimary">Explore data</Link>
           {/*<a href="#" className="btnTertiary">Get alerts</a>  */}
+
+          <button onClick={this.getRandomDataset} class="btnPrimary" id="randomdataset"> Random Dataset</button>
 
           <div id="randomfactdiv">
             <button onClick={this.getRandomFact} type = "button" className="btnPrimary" id="randomfactcontainer">  
