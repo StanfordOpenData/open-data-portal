@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './index.css';
-import { Switch, HashRouter, Route } from "react-router-dom";import { Elements, StripeProvider } from 'react-stripe-elements';
+import { Switch, HashRouter, Route } from "react-router-dom";
 
 import NavBar from './components/NavBar';
 import LandingPage from './components/LandingPage';
@@ -56,5 +56,3 @@ class App extends Component {
 }
 
 export default App;
-
-// <Route exact path='/payment' component={Payment} />

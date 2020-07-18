@@ -13,7 +13,7 @@ function NavBar() {
             {/* <li><a href="/">Email alerts</a></li> */}
             <li><Link to="/aboutus">About Us</Link></li>
             <li><Link to="/contribute" className="btnSecondary">Contribute a dataset</Link></li>
-            <li><a href="https://stanforddaily.com/" target="_blank"> Stanford Daily</a></li>
+            <li><a href="https://stanforddaily.com/" target="_blank" rel="noopener noreferrer"> Stanford Daily</a></li>
           </ul>
         </nav>
     </div>
