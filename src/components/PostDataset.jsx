@@ -68,7 +68,7 @@ class PostDataset extends React.Component{
 			<div className = "container">
 				<h2> Contribute a Dataset! </h2>
 				<p> Feel free to upload any Stanford-related datasets you have to the folder below, or you can send us a link via the form below. </p>
-				<iframe src="https://stanford.app.box.com/upload-widget/view/9v0zhgp52kv2km032ec3v4ede1y7nxfx/102172673701" width="500" height="600" frameborder="0" allowfullscreen webkitallowfullscreen msallowfullscreen></iframe>
+				<iframe title="Upload dataset to Box folder" src="https://stanford.app.box.com/upload-widget/view/9v0zhgp52kv2km032ec3v4ede1y7nxfx/102172673701" width="500" height="600" frameborder="0" allowfullscreen webkitallowfullscreen msallowfullscreen></iframe>
 				<h2> Contact Us! </h2>
 				<p>In the form below, you can leave us a message or drop 
 					us a link to an interesting Stanford dataset you found (or would like to see)! </p>
