@@ -68,7 +68,7 @@ export default class LandingPage extends React.Component {
                       "Stanford offers over 15,000 courses annually, as of 2020."]
     var randfact = this.state.randomfact;
     if (randomfacts.length > 1) {
-      while (randfact == this.state.randomfact) {
+      while (randfact === this.state.randomfact) {
         randfact = randomfacts[Math.floor(Math.random()*randomfacts.length)]
       }
     }
@@ -77,7 +77,7 @@ export default class LandingPage extends React.Component {
 
   render() {
     function html_entity_decode(message) {
-      {/* decodes UTF8 punctuation into HTML */ }
+      /* decodes UTF8 punctuation into HTML */
       var element = document.createElement("div");
       element.innerHTML = message;
       return element.innerHTML;
@@ -129,20 +129,22 @@ export default class LandingPage extends React.Component {
                 names += html_entity_decode(article._embedded.author[i].name);
               }
 
-              return (<a href={article.link} target="_blank">
-                <div className="title">
-                  {html_entity_decode(article.title.rendered)}
-                </div>
-                <div className="lightTitle">
-                  {names} • {Moment(Date.parse(article.date)).format("LL")}
-                </div>
-                <div></div>
-                <img className="articleImg" src={article._embedded['wp:featuredmedia'][0].source_url} alt=""/>
-              </a>)
+              return (
+                <a href={article.link} target="_blank" rel="noopener noreferrer">
+                  <div className="title">
+                    {html_entity_decode(article.title.rendered)}
+                  </div>
+                  <div className="lightTitle">
+                    {names} • {Moment(Date.parse(article.date)).format("LL")}
+                  </div>
+                  <div></div>
+                  <img className="articleImg" src={article._embedded['wp:featuredmedia'][0].source_url} alt=""/>
+                </a>
+              )
             })
             }
           </div>
-          <a href="https://www.stanforddaily.com/category/data-vizzes/" className="seeMore" target="_blank">See more</a>
+          <a href="https://www.stanforddaily.com/category/data-vizzes/" className="seeMore" target="_blank" rel="noopener noreferrer">See more</a>
         </div>
 
         <div className="secondHeader">

@@ -1,12 +1,9 @@
 import React from 'react';
-import Linkify from 'react-linkify';
-import ReactHtmlParser from 'react-html-parser';
 import './styles.css';
 import locationIcon from './static/locationIcon.png';
 import buildingIcon from './static/buildingIcon.png';
 import dollarIcon from './static/dollarIcon.png';
 //import briefcaseIcon from './static/briefcaseIcon.png';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { CsvToHtmlTable } from 'react-csv-to-table';
 import Moment from 'moment';
@@ -105,8 +102,7 @@ class DatasetDetails extends React.Component {
                       <br></br>
                       <br></br>
                       <div>
-                        <a href={post.source_url} target="_blank" className="btnSecondary">View Source</a>
-                        <a> </a>
+                        <a href={post.source_url} target="_blank" rel="noopener noreferrer" className="btnSecondary">View Source</a>
                         <a href={"https://s3.us-east-2.amazonaws.com/open-data-portal/" + this.props.match.params.name + ".csv"} className="btnSecondary">Download CSV</a>
                       </div>
 
@@ -134,7 +130,7 @@ class DatasetDetails extends React.Component {
                 {curArticles && curArticles.map(article => (
                   <ul>
                     <li className="mini" >
-                      <a href={article.link} target="_blank" id="detailsPageLink">
+                      <a href={article.link} target="_blank" rel="noopener noreferrer" id="detailsPageLink">
                           <div className="title">
                               {decodeURIComponent(article.title.rendered)}
                           </div>
