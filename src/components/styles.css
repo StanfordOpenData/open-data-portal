@@ -20,6 +20,9 @@ body {
     background-color: white;
     font-family: Source Sans Pro, sans-serif;
 }
+button {
+    font-family: Source Sans Pro, sans-serif;
+}
 .mainContent {
     float: left;
     width: 66%;
@@ -81,8 +84,6 @@ a.btnPrimary:hover, button.btnPrimary:hover, button[type=submit]:hover {
     transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
-/* add id for random dataset using # change padding.
-
 
 /* -----header/nav----*/
 nav {
