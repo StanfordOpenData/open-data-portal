@@ -41,8 +41,9 @@ a {
     color: rgba(255, 90, 96, 0.795);
     text-decoration: none;
 }
-
-
+hr {
+    margin-top: 20px;
+}
 
 /* -----buttons------*/
 a.btnPrimary, button.btnPrimary, button[type=submit] {
@@ -419,6 +420,14 @@ header .btnTertiary {
     padding-left: 16px;
     margin: auto 0 auto 0;
     object-fit: cover;
+}
+
+
+#datasetCollectionForm {
+    /* border: 2px solid var(--main-red); */
+    border-radius: 8px;
+    display: block;
+    margin: auto;
 }
 
 /* -----forms (filters, post dataset)-----*/
