@@ -8,6 +8,7 @@ import Datasets from './components/Datasets';
 import DatasetDetails from './components/DatasetDetails';
 import PostDataset from './components/PostDataset';
 import AboutUs from './components/AboutUs';
+import Guide from './components/Guide';
 import Footer from './components/Footer';
 //import Payment from './components/Payment';
 import NotFound from './components/NotFound';
@@ -44,6 +45,7 @@ class App extends Component {
                 <Route path='/datasets/:name' component={DatasetDetails} />
                 <Route exact path='/aboutus' component={AboutUs} />
                 <Route exact path='/contribute' component={PostDataset} />
+                <Route exact path='/guide' component={Guide} />
                 <Route path="*" component={NotFound} />
               </Switch>
             </div>

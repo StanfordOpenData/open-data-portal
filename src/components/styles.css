@@ -23,6 +23,11 @@ body {
 button {
     font-family: Source Sans Pro, sans-serif;
 }
+iframe {
+    border-radius: 8px;
+    display: block;
+    margin: auto;
+}
 .mainContent {
     float: left;
     width: 66%;
@@ -422,14 +427,10 @@ header .btnTertiary {
     object-fit: cover;
 }
 
-
-#datasetCollectionForm {
-    /* border: 2px solid var(--main-red); */
-    border-radius: 8px;
-    display: block;
-    margin: auto;
+#guideIframe {
+    height: 88vh;
+    width: 640px;
 }
-
 /* -----forms (filters, post dataset)-----*/
 #root__title { /* formats titles of forms */
     font-size: 32px;
