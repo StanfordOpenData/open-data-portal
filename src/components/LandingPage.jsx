@@ -50,7 +50,6 @@ export default class LandingPage extends React.Component {
             targetUrl += '&slug[]=' + multipleSlugs[j];
           }
         }
-        console.log(targetUrl);
 
         fetch(proxyUrl + targetUrl)
         .then(blob => blob.json())
