@@ -24,38 +24,50 @@ export default class LandingPage extends React.Component {
 
 
   componentDidMount() {
+    var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
+      targetUrl = 'https://wp.stanforddaily.com/wp-json/wp/v2/posts?_embed&categories=58277' 
+      // embed adds featured image
+
     axios.get('https://open-data-portal.s3.us-east-2.amazonaws.com/metadata.json')
       .then(result => {
-        this.setState({
-          isLoaded: true,
-          items: result.data,
-        });
-      },
-        (error) => {
           this.setState({
             isLoaded: true,
-            error
+            items: result.data,
           });
+        },
+          (error) => {
+            this.setState({
+              isLoaded: true,
+              error
+            });
+          }
+        )
+      .then(() => {
+        let slugs = this.state.items.filter(dataset => dataset.stories !== null).slice(0, 3).map(dataset => dataset.stories);
+        for (var i = 0; i < slugs.length; i++) {
+          let multipleSlugs = slugs[i].split(",")
+          for (var j = 0; j < multipleSlugs.length; j++) {
+            targetUrl += '&slug[]=' + multipleSlugs[j];
+          }
         }
-      )
-    var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-      targetUrl = 'https://wp.stanforddaily.com/wp-json/wp/v2/posts?_embed&categories=58277&per_page=3' 
-      // embed adds featured image
-    fetch(proxyUrl + targetUrl)
-      .then(blob => blob.json())
-      .then(result => {
-        this.setState({
-          isLoaded: true,
-          articles: result,
-        });
-      },
-        (error) => {
+        console.log(targetUrl);
+
+        fetch(proxyUrl + targetUrl)
+        .then(blob => blob.json())
+        .then(result => {
           this.setState({
             isLoaded: true,
-            error
+            articles: result,
           });
-        }
-      )
+        },
+          (error) => {
+            this.setState({
+              isLoaded: true,
+              error
+            });
+          }
+        )
+      })
   }
 
   getRandomFact = () => { // updates random fact displayed
