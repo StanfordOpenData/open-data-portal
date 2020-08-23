@@ -116,28 +116,7 @@ export default class LandingPage extends React.Component {
             </button>
           </div>
         </header>
-        <div className="newDatasets">
-          <h3>Featured Datasets</h3>
-          <div className="mini">
-            {this.state.items.slice(0, 3).map(dataset =>
-              <Link to={{
-                pathname: '/datasets/' + dataset.name,
-                state: {
-                  data: dataset,
-                }
-              }} className="seeMore">
-                <div className="title">
-                {dataset.display_name}
-              </div>
-              <div className="lightTitle">
-                {dataset.tags}
-              </div>
-              </Link>
-            )
-            }
-          </div>
-          <Link to="/datasets" className="seeMore">See more</Link>
-        </div>
+        
         <div className="newArticles">
           <h3>Articles Featuring Open Data</h3>
           <div className="mini">
@@ -163,6 +142,29 @@ export default class LandingPage extends React.Component {
             }
           </div>
           <a href="https://www.stanforddaily.com/category/data-vizzes/" className="seeMore" target="_blank" rel="noopener noreferrer">See more</a>
+        </div>
+
+        <div className="newDatasets">
+          <h3>Featured Datasets</h3>
+          <div className="mini">
+            {this.state.items.slice(0, 3).map(dataset =>
+              <Link to={{
+                pathname: '/datasets/' + dataset.name,
+                state: {
+                  data: dataset,
+                }
+              }} className="seeMore">
+                <div className="title">
+                {dataset.display_name}
+              </div>
+              <div className="lightTitle">
+                {dataset.tags}
+              </div>
+              </Link>
+            )
+            }
+          </div>
+          <Link to="/datasets" className="seeMore">See more</Link>
         </div>
 
         <div className="secondHeader">
