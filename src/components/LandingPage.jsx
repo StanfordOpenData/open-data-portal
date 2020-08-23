@@ -141,7 +141,7 @@ export default class LandingPage extends React.Component {
             })
             }
           </div>
-          <a href="https://www.stanforddaily.com/category/data-vizzes/" className="seeMore" target="_blank" rel="noopener noreferrer">See more</a>
+          {/* <a href="https://www.stanforddaily.com/category/data-vizzes/" className="seeMore" target="_blank" rel="noopener noreferrer">See more</a> */}
         </div>
 
         <div className="newDatasets">
