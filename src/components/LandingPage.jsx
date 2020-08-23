@@ -24,8 +24,7 @@ export default class LandingPage extends React.Component {
 
 
   componentDidMount() {
-    var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-      targetUrl = 'https://wp.stanforddaily.com/wp-json/wp/v2/posts?_embed&categories=58277' 
+    var targetUrl = 'https://wp.stanforddaily.com/wp-json/wp/v2/posts?_embed&categories=58277' 
       // embed adds featured image
 
     axios.get('https://open-data-portal.s3.us-east-2.amazonaws.com/metadata.json')
@@ -51,7 +50,7 @@ export default class LandingPage extends React.Component {
           }
         }
 
-        fetch(proxyUrl + targetUrl)
+        fetch(targetUrl)
         .then(blob => blob.json())
         .then(result => {
           this.setState({
