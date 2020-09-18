@@ -19,6 +19,7 @@ export default class LandingPage extends React.Component {
       items: [],
       articles: [],
       randomfact: "Stanford University was established in 1891.",
+      textInput: ''
     };
   }
 
@@ -80,6 +81,13 @@ export default class LandingPage extends React.Component {
     window.location.href = (randpath);
   }
 
+  onSubmit = () => {
+    console.log(this.state.textInput)
+    this.props.history.push({
+      pathname: '/datasets',
+      state: { value: this.state.textInput }})
+  }
+
   render() {
     function html_entity_decode(message) {
       /* decodes UTF8 punctuation into HTML */
@@ -93,11 +101,16 @@ export default class LandingPage extends React.Component {
         <header>
           <img className="hero" src={heroImage} alt="" height="375px" />
           <h1>Welcome to the Stanford Open Data Portal</h1>
+
+          <form>
+            <input type="search" id="searchInput" onChange={e => this.setState({textInput: e.target.value})} placeholder="Search by dataset category, description, etc." name="search"/>
+            <button onClick={this.onSubmit} className='btnPrimary'>Explore Data</button>
+          </form>
           
-          <Link to="/datasets" className="btnPrimary">Explore data</Link>
+          
           {/*<a href="#" className="btnTertiary">Get alerts</a>  */}
 
-          <button onClick={this.getRandomDataset} class="btnPrimary" id="randomdataset"> Random Dataset</button>
+          <button onClick={this.getRandomDataset} className="btnPrimary" id="randomdataset"> Random Dataset</button>
 
           <div id="randomfactdiv">
             <button onClick={this.getRandomFact} type = "button" className="btnPrimary" id="randomfactcontainer">  
