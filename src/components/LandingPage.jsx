@@ -85,14 +85,13 @@ export default class LandingPage extends React.Component {
       /* decodes UTF8 punctuation into HTML */
       var element = document.createElement("div");
       element.innerHTML = message;
-      return element.innerHTML;
+      return element.innerHTML; 
     }
 
     return (
       <div className="home">
         <header>
-          <img className="hero" src={heroImage} alt="" height="375px" />
-          <h1>Welcome to the Stanford Open Data Portal</h1>
+          <h1>Welcome to UChicago's Open Data Portal</h1>
           
           <Link to="/datasets" className="btnPrimary">Explore data</Link>
           {/*<a href="#" className="btnTertiary">Get alerts</a>  */}
@@ -155,17 +154,7 @@ export default class LandingPage extends React.Component {
           <a href="https://www.stanforddaily.com/category/data-vizzes/" className="seeMore" target="_blank" rel="noopener noreferrer">See more</a>
         </div>
 
-        <div className="secondHeader">
-          <div className="column">
-            <img src={Stanford} alt="Stanford Oval" />
-          </div>
-          <div className="column">
-            <div className="right">
-            <div className="title">The Stanford Open Data Project (SODP) is making data about Stanford University more accessible and transparent. The final version of this site will aggregate data about Stanford University &mdash; such as university finances, student life, and academics &mdash; as well as tools to analyze the data.</div>
-          </div>
-          </div>
-          <div style={{clear:"both"}}></div>
-        </div>
+        
       </div>
     );
   }

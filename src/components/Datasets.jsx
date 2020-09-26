@@ -141,7 +141,7 @@ class Datasets extends React.Component {
         <div className = "sideBar desktop">
           <div className="greenBackground">
             <h1>What's this?</h1>
-            <p>The Stanford Open Data Portal structures and stores university data for public use.
+            <p>UChicago's Open Data Portal structures and stores university data for public use.
             Use this page to search for datasets either through the search bar or delimited by the drop-down categories!
             </p>
           </div>

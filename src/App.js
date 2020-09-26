@@ -19,16 +19,16 @@ class App extends Component {
       <div className="flexWrapper">
           <Helmet>
             <meta charSet="utf-8" />
-            <title>Stanford Open Data Portal</title>
+            <title>UChicago Open Data Portal</title>
             <link rel="canonical" href="http://opendata.stanforddaily.com" />
             <meta name="description" content="Check out our datasets and contribute your own!"/>
 
-            <meta property="og:title" content="Stanford Open Data Portal"/>
+            <meta property="og:title" content="UChicago Open Data Portal"/>
             <meta property="og:description" content="Check out our datasets and contribute your own!"/>
             <meta property="og:image" content="https://wp.stanforddaily.com/wp-content/uploads/2020/03/logo.jpg"/>
             <meta property="og:url" content="http://opendata.stanforddaily.com"/>
 
-            <meta name="twitter:title" content="Stanford Open Data Portal"/>
+            <meta name="twitter:title" content="UChicago Open Data Portal"/>
             <meta name="twitter:description" content="Check out our datasets and contribute your own!"/>
             <meta name="twitter:image" content="https://wp.stanforddaily.com/wp-content/uploads/2020/03/logo.jpg"/>
             <meta name="twitter:card" content="summary"/>

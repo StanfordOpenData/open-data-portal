@@ -4,13 +4,13 @@
 
 :root {
     --main-black: #303030;
-    --main-red: #FF5A60;
-    --main-green: #11BF9F;
+    --main-red: #8F3931;
+    --main-green: #D49464;
     --main-gray: #8A8A8A;
     --main-outline: #DADADA;
     --light-outline: #E8E8E8;
     --light-background: #F4F4F4;
-    --light-green: #9FE5D8;
+    --light-yellow: #FFB547;
 }
 body {
     width: 100%;
@@ -38,7 +38,7 @@ button {
     justify-content: space-between
 }
 a {
-    color: rgba(255, 90, 96, 0.795);
+    color: #8F3931;
     text-decoration: none;
 }
 hr {
@@ -63,7 +63,7 @@ button[type=submit] {
     margin-top: 16px;
 }
 a.btnPrimary:hover, button.btnPrimary:hover, button[type=submit]:hover {
-    background-color: #FF7B7F;
+    background-color: #D49464;
     transition: all .3s ease;
     -webkit-transition: all .3s ease;
 }
@@ -81,7 +81,7 @@ a.btnPrimary:hover, button.btnPrimary:hover, button[type=submit]:hover {
     font-weight: 600;
 }
 .btnTertiary:hover {
-    color: #58D2BB;
+    color: #D49464;
     transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
@@ -126,8 +126,6 @@ nav ul li a:hover {
 }
 
 
-
-
 /* -----landing page----*/
 .articleImg {
     width: 100%;
@@ -135,6 +133,7 @@ nav ul li a:hover {
 }
 header {
     margin-bottom: 56px;
+    text-align: center; 
 }
 h1 {
     font-size: 40px;
@@ -172,7 +171,7 @@ header .btnTertiary {
     border-radius: 10px;
     padding: 24px 24px;
     color: var(--main-black);
-    background-color: 	#eefbf8;
+    background-color:#FFB547;
 }
 #detailsPageLink {
     width: 100%;
@@ -211,12 +210,14 @@ header .btnTertiary {
 }
 #randomfactcontainer {
     margin-top: 3em;
-    background-color: #eefbf8;
+    background-color: #FFB547;
+    outline-color: var(--main-outline); 
     width: 100%;
     border-radius: 10px;
 }
 #randomfactdiv {
     width: 50%;
+    
 }
 #randomfact {
     color: var(--main-black);
@@ -390,7 +391,7 @@ header .btnTertiary {
 }
 .greenBackground {
     margin-top: 142px;
-    background-color: var(--light-green);
+    background-color: var(--light-yellow);
     border-radius: 5px;
     padding: 24px 32px;
 }
@@ -524,6 +525,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     margin-bottom: 32px;
     padding: 0 12%;
     color: var(--main-gray);
+    text-align: center;
 }
 
 
