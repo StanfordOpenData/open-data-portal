@@ -86,16 +86,6 @@ class Datasets extends React.Component {
     this.setState({filteredItems: fsortedItems});
   }
 
-  handleLoad() {
-    console.log(this.props.location.state.value);
-    if (this.props.location.state.value !== 'undefined') {
-      this.setState({
-        value: this.props.location.state.value
-      });
-    }
-    console.log(this.state)
-  }
-
   componentDidMount() {
     axios.get('https://open-data-portal.s3.us-east-2.amazonaws.com/metadata.json')
       .then(result => {
@@ -104,7 +94,12 @@ class Datasets extends React.Component {
           items: result.data,
           filteredItems: result.data,
         });
-        //console.log(result.data)
+        if (this.props.location.state !== undefined) {
+        this.setState({
+          value: this.props.location.state.value
+        });
+        this.searchKey(this.props.location.state.value);
+      }
       },
         (error) => {
           this.setState({
@@ -113,20 +108,12 @@ class Datasets extends React.Component {
           });
         }
       )
-      if (this.props !== 'undefined') {
-        console.log(this.props);
-        if (this.props.location.state.value !== 'undefined') {
-          this.setState({
-            value: this.props.location.state.value
-          });
-        }
-      }      
+          
   }
 
   searchKey = (e) => {
-    this.setState({ value: e.target.value })
-    console.log(this.state.value)
-    const term = e.target.value;
+    this.setState({ value: e });
+    const term = e;
     const options = {
       shouldSort: true,
       threshold: 0.6,
@@ -169,7 +156,7 @@ class Datasets extends React.Component {
         </div>
         <div id="datasetsAnchor" className="mainContent">
           <div className="datasetFilters">
-            <input type="search" id="searchInput" value={this.state.value} onChange={e => this.searchKey(e)} placeholder="Search by dataset category, description, etc." name="search" />
+            <input type="search" id="searchInput" value={this.state.value} onChange={e => this.searchKey(e.target.value)} placeholder="Search by dataset category, description, etc." name="search" />
             <div id="filterDropdowns">
               <div className="filter">
                 <label className="marginRight">Categories</label>

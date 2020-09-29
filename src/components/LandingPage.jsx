@@ -82,7 +82,6 @@ export default class LandingPage extends React.Component {
   }
 
   onSubmit = () => {
-    console.log(this.state.textInput)
     this.props.history.push({
       pathname: '/datasets',
       state: { value: this.state.textInput }})
