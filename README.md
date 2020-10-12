@@ -3,6 +3,8 @@ The Stanford Open Data Portal is a serverless data store for Stanford datasets. 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Visit the [Stanford Open Data Project website](https://stanfordopendata.org/)!
+
 ## Data Collection
 We obtain or data from a number of locations including
 - scraping/downloading existing online university datasets

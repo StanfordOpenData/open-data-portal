@@ -23,7 +23,9 @@ const industryOptions = [
 
 const sortOptions = [
   {value: 'alphabetical', label: 'A-Z'},
-  {value: 'reverse', label: 'Z-A'}
+  {value: 'reverse', label: 'Z-A'},
+  {value: 'date', label: 'Date (Newest First)'},
+  {value: 'reverse-date', label: 'Date (Oldest First)'}
 ]
 
 class Datasets extends React.Component {
@@ -80,6 +82,14 @@ class Datasets extends React.Component {
     else if (sortby === 'reverse') {
       sortedItems.sort((p, q) => (p.display_name > q.display_name) ? -1 : (q.display_name > p.display_name) ? 1 : 0);
       fsortedItems.sort((p, q) => (p.display_name > q.display_name) ? -1 : (q.display_name > p.display_name) ? 1 : 0);
+    }
+    else if (sortby === 'date') {
+      sortedItems.sort((p, q) => (Date.parse(q.create_date) - Date.parse(p.create_date)));
+      fsortedItems.sort((p, q) => (Date.parse(q.create_date) - Date.parse(p.create_date)));
+    }
+    else if (sortby === 'reverse-date') {
+      sortedItems.sort((p, q) => (Date.parse(p.create_date) - Date.parse(q.create_date)));
+      fsortedItems.sort((p, q) => (Date.parse(p.create_date) - Date.parse(q.create_date)));
     }
     this.setState({items: sortedItems});
     this.setState({filteredItems: fsortedItems});
