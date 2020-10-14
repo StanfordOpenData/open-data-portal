@@ -1,13 +1,13 @@
 import React from 'react';
 import './styles.css';
 import { Link } from "react-router-dom";
-import logoImage from './static/logo.jpg';
+import logoImage from './static/Main Logo@2x.png';
 
 function NavBar() {
   return (
     <div>
         <nav>
-          <Link to="/" className="logo"><img src={logoImage} alt="logo" style= {{verticalAlign: 'middle', height:'5em'}}/></Link>
+          <Link to="/" className="logo"><img src={logoImage} alt="logo" style= {{verticalAlign: 'middle', height:'5em', paddingTop: '.5em'}}/></Link>
           <ul>
             <li className="leftNav"><Link to="/datasets">Datasets</Link></li>
             {/* <li><a href="/">Email alerts</a></li> */}

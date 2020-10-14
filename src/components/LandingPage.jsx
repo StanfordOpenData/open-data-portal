@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.css';
 import { Link } from "react-router-dom";
 import heroImage from './static/heroImage.svg';
-import Stanford from './static/StanfordOval@2x.png'
+import MainLogo from './static/Logo + Type@2x.png'
 import axios from 'axios';
 import Moment from 'moment';
 
@@ -169,7 +169,7 @@ export default class LandingPage extends React.Component {
 
         <div className="secondHeader">
           <div className="column">
-            <img src={Stanford} alt="Stanford Oval" />
+            <img src={MainLogo} alt="Stanford Open Data Project" style={{paddingTop: '3em'}} />
           </div>
           <div className="column">
             <div className="right">

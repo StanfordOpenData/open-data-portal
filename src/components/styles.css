@@ -11,6 +11,8 @@
     --light-outline: #E8E8E8;
     --light-background: #F4F4F4;
     --light-green: #9FE5D8;
+    --new-blue: #1C75BC;
+    --new-teal: #00AFB7;
 }
 body {
     width: 100%;
@@ -38,7 +40,7 @@ button {
     justify-content: space-between
 }
 a {
-    color: rgba(255, 90, 96, 0.795);
+    color: var(--new-teal);
     text-decoration: none;
 }
 hr {
@@ -51,7 +53,7 @@ a.btnPrimary, button.btnPrimary, button[type=submit] {
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
-    background-color: var(--main-red);
+    background-color: var(--new-blue);
     padding: 8px 16px;
     border: none;
     border-radius: 5px;
@@ -63,7 +65,7 @@ button[type=submit] {
     margin-top: 16px;
 }
 a.btnPrimary:hover, button.btnPrimary:hover, button[type=submit]:hover {
-    background-color: #FF7B7F;
+    background-color: #3E98E2;
     transition: all .3s ease;
     -webkit-transition: all .3s ease;
 }
@@ -73,7 +75,7 @@ a.btnPrimary:hover, button.btnPrimary:hover, button[type=submit]:hover {
     border-radius: 5px;
 }
 .btnSecondary:hover {
-    border-color: var(--main-green);
+    border-color: var(--new-teal);
     transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
@@ -97,7 +99,7 @@ nav a {
     text-decoration: none;
 }
 .logo {
-    color: var(--main-green);
+    color: var(--new-teal);
     margin-left: 3px; /* correct slight overhang */
     font-family: "Libre Baskerville";
     font-weight: 700;
@@ -120,7 +122,7 @@ nav .leftNav {
     margin-left: 0;
 }
 nav ul li a:hover {
-    color: var(--main-green);
+    color: var(--new-teal);
     transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
