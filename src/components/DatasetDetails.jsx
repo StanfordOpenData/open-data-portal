@@ -59,7 +59,6 @@ class DatasetDetails extends React.Component {
           isLoaded: true,
           articles: result,
         });
-        console.log(result);
       },
         (error) => {
           this.setState({
@@ -75,8 +74,8 @@ class DatasetDetails extends React.Component {
     if (this.state.items.length !== 0 && this.state.articles.length !== 0) {
       //console.log('this.state.items' + this.state.items);
       let dataset = find(this.state.items, {"name": this.props.match.params.name});
-      //console.log('dataset', dataset);
-      //console.log('articles', this.state.articles);
+      console.log('dataset', dataset);
+      console.log('articles', this.state.articles);
       curArticles = dataset.stories.split(',').map((story) => find(this.state.articles, {"slug": story})).filter(e => e)
       console.log('curArticles', curArticles);
     }

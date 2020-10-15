@@ -24,6 +24,7 @@ body {
 }
 button {
     font-family: Source Sans Pro, sans-serif;
+    line-height: normal;
 }
 .mainContent {
     float: left;
@@ -172,7 +173,7 @@ header .btnTertiary {
     border-radius: 10px;
     padding: 24px 24px;
     color: var(--main-black);
-    background-color: 	#eefbf8;
+    background-color: #eefbf8;
 }
 #detailsPageLink {
     width: 100%;

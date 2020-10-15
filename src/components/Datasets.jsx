@@ -100,8 +100,8 @@ class Datasets extends React.Component {
       .then(result => {
         this.setState({
           isLoaded: true,
-          items: result.data,
-          filteredItems: result.data,
+          items: result.data.sort((p, q) => (Date.parse(q.create_date) - Date.parse(p.create_date))),
+          filteredItems: result.data.sort((p, q) => (Date.parse(q.create_date) - Date.parse(p.create_date))),
         });
         //console.log(result.data)
       },

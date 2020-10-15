@@ -6,7 +6,7 @@ import Nav from 'react-bootstrap/Nav'
 
 function NavBar() {
   return (
-    <Navbar expand="lg">
+    <Navbar collapseOnSelect expand="lg">
       <Navbar.Brand href="/">
         <img
           alt="logo"
@@ -17,9 +17,9 @@ function NavBar() {
       <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto">
-          <Nav.Link href="/datasets">Datasets</Nav.Link>
-          <Nav.Link href="/aboutus">About Us</Nav.Link>
-          <Nav.Link href="/contribute" className="btnSecondary">Contribute a Dataset</Nav.Link>
+          <Nav.Link href="#/datasets">Datasets</Nav.Link>
+          <Nav.Link href="#/aboutus">About Us</Nav.Link>
+          <Nav.Link href="#/contribute" className="btnSecondary">Contribute a Dataset</Nav.Link>
           <Nav.Link href="https://stanforddaily.com/" target="_blank">Stanford Daily</Nav.Link>
         </Nav>
       </Navbar.Collapse>

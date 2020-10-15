@@ -42,8 +42,7 @@ export default class LandingPage extends React.Component {
           }
         )
       .then(() => {
-        let slugs = this.state.items.filter(dataset => dataset.stories !== null).slice(0, 3).map(dataset => dataset.stories);
-        console.log(slugs)
+        let slugs = this.state.items.filter(dataset => dataset.stories !== "").slice(0, 3).map(dataset => dataset.stories);
         for (var i = 0; i < slugs.length; i++) {
           let multipleSlugs = slugs[i].split(",")
           for (var j = 0; j < multipleSlugs.length; j++) {
@@ -139,7 +138,7 @@ export default class LandingPage extends React.Component {
                     {names} • {Moment(Date.parse(article.date)).format("LL")}
                   </div>
                   <div></div>
-                  <img className="articleImg" src={article._embedded['wp:featuredmedia'][0].source_url} alt=""/>
+                  <img className="articleImg" style={{objectFit:"cover"}} src={article._embedded['wp:featuredmedia'][0].source_url} alt=""/>
                 </a>
               )
             })
