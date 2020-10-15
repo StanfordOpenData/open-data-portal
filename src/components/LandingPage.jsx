@@ -43,6 +43,7 @@ export default class LandingPage extends React.Component {
         )
       .then(() => {
         let slugs = this.state.items.filter(dataset => dataset.stories !== null).slice(0, 3).map(dataset => dataset.stories);
+        console.log(slugs)
         for (var i = 0; i < slugs.length; i++) {
           let multipleSlugs = slugs[i].split(",")
           for (var j = 0; j < multipleSlugs.length; j++) {
@@ -102,19 +103,22 @@ export default class LandingPage extends React.Component {
       <div className="home">
         <header>
           <img className="hero" src={heroImage} alt="" height="375px" />
-          <h1>Welcome to the Stanford Open Data Portal</h1>
-          
-          <Link to="/datasets" className="btnPrimary">Explore data</Link>
-          {/*<a href="#" className="btnTertiary">Get alerts</a>  */}
+          <div>
+            <h1>Welcome to the Stanford Open Data Portal</h1>
+            
+            <Link to="/datasets" className="btnPrimary">Explore data</Link>
+            {/*<a href="#" className="btnTertiary">Get alerts</a>  */}
 
-          <button onClick={this.getRandomDataset} class="btnPrimary" id="randomdataset"> Random Dataset</button>
+            <button onClick={this.getRandomDataset} class="btnPrimary" id="randomdataset"> Random Dataset</button>
 
-          <div id="randomfactdiv">
-            <button onClick={this.getRandomFact} type = "button" className="btnPrimary" id="randomfactcontainer">  
-              <p id="randomfact">{this.state.randomfact}</p>
-              <p id="newfact">Click for Another Fun Data Fact!</p> 
-            </button>
+            <div id="randomfactdiv">
+              <button onClick={this.getRandomFact} type = "button" className="btnPrimary" id="randomfactcontainer">  
+                <p id="randomfact">{this.state.randomfact}</p>
+                <p id="newfact">Click for Another Fun Data Fact!</p> 
+              </button>
+            </div>
           </div>
+          
         </header>
         
         <div className="newArticles">

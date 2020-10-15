@@ -1,22 +1,29 @@
 import React from 'react';
 import './styles.css';
-import { Link } from "react-router-dom";
 import logoImage from './static/Main Logo@2x.png';
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
 
 function NavBar() {
   return (
-    <div>
-        <nav>
-          <Link to="/" className="logo"><img src={logoImage} alt="logo" style= {{verticalAlign: 'middle', height:'5em', paddingTop: '.5em'}}/></Link>
-          <ul>
-            <li className="leftNav"><Link to="/datasets">Datasets</Link></li>
-            {/* <li><a href="/">Email alerts</a></li> */}
-            <li><Link to="/aboutus">About Us</Link></li>
-            <li><Link to="/contribute" className="btnSecondary">Contribute a dataset</Link></li>
-            <li><a href="https://stanforddaily.com/" target="_blank" rel="noopener noreferrer"> Stanford Daily</a></li>
-          </ul>
-        </nav>
-    </div>
+    <Navbar expand="lg">
+      <Navbar.Brand href="/">
+        <img
+          alt="logo"
+          src={logoImage}
+          style={{verticalAlign: 'middle', height:'5em', paddingTop: '.5em'}}
+        />
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="ml-auto">
+          <Nav.Link href="/datasets">Datasets</Nav.Link>
+          <Nav.Link href="/aboutus">About Us</Nav.Link>
+          <Nav.Link href="/contribute" className="btnSecondary">Contribute a Dataset</Nav.Link>
+          <Nav.Link href="https://stanforddaily.com/" target="_blank">Stanford Daily</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }
 

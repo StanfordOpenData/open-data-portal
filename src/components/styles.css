@@ -47,6 +47,10 @@ hr {
     margin-top: 20px;
 }
 
+*, ::after, ::before {
+    box-sizing: content-box;
+}
+
 /* -----buttons------*/
 a.btnPrimary, button.btnPrimary, button[type=submit] {
     color: white;
@@ -90,13 +94,10 @@ a.btnPrimary:hover, button.btnPrimary:hover, button[type=submit]:hover {
 
 /* -----header/nav----*/
 nav {
-    display: inline-block;
     width: 100%;
     margin-bottom: 16px;
-}
-nav a {
-    color: var(--main-black);
-    text-decoration: none;
+    justify-content: space-between;
+    padding: 0rem !important;
 }
 .logo {
     color: var(--new-teal);
@@ -106,25 +107,22 @@ nav a {
     font-size: 20px;
     line-height: 80px;
 }
-nav ul {
-    float: right;
-    list-style: none;
-    padding-left: 0;
+nav div.navbar-collapse a {
+    color: var(--main-black) !important;
+    text-decoration: none;
 }
-nav ul li {
-    display: inline-block;
-    margin-left: 32px;
+nav div.navbar-collapse a {
+    margin-left: 1rem;
     font-size: 14px;
     font-weight: 600;
-    line-height: 56px;
 }
 nav .leftNav {
     margin-left: 0;
 }
-nav ul li a:hover {
-    color: var(--new-teal);
-    transition: all .2s ease;
-    -webkit-transition: all .2s ease;
+nav div.navbar-collapse a:hover {
+    color: var(--new-teal) !important;
+    transition: all .2s ease !important;
+    -webkit-transition: all .2s ease !important;
 }
 
 
@@ -159,10 +157,10 @@ header .btnTertiary {
     top: 212px;
 }
 .newDatasets {
-    margin-top: 160px;
+    margin-top: 5rem;
 }
 .newArticles {
-    margin-top: 120px;
+    margin-top: 5rem;
 }
 .mini {
     display: flex;
@@ -213,18 +211,15 @@ header .btnTertiary {
 }
 #randomfactcontainer {
     margin-top: 3em;
+    width: 40%;
     background-color: #eefbf8;
-    width: 100%;
     border-radius: 10px;
-}
-#randomfactdiv {
-    width: 50%;
 }
 #randomfact {
     color: var(--main-black);
 }
 #randomdataset {
-    margin-left: 30px;
+    margin-left: 3rem;
 }
 #newfact {
     color: var(--main-gray);
@@ -540,15 +535,17 @@ tr:nth-child(even) {background-color: #f2f2f2;}
         flex-wrap: wrap;
     }    
     header h1 {
+        margin-top: 3rem;
         width: 100%;
     }
     .hero {
         display: none;
     }
     #randomfactdiv {
+        display: flex;
+    }
+    #randomfactcontainer {
         width: 100%;
-        margin-left: auto;
-        margin-right: auto;
     }
     .sideBar {
         display: inline-block;
