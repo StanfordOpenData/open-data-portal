@@ -220,7 +220,7 @@ header .btnTertiary {
     color: var(--main-black);
 }
 #randomdataset {
-    margin-left: 3rem;
+    margin-left: 1rem;
 }
 #newfact {
     color: var(--main-gray);
@@ -351,6 +351,8 @@ header .btnTertiary {
 
 /* -----dataset information page----*/
 .datasetDetails {
+    display: flex;
+    flex-direction: row;
 }
 .datasetDetails .datasetTitle {
     font-size: 32px;
@@ -401,11 +403,9 @@ header .btnTertiary {
 }
 .detailsColumn1 {
     float: left;
-    width: 60%;
 }
 .detailsColumn2 {
     float: left;
-    width: 40%;
 }
 
 /* -----advice articles-----*/
@@ -575,6 +575,11 @@ tr:nth-child(even) {background-color: #f2f2f2;}
         width: 70%;
     }
 
+    /* Dataset Page */
+    .datasetDetails {
+        flex-direction: column;
+    }
+
 }
 @media only screen and (max-width: 768px){
     .mainContent {
@@ -593,6 +598,9 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     }
     textarea, select, .postDataset input, .__PrivateStripeElement {
         width: 100%;
+    }
+    #filterDropdowns {
+        flex-direction: column;
     }
 
 }

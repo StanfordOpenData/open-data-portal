@@ -39,7 +39,6 @@ class DatasetDetails extends React.Component {
       )
     axios.get("https://s3.us-east-2.amazonaws.com/open-data-portal/" + this.props.match.params.name + ".csv") 
         .then(result => {
-          console.log(result.data.split('\r\n').slice(0, 9).join('\r\n'))
           this.setState({
             csv: result.data.split('\r\n').slice(0, 9).join('\r\n'),
           });
@@ -76,9 +75,10 @@ class DatasetDetails extends React.Component {
       //console.log('this.state.items' + this.state.items);
       let dataset = find(this.state.items, {"name": this.props.match.params.name});
       //console.log('dataset', dataset);
-      //console.log('articles', this.state.articles);
+      console.log('articles', this.state.articles);
       curArticles = dataset.stories.split(',').map((story) => find(this.state.articles, {"slug": story})).filter(e => e)
-      //console.log('curArticles', curArticles);
+      console.log(dataset.stories.split(',').map((story) => console.log(story)))
+      console.log('curArticles', curArticles);
     }
 
     if (this.state.items.length === 0) {
