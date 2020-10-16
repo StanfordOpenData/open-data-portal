@@ -11,6 +11,8 @@
     --light-outline: #E8E8E8;
     --light-background: #F4F4F4;
     --light-green: #9FE5D8;
+    --new-blue: #1C75BC;
+    --new-teal: #00AFB7;
 }
 body {
     width: 100%;
@@ -22,6 +24,7 @@ body {
 }
 button {
     font-family: Source Sans Pro, sans-serif;
+    line-height: normal;
 }
 .mainContent {
     float: left;
@@ -38,11 +41,15 @@ button {
     justify-content: space-between
 }
 a {
-    color: rgba(255, 90, 96, 0.795);
+    color: var(--new-teal);
     text-decoration: none;
 }
 hr {
     margin-top: 20px;
+}
+
+*, ::after, ::before {
+    box-sizing: content-box;
 }
 
 /* -----buttons------*/
@@ -51,7 +58,7 @@ a.btnPrimary, button.btnPrimary, button[type=submit] {
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
-    background-color: var(--main-red);
+    background-color: var(--new-blue);
     padding: 8px 16px;
     border: none;
     border-radius: 5px;
@@ -63,7 +70,7 @@ button[type=submit] {
     margin-top: 16px;
 }
 a.btnPrimary:hover, button.btnPrimary:hover, button[type=submit]:hover {
-    background-color: #FF7B7F;
+    background-color: #3E98E2;
     transition: all .3s ease;
     -webkit-transition: all .3s ease;
 }
@@ -73,7 +80,7 @@ a.btnPrimary:hover, button.btnPrimary:hover, button[type=submit]:hover {
     border-radius: 5px;
 }
 .btnSecondary:hover {
-    border-color: var(--main-green);
+    border-color: var(--new-teal);
     transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
@@ -88,41 +95,35 @@ a.btnPrimary:hover, button.btnPrimary:hover, button[type=submit]:hover {
 
 /* -----header/nav----*/
 nav {
-    display: inline-block;
     width: 100%;
     margin-bottom: 16px;
-}
-nav a {
-    color: var(--main-black);
-    text-decoration: none;
+    justify-content: space-between;
+    padding: 0rem !important;
 }
 .logo {
-    color: var(--main-green);
+    color: var(--new-teal);
     margin-left: 3px; /* correct slight overhang */
     font-family: "Libre Baskerville";
     font-weight: 700;
     font-size: 20px;
     line-height: 80px;
 }
-nav ul {
-    float: right;
-    list-style: none;
-    padding-left: 0;
+nav div.navbar-collapse a {
+    color: var(--main-black) !important;
+    text-decoration: none;
 }
-nav ul li {
-    display: inline-block;
-    margin-left: 32px;
+nav div.navbar-collapse a {
+    margin-left: 1rem;
     font-size: 14px;
     font-weight: 600;
-    line-height: 56px;
 }
 nav .leftNav {
     margin-left: 0;
 }
-nav ul li a:hover {
-    color: var(--main-green);
-    transition: all .2s ease;
-    -webkit-transition: all .2s ease;
+nav div.navbar-collapse a:hover {
+    color: var(--new-teal) !important;
+    transition: all .2s ease !important;
+    -webkit-transition: all .2s ease !important;
 }
 
 
@@ -157,10 +158,10 @@ header .btnTertiary {
     top: 212px;
 }
 .newDatasets {
-    margin-top: 160px;
+    margin-top: 5rem;
 }
 .newArticles {
-    margin-top: 120px;
+    margin-top: 5rem;
 }
 .mini {
     display: flex;
@@ -172,7 +173,7 @@ header .btnTertiary {
     border-radius: 10px;
     padding: 24px 24px;
     color: var(--main-black);
-    background-color: 	#eefbf8;
+    background-color: #eefbf8;
 }
 #detailsPageLink {
     width: 100%;
@@ -211,18 +212,15 @@ header .btnTertiary {
 }
 #randomfactcontainer {
     margin-top: 3em;
+    width: 40%;
     background-color: #eefbf8;
-    width: 100%;
     border-radius: 10px;
-}
-#randomfactdiv {
-    width: 50%;
 }
 #randomfact {
     color: var(--main-black);
 }
 #randomdataset {
-    margin-left: 30px;
+    margin-left: 3rem;
 }
 #newfact {
     color: var(--main-gray);
@@ -236,7 +234,6 @@ header .btnTertiary {
     background-repeat: no-repeat; /* Do not repeat the icon image */
     font-family: Source Sans Pro, sans-serif;
     font-size: 16px;
-    width: 100%;
     font-size: 16px; /* Increase font-size */
     padding: 8px 20px 8px 32px; /* Add some padding */
     border: 1px solid var(--main-outline); /* Add a grey border */
@@ -252,6 +249,8 @@ header .btnTertiary {
 }
 .datasetFilters {
     margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
 }
 #filterDropdowns {
     display: flex;
@@ -260,8 +259,8 @@ header .btnTertiary {
 }
 #filterDropdowns .filter {
     padding-right: 10px;
-    width: 100%;
     display: flex;
+    width: 100%;
     flex-direction: column;
 }
 .inline {
@@ -319,9 +318,6 @@ header .btnTertiary {
     white-space: wrap;
     text-overflow: ellipsis;
 }
-
-
-
 
 /* -----sidebar----*/
 .sideBar {
@@ -533,20 +529,26 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     margin: 0 auto;
 }
 @media only screen and (max-width: 1000px) {
+    #contribute {
+        width: fit-content;
+        padding: 8px 1rem;
+    }
     .mainContent {
         width: 100%;
         flex-wrap: wrap;
     }    
     header h1 {
+        margin-top: 3rem;
         width: 100%;
     }
     .hero {
         display: none;
     }
     #randomfactdiv {
+        display: flex;
+    }
+    #randomfactcontainer {
         width: 100%;
-        margin-left: auto;
-        margin-right: auto;
     }
     .sideBar {
         display: inline-block;

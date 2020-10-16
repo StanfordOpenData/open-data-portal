@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.css';
 import { Link } from "react-router-dom";
 import heroImage from './static/heroImage.svg';
-import Stanford from './static/StanfordOval@2x.png'
+import MainLogo from './static/Logo + Type@2x.png'
 import axios from 'axios';
 import Moment from 'moment';
 
@@ -42,7 +42,7 @@ export default class LandingPage extends React.Component {
           }
         )
       .then(() => {
-        let slugs = this.state.items.filter(dataset => dataset.stories !== null).slice(0, 3).map(dataset => dataset.stories);
+        let slugs = this.state.items.filter(dataset => dataset.stories !== "").slice(0, 3).map(dataset => dataset.stories);
         for (var i = 0; i < slugs.length; i++) {
           let multipleSlugs = slugs[i].split(",")
           for (var j = 0; j < multipleSlugs.length; j++) {
@@ -102,19 +102,22 @@ export default class LandingPage extends React.Component {
       <div className="home">
         <header>
           <img className="hero" src={heroImage} alt="" height="375px" />
-          <h1>Welcome to the Stanford Open Data Portal</h1>
-          
-          <Link to="/datasets" className="btnPrimary">Explore data</Link>
-          {/*<a href="#" className="btnTertiary">Get alerts</a>  */}
+          <div>
+            <h1>Welcome to the Stanford Open Data Portal</h1>
+            
+            <Link to="/datasets" className="btnPrimary">Explore data</Link>
+            {/*<a href="#" className="btnTertiary">Get alerts</a>  */}
 
-          <button onClick={this.getRandomDataset} class="btnPrimary" id="randomdataset"> Random Dataset</button>
+            <button onClick={this.getRandomDataset} class="btnPrimary" id="randomdataset"> Random Dataset</button>
 
-          <div id="randomfactdiv">
-            <button onClick={this.getRandomFact} type = "button" className="btnPrimary" id="randomfactcontainer">  
-              <p id="randomfact">{this.state.randomfact}</p>
-              <p id="newfact">Click for Another Fun Data Fact!</p> 
-            </button>
+            <div id="randomfactdiv">
+              <button onClick={this.getRandomFact} type = "button" className="btnPrimary" id="randomfactcontainer">  
+                <p id="randomfact">{this.state.randomfact}</p>
+                <p id="newfact">Click for Another Fun Data Fact!</p> 
+              </button>
+            </div>
           </div>
+          
         </header>
         
         <div className="newArticles">
@@ -135,7 +138,7 @@ export default class LandingPage extends React.Component {
                     {names} • {Moment(Date.parse(article.date)).format("LL")}
                   </div>
                   <div></div>
-                  <img className="articleImg" src={article._embedded['wp:featuredmedia'][0].source_url} alt=""/>
+                  <img className="articleImg" style={{objectFit:"cover"}} src={article._embedded['wp:featuredmedia'][0].source_url} alt=""/>
                 </a>
               )
             })
@@ -169,7 +172,7 @@ export default class LandingPage extends React.Component {
 
         <div className="secondHeader">
           <div className="column">
-            <img src={Stanford} alt="Stanford Oval" />
+            <img src={MainLogo} alt="Stanford Open Data Project" style={{paddingTop: '3em'}} />
           </div>
           <div className="column">
             <div className="right">
