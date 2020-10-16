@@ -234,7 +234,6 @@ header .btnTertiary {
     background-repeat: no-repeat; /* Do not repeat the icon image */
     font-family: Source Sans Pro, sans-serif;
     font-size: 16px;
-    width: 100%;
     font-size: 16px; /* Increase font-size */
     padding: 8px 20px 8px 32px; /* Add some padding */
     border: 1px solid var(--main-outline); /* Add a grey border */
@@ -250,6 +249,8 @@ header .btnTertiary {
 }
 .datasetFilters {
     margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
 }
 #filterDropdowns {
     display: flex;
@@ -258,8 +259,8 @@ header .btnTertiary {
 }
 #filterDropdowns .filter {
     padding-right: 10px;
-    width: 100%;
     display: flex;
+    width: 100%;
     flex-direction: column;
 }
 .inline {
@@ -317,9 +318,6 @@ header .btnTertiary {
     white-space: wrap;
     text-overflow: ellipsis;
 }
-
-
-
 
 /* -----sidebar----*/
 .sideBar {
@@ -531,6 +529,10 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     margin: 0 auto;
 }
 @media only screen and (max-width: 1000px) {
+    #contribute {
+        width: fit-content;
+        padding: 8px 1rem;
+    }
     .mainContent {
         width: 100%;
         flex-wrap: wrap;

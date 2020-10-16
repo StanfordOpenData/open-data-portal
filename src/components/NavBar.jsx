@@ -19,7 +19,7 @@ function NavBar() {
         <Nav className="ml-auto">
           <Nav.Link href="#/datasets">Datasets</Nav.Link>
           <Nav.Link href="#/aboutus">About Us</Nav.Link>
-          <Nav.Link href="#/contribute" className="btnSecondary">Contribute a Dataset</Nav.Link>
+          <Nav.Link href="#/contribute" className="btnSecondary" id="contribute">Contribute a Dataset</Nav.Link>
           <Nav.Link href="https://stanforddaily.com/" target="_blank">Stanford Daily</Nav.Link>
         </Nav>
       </Navbar.Collapse>
