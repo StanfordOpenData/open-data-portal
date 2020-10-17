@@ -119,7 +119,7 @@ export default class LandingPage extends React.Component {
               </button>
             </div>
           </div>
-          <a href='https://tinyurl.com/sodp20'><Image className="hero" src={heroImage} alt=""/></a>
+          <a href='https://tinyurl.com/sodp20' target="_blank" rel="noopener noreferrer"><Image className="hero" src={heroImage} alt=""/></a>
         </header>
         
         <div className="newArticles">
