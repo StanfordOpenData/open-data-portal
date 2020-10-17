@@ -161,7 +161,7 @@ header .btnTertiary {
     margin-top: 50px;
     max-height: 400px;
     min-height: 375px;
-
+    border-radius: 5%;
 }
 .newDatasets {
     margin-top: 5rem;

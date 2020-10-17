@@ -3,7 +3,6 @@ import './styles.css';
 import logoImage from './static/Main Logo@2x.png';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import Button from 'react-bootstrap/Button';
 import './recruitment.css';
 
 function NavBar() {
