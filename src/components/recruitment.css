@@ -1,0 +1,26 @@
+#nav {
+    padding-bottom: 4vh;
+}
+
+#recruitment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4vh 1vw;
+}
+
+#recruitment {
+    border-radius: 10px;
+    border: black solid 4px;
+    color: black;
+    text-decoration: none;
+}
+
+#recruitment:hover {
+    color: #00AFB7;
+    border-color: #00AFB7;
+}
+
+#recruitment h2 {
+    text-align: center;
+}

@@ -5,6 +5,7 @@ import heroImage from './static/heroImage.svg';
 import MainLogo from './static/Logo + Type@2x.png'
 import axios from 'axios';
 import Moment from 'moment';
+import Image from 'react-bootstrap/Image'
 
 export default class LandingPage extends React.Component {
   state = {
@@ -101,14 +102,15 @@ export default class LandingPage extends React.Component {
     return (
       <div className="home">
         <header>
-          <img className="hero" src={heroImage} alt="" height="375px" />
-          <div>
-            <h1>Welcome to the Stanford Open Data Portal</h1>
+          <div id='info'>
+            <h1>Welcome to the<br/>Stanford Open Data Portal</h1>
             
-            <Link to="/datasets" className="btnPrimary">Explore data</Link>
-            {/*<a href="#" className="btnTertiary">Get alerts</a>  */}
+            <div id='lpbuttons'>
+              <Link to="/datasets" className="btnPrimary">Explore data</Link>
+              {/*<a href="#" className="btnTertiary">Get alerts</a>  */}
 
-            <button onClick={this.getRandomDataset} class="btnPrimary" id="randomdataset"> Random Dataset</button>
+              <button onClick={this.getRandomDataset} class="btnPrimary" id="randomdataset"> Random Dataset</button>
+            </div>
 
             <div id="randomfactdiv">
               <button onClick={this.getRandomFact} type = "button" className="btnPrimary" id="randomfactcontainer">  
@@ -117,7 +119,7 @@ export default class LandingPage extends React.Component {
               </button>
             </div>
           </div>
-          
+          <Image className="hero" src={heroImage} alt=""/>
         </header>
         
         <div className="newArticles">

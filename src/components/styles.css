@@ -135,15 +135,21 @@ nav div.navbar-collapse a:hover {
     padding-top: 20px;
 }
 header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin-bottom: 56px;
 }
 h1 {
     font-size: 40px;
     font-weight: 600;
 }
+header #info {
+    width: 100%;
+}
 header h1 {
-    margin: 112px 0 40px 0;
-    width: 50%;
+    margin: 75px 0 40px 0;
+    width: 80%;
 }
 header .btnTertiary {
     margin-left: 16px;
@@ -152,10 +158,10 @@ header .btnTertiary {
     margin-bottom: 40px;
 }
 .hero {
-    width: 50%;
-    position: absolute;
-    right: 32px;
-    top: 212px;
+    margin-top: 50px;
+    max-height: 400px;
+    min-height: 375px;
+
 }
 .newDatasets {
     margin-top: 5rem;
@@ -212,7 +218,7 @@ header .btnTertiary {
 }
 #randomfactcontainer {
     margin-top: 3em;
-    width: 40%;
+    width: 80%;
     background-color: #eefbf8;
     border-radius: 10px;
 }
@@ -461,9 +467,6 @@ label {
 .checkboxContainer { /* adds space after last checkbox in Post Dataset form */
     margin-bottom: 16px;
 }
-.upload {
-
-}
 input[type=checkbox] + label {
     font-weight: 100;
 }
@@ -528,7 +531,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 .mainContent {
     margin: 0 auto;
 }
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1024px) {
     #contribute {
         width: fit-content;
         padding: 8px 1rem;
@@ -538,6 +541,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
         flex-wrap: wrap;
     }    
     header h1 {
+        text-align: center;
         margin-top: 3rem;
         width: 100%;
     }
@@ -549,6 +553,10 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     }
     #randomfactcontainer {
         width: 100%;
+    }
+    #lpbuttons {
+        display: flex;
+        justify-content: center;
     }
     .sideBar {
         display: inline-block;
@@ -582,8 +590,6 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
 }
 @media only screen and (max-width: 768px){
-    .mainContent {
-    }
     .wrapper {
         width: 90%;
         padding: 0 5%;
