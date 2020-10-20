@@ -3,6 +3,7 @@ import './styles.css';
 import logoImage from './static/Main Logo@2x.png';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import './recruitment.css';
 
 function NavBar() {
@@ -21,8 +22,12 @@ function NavBar() {
           <Nav className="ml-auto">
             <Nav.Link href="#/datasets">Datasets</Nav.Link>
             <Nav.Link href="#/aboutus">About Us</Nav.Link>
-            <Nav.Link href="#/contribute" className="btnSecondary" id="contribute">Contribute a Dataset</Nav.Link>
-            <Nav.Link href="https://stanforddaily.com/" target="_blank">Stanford Daily</Nav.Link>
+            <Nav.Link href="#/contribute">Contribute a Dataset</Nav.Link>
+            <NavDropdown title="Related Links">
+              <NavDropdown.Item href="https://www.stanforddaily.com/category/@94305/" target="_blank">Stanford Daily</NavDropdown.Item>
+              <NavDropdown.Item href="https://pitlab.stanford.edu/" target="_blank">PIT Lab</NavDropdown.Item>
+              <NavDropdown.Item href="https://opendatacampus.com/" target="_blank">Open Data Handbook</NavDropdown.Item>
+            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
