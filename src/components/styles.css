@@ -126,8 +126,10 @@ nav div.navbar-collapse a:hover {
     -webkit-transition: all .2s ease !important;
 }
 
-
-
+nav .dropdown-item {
+  padding: .5rem 0;
+  background-color: transparent !important;
+}
 
 /* -----landing page----*/
 .articleImg {
