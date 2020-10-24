@@ -18,7 +18,7 @@ export default class LandingPage extends React.Component {
       isLoaded: false,
       items: [],
       articles: [],
-      randomfact: "Stanford University was established in 1891.",
+      randomfact: "This quarter, UChicago is offering 11 courses with the word 'data' in the title.",
     };
   }
 
@@ -59,13 +59,7 @@ export default class LandingPage extends React.Component {
   }
 
   getRandomFact = () => { // updates random fact displayed
-    var randomfacts = ["Stanford has won 270 overall Olympic medals (139 gold, 73 silver, 58 bronze), as of the 2016 Rio Olympics.", 
-                      "Stanford has 165 overall Olympic medalists, as of the 2016 Rio Olympics",
-                      "Stanford won 27 medals at the 2016 Rio de Janeiro Olympic Games, a school record!", 
-                      "The Cardinal has produced at least one medalist in every Olympics the U.S. has competed in since 1912.",
-                      "There are over 800 (registered) parties yearly on Stanford campus.",
-                      "Over 10,000 students were driven home by 5-SURE in the 2017-2018 school year.",
-                      "Stanford offers over 15,000 courses annually, as of 2020."]
+    var randomfacts = ["This quarter, UChicago is offering 11 courses with the word 'data' in the title."];
     var randfact = this.state.randomfact;
     if (randomfacts.length > 1) {
       while (randfact === this.state.randomfact) {
@@ -145,7 +139,7 @@ export default class LandingPage extends React.Component {
                     {names} • {Moment(Date.parse(article.date)).format("LL")}
                   </div>
                   <div></div>
-                  <img className="articleImg" src={article._embedded['wp:featuredmedia'][0].source_url} alt=""/>
+                  {/* <img className="articleImg" src={article._embedded['wp:featuredmedia'][0].source_url} alt=""/> */}
                 </a>
               )
             })

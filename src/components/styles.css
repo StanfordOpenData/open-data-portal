@@ -13,6 +13,7 @@
     --light-yellow: #FFB547;
 }
 body {
+    min-width: 250px;
     width: 100%;
     height: 100%;
     margin: 0;
@@ -216,7 +217,7 @@ header .btnTertiary {
 }
 #randomfactdiv {
     width: 50%;
-    
+    padding-left: 25%
 }
 #randomfact {
     color: var(--main-black);
@@ -548,6 +549,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
         width: 100%;
         margin-left: auto;
         margin-right: auto;
+        padding-left: 0;
     }
     .sideBar {
         display: inline-block;
