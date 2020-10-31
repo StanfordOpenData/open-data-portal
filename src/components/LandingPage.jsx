@@ -59,7 +59,11 @@ export default class LandingPage extends React.Component {
   }
 
   getRandomFact = () => { // updates random fact displayed
-    var randomfacts = ["This quarter, UChicago is offering 11 courses with the word 'data' in the title."];
+    var randomfacts = ["UChicago is home to the 9th largest library system (by number of volumes) in the United States.",
+                      "This quarter, UChicago is offering 11 courses with the word 'data' in the title.",
+                      "UChicago has a graduation rate of 94.2%.",
+                      "On average, UChicago undergrads get laid 0.5 times per quarter."
+                      "Since 2007, independent union GSU (Graduate Student Union) has been representing the interests of graduate student workers at UChicago."]
     var randfact = this.state.randomfact;
     if (randomfacts.length > 1) {
       while (randfact === this.state.randomfact) {
