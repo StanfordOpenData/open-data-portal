@@ -18,7 +18,7 @@ export default class LandingPage extends React.Component {
       isLoaded: false,
       items: [],
       articles: [],
-      randomfact: "Stanford University was established in 1891.",
+      randomfact: "UChicago enrolled 16,445 students in Autumn 2019.",
     };
   }
 
@@ -61,9 +61,9 @@ export default class LandingPage extends React.Component {
   getRandomFact = () => { // updates random fact displayed
     var randomfacts = ["The numbered football jersey, the huddle, and the lighted playing field were invented by UChicago football coach Amos Alonzo Stagg during his tenure at the University.", 
                       "UChicago is home to the 9th largest library system (by number of volumes) in the United States.",
-                      "The average UChicago student spends 5,040 hours in the Regenstein library every school year.",
+                      "The average UChicago student spends 5,000 hours in the Regenstein library every school year.",
                       "UChicago has a graduation rate of 94.2%.",
-                      "On average, UChicago undergrads get laid 0.5 times per quarter."
+                      "On average, UChicago undergrads get laid 0.5 times per quarter.",
                       "Since 2007, independent union GSU (Graduate Student Union) has been representing the interests of graduate student workers."]
     var randfact = this.state.randomfact;
     if (randomfacts.length > 1) {
@@ -144,7 +144,7 @@ export default class LandingPage extends React.Component {
                     {names} • {Moment(Date.parse(article.date)).format("LL")}
                   </div>
                   <div></div>
-                  <img className="articleImg" src={article._embedded['wp:featuredmedia'][0].source_url} alt=""/>
+                    {/* <img className="articleImg" src={article._embedded['wp:featuredmedia'][0].    source_url} alt=""/> */}
                 </a>
               )
             })
