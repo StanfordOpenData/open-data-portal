@@ -23,7 +23,7 @@ class DatasetDetails extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('https://open-data-portal.s3.us-east-2.amazonaws.com/metadata.json')
+    axios.get('https://ucopendata.s3.us-east-2.amazonaws.com/metadata.json')
       .then(result => {
         this.setState({
           isLoaded: true,
@@ -37,7 +37,7 @@ class DatasetDetails extends React.Component {
           });
         }
       )
-    axios.get("https://s3.us-east-2.amazonaws.com/open-data-portal/" + this.props.match.params.name + ".csv") 
+    axios.get("https://s3.us-east-2.amazonaws.com/ucopendata/" + this.props.match.params.name + ".csv") 
         .then(result => {
           this.setState({
             csv: result.data,
@@ -103,7 +103,7 @@ class DatasetDetails extends React.Component {
                       <br></br>
                       <div>
                         <a href={post.source_url} target="_blank" rel="noopener noreferrer" className="btnSecondary">View Source</a>
-                        <a href={"https://s3.us-east-2.amazonaws.com/open-data-portal/" + this.props.match.params.name + ".csv"} className="btnSecondary">Download CSV</a>
+                        <a href={"https://s3.us-east-2.amazonaws.com/ucopendata/" + this.props.match.params.name + ".csv"} className="btnSecondary">Download CSV</a>
                       </div>
 
                     </div>

@@ -145,7 +145,8 @@ export default class LandingPage extends React.Component {
                     {names} • {Moment(Date.parse(article.date)).format("LL")}
                   </div>
                   <div></div>
-                  <img className="articleImg" src={article._embedded['wp:featuredmedia'][0].source_url} alt=""/>
+                  {/* <img className="articleImg" src={article._embedded['wp:featuredmedia'][0].source_url} alt=""/> */}
+									
                 </a>
               )
             })
