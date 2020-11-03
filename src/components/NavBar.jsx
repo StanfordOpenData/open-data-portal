@@ -31,9 +31,9 @@ function NavBar() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <a id='recruitment' href='https://tinyurl.com/sodp20' target='_blank' rel="noopener noreferrer">
+      {/*<a id='recruitment' href='https://tinyurl.com/sodp20' target='_blank' rel="noopener noreferrer">
         <h2>Interested in the Open Data Project? Join our team! Applications due October 26th!</h2>
-      </a>
+      </a>*/}
     </div>
   );
 }
