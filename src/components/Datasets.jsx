@@ -87,7 +87,7 @@ class Datasets extends React.Component {
 
   componentDidMount() {
 		console.log("Hello0")
-    axios.get('https://ucopendata.s3.us-east-2.amazonaws.com/metadata_uchicago.json')
+    axios.get('https://ucopendata.s3.us-east-2.amazonaws.com/metadata_stanford.json')
       .then(result => {
         this.setState({
           isLoaded: true,
@@ -98,6 +98,7 @@ class Datasets extends React.Component {
         console.log(result.data)
       },
         (error) => {
+					console.log("hello_error")
 					console.log(error)
           this.setState({
             isLoaded: true,
@@ -105,6 +106,8 @@ class Datasets extends React.Component {
           });
         }
       )
+		console.log("Hello_component")
+		console.log(this.filteredItems)
   }
 
   searchKey = (e) => {
