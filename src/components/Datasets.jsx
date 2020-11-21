@@ -86,13 +86,12 @@ class Datasets extends React.Component {
   }
 
   componentDidMount() {
-		let var_1 = '[{"name": "temp_uc_opendata_form","display_name": "Fake form for testing UC Open Data AWS services","create_date": "10/24/20","source_url": "https://docs.google.com/spreadsheets/d/11O_UT9NVSRQdbs6WJqBojmjgheSUJnP1wS12pwolkoE/edit?usp=sharing","description": "lorem ipsum","tags": "misc","stories": "","source": "other","owner": "vannstrasen@gmail.com"}]'
-    axios.get('https://ucopendata.s3.us-east-2.amazonaws.com/metadata_uchicago.json')
+    axios.get('https://ucopendata.s3.us-east-2.amazonaws.com/metadata.json')
       .then(result => {
         this.setState({
           isLoaded: true,
-          items: JSON.parse(var_1),
-          filteredItems: JSON.parse(var_1),
+          items: result.data,
+          filteredItems: result.data,
         });
       },
         (error) => {
