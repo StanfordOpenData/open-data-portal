@@ -23,7 +23,7 @@ class DatasetDetails extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('https://ucopendata.s3.us-east-2.amazonaws.com/metadata_uchicago.json')
+    axios.get('https://ucopendata.s3.us-east-2.amazonaws.com/metadata_stanford.json')
       .then(result => {
         this.setState({
           isLoaded: true,

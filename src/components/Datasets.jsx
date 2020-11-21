@@ -86,19 +86,16 @@ class Datasets extends React.Component {
   }
 
   componentDidMount() {
-		console.log("Hello0")
-    axios.get('https://ucopendata.s3.us-east-2.amazonaws.com/metadata_stanford.json')
+		let var_1 = '[{"name": "temp_uc_opendata_form","display_name": "Fake form for testing UC Open Data AWS services","create_date": "10/24/20","source_url": "https://docs.google.com/spreadsheets/d/11O_UT9NVSRQdbs6WJqBojmjgheSUJnP1wS12pwolkoE/edit?usp=sharing","description": "lorem ipsum","tags": "misc","stories": "","source": "other","owner": "vannstrasen@gmail.com"}]'
+    axios.get('https://ucopendata.s3.us-east-2.amazonaws.com/metadata_uchicago.json')
       .then(result => {
         this.setState({
           isLoaded: true,
-          items: result.data,
-          filteredItems: result.data,
+          items: JSON.parse(var_1),
+          filteredItems: JSON.parse(var_1),
         });
-				console.log("Hello")
-        console.log(result.data)
       },
         (error) => {
-					console.log("hello_error")
 					console.log(error)
           this.setState({
             isLoaded: true,
@@ -106,8 +103,6 @@ class Datasets extends React.Component {
           });
         }
       )
-		console.log("Hello_component")
-		console.log(this.filteredItems)
   }
 
   searchKey = (e) => {
