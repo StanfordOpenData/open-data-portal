@@ -1,0 +1,25 @@
+#tablecontainer {
+  width: 75%;
+  margin: auto;
+}
+
+table * {
+  padding: .5em 1em;
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+
+table td {
+  background-color: #e1f4fd;
+}
+
+table th, table td.aqua {
+  font-size: 18px;
+  background-color: #00afb7;
+}
+
+@media only screen and (max-width: 768px) {
+  table * {
+    padding: .5em;
+  }
+}

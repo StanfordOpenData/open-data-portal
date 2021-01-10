@@ -1,2 +1,2 @@
 # Netlify redirects
-/datathon https://stanfordopendatathon.netlify.app 200!
+/datathon https://stanfordopendatathon.netlify.app/ 200!
