@@ -27,7 +27,7 @@ function Bootcamp() {
         <li><strong>Use your skills in hands-on projects</strong>: collaborate with our partner orgs (eg: the Bill Lane Center), or pick your own dataset, and explore!</li>
         <li><strong>Learn about data ethics and governance</strong>: we have confirmed a guest lecture with professor <a href="https://web.stanford.edu/~jugander/" target="_blank" rel="noopener noreferrer">Johan Ugander</a> on data ethics and governance.</li>
       </ul>
-      <h4>Our Curriculum</h4>
+      <h4>Our Curriculum</h4><br/>
       <div id="tablecontainer">
         <table>
           <tr>
