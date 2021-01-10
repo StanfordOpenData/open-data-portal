@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 import { Link } from "react-router-dom";
-import heroImage from './static/3.png';
+import heroImage from './static/Bootcamp1.png';
 import MainLogo from './static/Logo + Type@2x.png'
 import axios from 'axios';
 import Moment from 'moment';
@@ -119,7 +119,7 @@ export default class LandingPage extends React.Component {
               </button>
             </div>
           </div>
-          <a href='https://tinyurl.com/sodp20' target="_blank" rel="noopener noreferrer"><Image className="hero" src={heroImage} alt=""/></a>
+          <a href='https://docs.google.com/forms/d/e/1FAIpQLSftolCEBzSFwardri_jpK1pEJtbTjxslBatL2xxV5CfHk0yuw/viewform' target="_blank" rel="noopener noreferrer"><Image className="hero" src={heroImage} alt=""/></a>
         </header>
         
         <div className="newArticles">

@@ -21,6 +21,7 @@ function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">
             <Nav.Link href="#/datasets">Datasets</Nav.Link>
+            <Nav.Link href="#/bootcamp">Bootcamp</Nav.Link>
             <Nav.Link href="#/aboutus">About Us</Nav.Link>
             <Nav.Link href="#/contribute">Contribute a Dataset</Nav.Link>
             <NavDropdown title="Related Links">
@@ -31,9 +32,9 @@ function NavBar() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      {/*<a id='recruitment' href='https://tinyurl.com/sodp20' target='_blank' rel="noopener noreferrer">
-        <h2>Interested in the Open Data Project? Join our team! Applications due October 26th!</h2>
-      </a>*/}
+      <a id='recruitment' href='https://docs.google.com/forms/d/e/1FAIpQLSftolCEBzSFwardri_jpK1pEJtbTjxslBatL2xxV5CfHk0yuw/viewform' target='_blank' rel="noopener noreferrer">
+        <h2>Interested in or new to data science and journalism? Join SODP Bootcamp and apply today! Applications due January 15th at 11:59 PST</h2>
+      </a>
     </div>
   );
 }
