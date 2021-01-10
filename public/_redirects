@@ -1,0 +1,2 @@
+# Netlify redirects
+/datathon https://stanfordopendatathon.netlify.app 200!
