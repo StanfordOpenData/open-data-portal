@@ -1,11 +1,11 @@
 import React from 'react';
-import "./bootcamp.css"
+import "./fellowship.css"
 
-function Bootcamp() {
+function Fellowship() {
   return (
     <div className="container">
-      <h2>Stanford Open Data Project Bootcamp</h2>
-      <p>The SODP Bootcamp is a 7-week data workshop filled with active group learning and one-on-one mentoring on topics from data visualization to statistical analysis. It is geared towards students with little to no background in data. It will culminate in data journalism projects that will have the opportunity to be published in the Stanford Daily and/or SODP’s website.</p>
+      <h2>Stanford Open Data Project Fellowship</h2>
+      <p>The SODP Fellowship is a 7-week data workshop filled with active group learning and one-on-one mentoring on topics from data visualization to statistical analysis. It is geared towards students with little to no background in data. It will culminate in data journalism projects that will have the opportunity to be published in the Stanford Daily and/or SODP’s website.</p>
       <h4>Class Format</h4>
       <ul>
         <li>Week 2-6: weekly 1-hour class time, consisted of 20-min lecture and 40-min group study</li>
@@ -19,7 +19,7 @@ function Bootcamp() {
         <li>Enthusiasm about data, data advocacy, and data journalism</li>
         <li>Commitment to attend the lectures, engage in class activities, and complete a final project</li>
       </ul>
-      <h4>Why should you join the Bootcamp?</h4>
+      <h4>Why should you join the Fellowship?</h4>
       <ul>
         <li><strong>Interactive and group-based learning</strong>: in lecture, you'll do more than just listen. Most of our learning will be conducted through hands-on problem solving with your group members.</li>
         <li><strong>Rapid skill development</strong>: data skills are some of the sought-after skills in academia and by employers. We provide resources specifically for students with little to no background in data to equip themselves with these skills.</li>
@@ -81,4 +81,4 @@ function Bootcamp() {
   )
 };
 
-export default Bootcamp;
+export default Fellowship;

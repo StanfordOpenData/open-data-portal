@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 import { Link } from "react-router-dom";
-import heroImage from './static/Bootcamp1.png';
+import heroImage from './static/SODP Fellowship.png';
 import MainLogo from './static/Logo + Type@2x.png'
 import axios from 'axios';
 import Moment from 'moment';
