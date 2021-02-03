@@ -33,8 +33,8 @@ function NavBar() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <a id='recruitment' href='https://docs.google.com/forms/d/e/1FAIpQLSftolCEBzSFwardri_jpK1pEJtbTjxslBatL2xxV5CfHk0yuw/viewform' target='_blank' rel="noopener noreferrer">
-        <h2>Interested in or new to data science and journalism? Join SODP Fellowship and apply today! Applications due January 19th at 11:59 PST</h2>
+      <a id='recruitment' href='https://docs.google.com/forms/d/e/1FAIpQLSekpg0-j0vEGCWg9ZM534NdDofMMaJggohJXFv6b1MrGPUYpw/viewform' target='_blank' rel="noopener noreferrer">
+        <h2>Interested in data science, promoting open data, or data policy? Apply to be part of the first Stanford Open Datathon! Applications due March 15th at 11:59 PST!</h2>
       </a>
     </div>
   );
