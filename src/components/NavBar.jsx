@@ -22,7 +22,7 @@ function NavBar() {
           <Nav className="ml-auto">
             <Nav.Link href="#/datasets">Datasets</Nav.Link>
             <Nav.Link href="#/fellowship">Fellowship</Nav.Link>
-            <Nav.Link href="/datathon">SODP Datathon</Nav.Link>
+            <Nav.Link href="https://datathon.stanford.edu/">SODP Datathon</Nav.Link>
             <Nav.Link href="#/aboutus">About Us</Nav.Link>
             <Nav.Link href="#/contribute">Contribute a Dataset</Nav.Link>
             <NavDropdown title="Related Links">
