@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './index.css';
-import { Switch, HashRouter, Route } from "react-router-dom";
+import { Switch, HashRouter, Route, BrowserRouter } from "react-router-dom";
 
 import NavBar from './components/NavBar';
 import LandingPage from './components/LandingPage';
@@ -46,14 +46,18 @@ class App extends Component {
                 <Route exact path='/aboutus' component={AboutUs} />
                 <Route exact path='/contribute' component={PostDataset} />
                 <Route exact path='/Fellowship' component={Fellowship} />
-                <Route exact path="/datathon" component={() => {
-                  window.location.replace("https://datathon.stanford.edu/");
-                  return null;
-                }}/>
                 <Route path="*" component={NotFound} />
               </Switch>
             </div>
-          </HashRouter>    
+          </HashRouter>
+          <BrowserRouter>
+            <Switch>
+              <Route exact path="/datathon" component={() => {
+                    window.location.replace("https://datathon.stanford.edu/");
+                    return null;
+                  }}/>
+            </Switch>
+          </BrowserRouter>   
         </div>
         <Footer />
       </div>
