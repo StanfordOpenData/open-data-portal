@@ -46,6 +46,10 @@ class App extends Component {
                 <Route exact path='/aboutus' component={AboutUs} />
                 <Route exact path='/contribute' component={PostDataset} />
                 <Route exact path='/Fellowship' component={Fellowship} />
+                <Route exact path="/datathon" component={() => {
+                  window.location.replace("https://datathon.stanford.edu/");
+                  return null;
+                }}/>
                 <Route path="*" component={NotFound} />
               </Switch>
             </div>
