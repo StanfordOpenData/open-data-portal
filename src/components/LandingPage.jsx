@@ -28,6 +28,22 @@ export default class LandingPage extends React.Component {
     var targetUrl = 'https://wp.stanforddaily.com/wp-json/wp/v2/posts?_embed&categories=58277' 
       // embed adds featured image
 
+    axios.get(targetUrl)
+      .then(result => {
+        let stories = result.data.slice(0, 3);
+        this.setState({
+          isLoaded: true,
+          articles: stories
+        });
+      },
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
+
     axios.get('https://open-data-portal.s3.us-east-2.amazonaws.com/metadata.json')
       .then(result => {
           this.setState({
@@ -42,14 +58,16 @@ export default class LandingPage extends React.Component {
             });
           }
         )
-      .then(() => {
+      /*.then(() => {
         let slugs = this.state.items.filter(dataset => dataset.stories !== "").slice(0, 3).map(dataset => dataset.stories);
+        console.log(this.state.items);
         for (var i = 0; i < slugs.length; i++) {
           let multipleSlugs = slugs[i].split(",")
           for (var j = 0; j < multipleSlugs.length; j++) {
             targetUrl += '&slug[]=' + multipleSlugs[j];
           }
         }
+        console.log(targetUrl);
 
         fetch(targetUrl)
         .then(blob => blob.json())
@@ -66,7 +84,7 @@ export default class LandingPage extends React.Component {
             });
           }
         )
-      })
+      })*/
   }
 
   getRandomFact = () => { // updates random fact displayed
