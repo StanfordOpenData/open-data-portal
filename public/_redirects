@@ -1,3 +1,3 @@
 # Netlify redirects
-/datathon/static/* https://datathon.stanford.edu/static/:splat 200
-/datathon https://datathon.stanford.edu 200
+# /datathon/static/* https://datathon.stanford.edu/static/:splat 200
+# /datathon https://datathon.stanford.edu 200
