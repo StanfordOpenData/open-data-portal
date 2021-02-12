@@ -36,6 +36,7 @@ class App extends Component {
         </Helmet>
 
         <div className="wrapper">
+           
           <HashRouter>
             <div>
               <NavBar />
@@ -51,13 +52,11 @@ class App extends Component {
             </div>
           </HashRouter>
           <BrowserRouter>
-            <Switch>
-              <Route exact path="/datathon" component={() => {
-                    window.location.replace("https://datathon.stanford.edu/");
+              <Route path="/datathon" component={() => {
+                    window.location.href = "https://datathon.stanford.edu/";
                     return null;
                   }}/>
-            </Switch>
-          </BrowserRouter>   
+          </BrowserRouter>
         </div>
         <Footer />
       </div>
