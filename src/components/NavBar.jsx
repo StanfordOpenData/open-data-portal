@@ -4,7 +4,7 @@ import logoImage from './static/Main Logo@2x.png';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import './recruitment.css';
+//import './recruitment.css';
 
 function NavBar() {
   return (
@@ -33,9 +33,11 @@ function NavBar() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+      {/*
       <a id='recruitment' href='https://docs.google.com/forms/d/e/1FAIpQLSekpg0-j0vEGCWg9ZM534NdDofMMaJggohJXFv6b1MrGPUYpw/viewform' target='_blank' rel="noopener noreferrer">
         <h2>Interested in data science, promoting open data, or data policy? Apply to be part of the first Stanford Open Datathon! Applications due March 17th at 11:59 PDT!</h2>
       </a>
+      */}
     </div>
   );
 }
